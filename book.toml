@@ -1,0 +1,10 @@
+[book]
+title = "Dawn"
+authors = ["Zeyla Hellyer"]
+language = "en"
+multilingual = true
+src = "src"
+
+[output.html]
+theme = "rust"
+default-theme = "rust"
