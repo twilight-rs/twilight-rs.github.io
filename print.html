@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Dawn</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="rust">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li><a href="support.html"><strong aria-hidden="true">2.</strong> Support</a></li><li><a href="chapter_1_crates/summary.html"><strong aria-hidden="true">3.</strong> Crates</a></li><li><ol class="section"><li><a href="chapter_1_crates/section_1_model.html"><strong aria-hidden="true">3.1.</strong> Model</a></li><li><a href="chapter_1_crates/section_2_http.html"><strong aria-hidden="true">3.2.</strong> HTTP</a></li><li><a href="chapter_1_crates/section_3_gateway.html"><strong aria-hidden="true">3.3.</strong> Gateway</a></li><li><a href="chapter_1_crates/section_4_cache.html"><strong aria-hidden="true">3.4.</strong> Cache</a></li><li><a href="chapter_1_crates/section_5_command_parser.html"><strong aria-hidden="true">3.5.</strong> Command Parser</a></li><li><a href="chapter_1_crates/section_6_dawn.html"><strong aria-hidden="true">3.6.</strong> Dawn</a></li><li><a href="chapter_1_crates/section_7_first_party/summary.html"><strong aria-hidden="true">3.7.</strong> First-party</a></li><li><ol class="section"><li><a href="chapter_1_crates/section_7_first_party/section_1_cache_redis.html"><strong aria-hidden="true">3.7.1.</strong> Redis Cache</a></li><li><a href="chapter_1_crates/section_7_first_party/section_2_lavalink.html"><strong aria-hidden="true">3.7.2.</strong> Lavalink</a></li></ol></li><li><a href="chapter_1_crates/section_8_third_party.html"><strong aria-hidden="true">3.8.</strong> Third-party</a></li></ol></li><li><a href="chapter_2_building_a_bot/summary.html"><strong aria-hidden="true">4.</strong> Building a Bot</a></li><li><ol class="section"><li><a href="chapter_2_building_a_bot/section_1_preparation.html"><strong aria-hidden="true">4.1.</strong> Preparation</a></li><li><a href="chapter_2_building_a_bot/section_2_pong.html"><strong aria-hidden="true">4.2.</strong> Pong!</a></li><li><a href="chapter_2_building_a_bot/section_3_have_some_fun.html"><strong aria-hidden="true">4.3.</strong> Have Some Fun</a></li><li><a href="chapter_2_building_a_bot/section_4_basic_moderation.html"><strong aria-hidden="true">4.4.</strong> Basic Moderation</a></li></ol></li><li><a href="chapter_3_services/summary.html"><strong aria-hidden="true">5.</strong> Services</a></li><li><ol class="section"><li><a href="chapter_3_services/section_1_why_build.html"><strong aria-hidden="true">5.1.</strong> Why Build Services?</a></li><li><a href="chapter_3_services/section_2_using_http_proxy.html"><strong aria-hidden="true">5.2.</strong> Using an HTTP Proxy</a></li><li><a href="chapter_3_services/section_3_using_redis.html"><strong aria-hidden="true">5.3.</strong> Using a Redis Cache</a></li><li><a href="chapter_3_services/section_4_using_message_broker.html"><strong aria-hidden="true">5.4.</strong> Using a Message Broker</a></li><li><a href="chapter_3_services/section_5_moving_forward.html"><strong aria-hidden="true">5.5.</strong> Moving Forward</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Dawn</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#overview" id="overview">Overview</a></h1>
+<p><img
+  src="https://raw.githubusercontent.com/dawn-rs/dawn/master/logo.png" 
+  alt="dawn logo"
+/></p>
+<p><strong>dawn</strong> is an ecosystem of asynchronous, unopinionated, and extensible
+libraries for using the Discord APIs. It has the additional goals of simplicity,
+fearless breaking changes where needed, and the embracing of third party
+libraries.</p>
+<h3><a class="header" href="#the-guide" id="the-guide">The Guide</a></h3>
+<p>In this guide you'll learn about the core crates in the dawn ecosystem, useful
+first-party crates for more advanced use cases, and third-party crates giving
+you a tailored experience. You'll build a bot using all of the core crates
+available, and learn why and how to use services for larger bots.</p>
+<h3><a class="header" href="#links" id="links">Links</a></h3>
+<p>The organization for the project is <a href="https://github.com/dawn-rs">on GitHub, named &quot;dawn-rs&quot;</a>.</p>
+<p>The crates are available on <a href="https://crates.io/crates/dawn">crates.io</a>.</p>
+<p>The API docs are also hosted for the <a href="https://dawn.valley.cafe/docs">latest version</a>.</p>
+<p>There is a community and support server <a href="https://dawn.valley.cafe/discord">on Discord</a>.</p>
+<p>If you need to email us for some reason (don't have a GitHub account, but don't
+want to join the server?), then we can be reached at <code>dawn@valley.cafe</code>.</p>
+<h3><a class="header" href="#a-quick-example" id="a-quick-example">A Quick Example</a></h3>
+<p>Below is a quick example of a program printing &quot;Pong!&quot; when a ping command comes
+in from a channel:</p>
+<pre><code class="language-rust ignore">use futures::StreamExt;
+use dawn::{
+    command_parser::Parser,
+    gateway::{Config, Event, Shard},
+};
+use std::{
+    env,
+    error::Error,
+};
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
+    let token = env::var(&quot;DISCORD_TOKEN&quot;)?;
+
+    let parser = Parser::builder()
+        .prefix(&quot;!&quot;)
+        .command(&quot;ping&quot;)
+        .build();
+
+    let mut shard = Shard::builder(&amp;token).build();
+    shard.connect().await?;
+    let mut events = shard.events();
+
+    while let Some(event) = events.next().await {
+        match event {
+            Event::Message(msg) =&gt; match parser.parse(msg) {
+                Output::Command { name: &quot;ping&quot;, .. } =&gt; println!(&quot;Pong!&quot;),
+                _ =&gt; {},
+            },
+            _ =&gt; {},
+        }
+    }
+}
+</code></pre>
+<h1><a class="header" href="#support" id="support">Support</a></h1>
+<p>Support for the library is provided through the <a href="https://github.com/dawn-rs/dawn/issues">GitHub issues</a> section and the
+<a href="https://dawn.valley.cafe/discord">Discord server</a>.</p>
+<p>If you have a question, then the issues or the server are both good fits for it.
+If you find a bug, then the issues section is the best place.</p>
+<p>The API documentation is <a href="https://dawn.valley.cafe/docs">also available</a>.</p>
+<h3><a class="header" href="#supported-rust-versions" id="supported-rust-versions">Supported Rust Versions</a></h3>
+<p>Dawn supports Rust versions 1.39 and above.</p>
+<h3><a class="header" href="#breaking-changes" id="breaking-changes">Breaking Changes</a></h3>
+<p>Although Dawn aims to design APIs right the first time, that obviously won't
+happen. A lot of care is taken into designing them in an unopinionated way,
+leaving more opinionated concepts to userland libraries.</p>
+<p>While Dawn takes care to avoid the need for breaking changes, it will be
+fearless when it needs to: they won't be avoided for the sake of avoiding a
+change. Breaking changes won't be piled up over the course of a long time, so
+when upgrades need to happen they will be quick and painless.</p>
+<h1><a class="header" href="#crates" id="crates">Crates</a></h1>
+<p>Dawn is, at heart, an ecosystem. These components of the ecosystem generally,
+for the most part, don't depend on each other. The crates in it are sectioned
+into three &quot;parts&quot;: the <em>core crates</em>, <em>first-party crates</em>, and <em>third-party
+crates</em>.</p>
+<h3><a class="header" href="#core-crates" id="core-crates">Core Crates</a></h3>
+<p>Dawn includes a few crates which are the &quot;building blocks&quot; to your success. You
+might not need them all, but generally speaking you'll need most of them for
+your use case. Most of them wrap Discord's various APIs.</p>
+<ul>
+<li><em>model</em>: All of the structs, enums, and bitflags used by the Discord APIs.</li>
+<li><em>http</em>: An HTTP client supporting all of the documented features of Discord's
+HTTP API, with support for ratelimiting, proxying, and more.</li>
+<li><em>gateway</em>: A WebSocket client supporting Discord's gateway API.</li>
+<li><em>cache</em>: Definitions for implementating a cache. An in-process memory
+implementation is included.</li>
+<li><em>command-parser</em>: A basic command parser for parsing commands and arguments
+out of messages.</li>
+<li><em>dawn</em>: The root crate, re-exporting all of the other core crates in one
+unified crate.</li>
+</ul>
+<h3><a class="header" href="#first-party-crates" id="first-party-crates">First-Party Crates</a></h3>
+<p>Additionally, there are some first-party crates maintained by the Dawn
+organization, but not included in the core experience. These might be for more
+advanced use cases or clients for third-party services.</p>
+<ul>
+<li><em>cache-redis</em>: An implementation of a cache using <a href="https://redis.io">redis</a> as a backend.</li>
+<li><em>lavalink</em>: A client implementation for <a href="https://github.com/Frederikam/Lavalink">Lavalink</a> using <em>dawn-gateway</em>.</li>
+</ul>
+<h3><a class="header" href="#third-party-crates" id="third-party-crates">Third-Party Crates</a></h3>
+<p>Third-party crates may start to exist over time. These aren't officially
+supported by the Dawn organization, and are maintained by other people.</p>
+<p>These are currently no third-party crates. I mean, this thing isn't even at 0.1
+yet.</p>
+<h1><a class="header" href="#model" id="model">Model</a></h1>
+<p><code>dawn-model</code> is a crate of only serde models defining the Discord APIs with
+no implementations on top of them or functions to work with them.</p>
+<p>These are in a single crate for ease of use, a single point of definition,
+and a sort of versioning of the Discord API. Similar to how a database
+schema progresses in versions, the definition of the API also progresses in
+versions.</p>
+<p>The types in this crate are reproducible: deserializing a payload into a
+type, serializing it, and then deserializing it again will work.</p>
+<p>Defined are a number of modules defining types returned by or owned by
+resource categories. For example, <code>gateway</code> are types used to interact with
+and returned by the gateway API. <code>guild</code> contains types owned by the Guild
+resource category. These types may be directly returned by, built on top of,
+or extended by other crates.</p>
+<h3><a class="header" href="#installation" id="installation">Installation</a></h3>
+<p>This crate requires Rust 1.31+.</p>
+<p>Add the following to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">dawn-model = &quot;0.1&quot;
+</code></pre>
+<h3><a class="header" href="#features" id="features">Features</a></h3>
+<p><code>dawn-model</code> has a single feature, <code>serde-support</code>. By default it is enabled.
+This enables serde support of the models, which brings in four dependencies:</p>
+<ul>
+<li><code>serde</code></li>
+<li><code>serde_json</code></li>
+<li><code>serde-mappable-seq</code></li>
+<li><code>serde_repr</code></li>
+</ul>
+<p>If you don't need serde support, you can disable it:</p>
+<pre><code class="language-toml">[dependencies]
+dawn-model = { default-features = false, git = &quot;https://github.com/dawn-rs/dawn&quot; }
+</code></pre>
+<h2><a class="header" href="#license" id="license">License</a></h2>
+<p><a href="https://github.com/dawn-rs/dawn/blob/master/LICENSE.md">ISC</a></p>
+<h1><a class="header" href="#http" id="http">HTTP</a></h1>
+<h1><a class="header" href="#gateway" id="gateway">Gateway</a></h1>
+<h1><a class="header" href="#cache" id="cache">Cache</a></h1>
+<h1><a class="header" href="#command-parser" id="command-parser">Command Parser</a></h1>
+<p>The Command Parser is a basic parser for the Dawn ecosystem.</p>
+<p>Included is a mutable configuration that allows you to specify the command
+names, prefixes, ignored guilds and users, and more. The parser parses out
+commands matching an available command and prefix and provides the command
+arguments to you.</p>
+<h3><a class="header" href="#features-1" id="features-1">Features</a></h3>
+<p>There is a single feature, <code>model</code>, which determines whether to support
+<code>dawn_model::channel::Message</code> as an input. All that this does is additional
+checking of the author and the guild it was sent in to see if they're
+ignored. If you don't need that, you can disable this feature. With this
+feature the dependency tree is 17 dependencies, and without it is 0.</p>
+<p>Using <code>model</code>:</p>
+<pre><code class="language-toml">[dependencies]
+dawn-command-parser = &quot;0.1&quot;
+</code></pre>
+<p>Not using <code>dawn_model</code>:</p>
+<pre><code class="language-toml">[dependencies]
+dawn-command-parser = { default-features = false, version = &quot;0.1&quot; }
+</code></pre>
+<h1><a class="header" href="#installation-1" id="installation-1">Installation</a></h1>
+<p><code>dawn-command-parser</code> requires at least Rust 1.36.0.</p>
+<p>Add the following to your Cargo.toml:</p>
+<pre><code class="language-toml">[dependencies]
+dawn-command-parser = &quot;0.1&quot;
+</code></pre>
+<h3><a class="header" href="#examples" id="examples">Examples</a></h3>
+<p>A simple parser for a bot with one prefix (<code>&quot;!&quot;</code>) and two commands: <code>&quot;echo&quot;</code>
+and <code>&quot;ping&quot;</code>:</p>
+<pre><pre class="playpen"><code class="language-rust no_run">
+# #![allow(unused_variables)]
+#fn main() {
+use dawn_command_parser::{Config, Output, Parser};
+
+let mut config = Config::new();
+
+// (Use `Config::add_command` to add a single command)
+config.add_command(&quot;echo&quot;);
+config.add_command(&quot;ping&quot;);
+
+// Add the prefix `&quot;!&quot;`.
+// (Use `Config::add_prefixes` to add multiple prefixes)
+config.add_prefix(&quot;!&quot;);
+
+let parser = Parser::new(config);
+
+// Now pass a command to the parser
+match parser.parse_str(&quot;!echo a message&quot;) {
+    Output::Command { name: &quot;echo&quot;, arguments, .. } =&gt; {
+        let content = arguments.as_str();
+
+        println!(&quot;Got an echo request to send `{}`&quot;, content);
+    },
+    Output::Command { name: &quot;ping&quot;, .. } =&gt; {
+        println!(&quot;Got a ping request&quot;);
+    },
+    Output::IgnoredGuild =&gt; println!(&quot;Message from ignored guild&quot;),
+    Output::IgnoredUser =&gt; println!(&quot;Message from ignored user&quot;),
+    Output::NoMatch =&gt; println!(&quot;Message didn't match a prefix and command&quot;),
+    // Ignore all other commands.
+    _ =&gt; {},
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#dawn" id="dawn">Dawn</a></h1>
+<h1><a class="header" href="#first-party" id="first-party">First-party</a></h1>
+<h1><a class="header" href="#redis-cache" id="redis-cache">Redis Cache</a></h1>
+<h1><a class="header" href="#lavalink" id="lavalink">Lavalink</a></h1>
+<h1><a class="header" href="#third-party" id="third-party">Third-party</a></h1>
+<h1><a class="header" href="#building-a-bot" id="building-a-bot">Building a Bot</a></h1>
+<h1><a class="header" href="#preparation" id="preparation">Preparation</a></h1>
+<h1><a class="header" href="#pong" id="pong">Pong!</a></h1>
+<h1><a class="header" href="#have-some-fun" id="have-some-fun">Have Some Fun</a></h1>
+<h1><a class="header" href="#basic-moderation" id="basic-moderation">Basic Moderation</a></h1>
+<h1><a class="header" href="#services" id="services">Services</a></h1>
+<h1><a class="header" href="#why-build-services" id="why-build-services">Why Build Services?</a></h1>
+<h1><a class="header" href="#using-an-http-proxy" id="using-an-http-proxy">Using an HTTP Proxy</a></h1>
+<h1><a class="header" href="#using-a-redis-cache" id="using-a-redis-cache">Using a Redis Cache</a></h1>
+<h1><a class="header" href="#using-a-message-broker" id="using-a-message-broker">Using a Message Broker</a></h1>
+<h1><a class="header" href="#moving-forward" id="moving-forward">Moving Forward</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
