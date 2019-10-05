@@ -24,7 +24,7 @@ This crate requires Rust 1.31+.
 Add the following to your `Cargo.toml`:
 
 ```toml
-dawn-model = "0.1"
+dawn-model = { git = "https://github.com/dawn-rs/dawn" }
 ```
 
 ### Features
@@ -44,13 +44,10 @@ If you don't need serde support, you can disable it:
 dawn-model = { default-features = false, git = "https://github.com/dawn-rs/dawn" }
 ```
 
-## License
+### Links
 
-[ISC][LICENSE.md]
+*source*: <https://github.com/dawn-rs/dawn/tree/master/model>
 
-[LICENSE.md]: https://github.com/dawn-rs/dawn/blob/master/LICENSE.md
-[`dawn`]: https://docs.rs/dawn
-[license badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
-[license link]: https://opensource.org/licenses/ISC
-[rust badge]: https://img.shields.io/badge/rust-1.31+-93450a.svg?style=flat-square
-[rust link]: https://blog.rust-lang.org/2018/12/06/Rust-1.31-and-rust-2018.html
+*docs*: <https://docs.rs/dawn-model>
+
+*crates.io*: <https://crates.io/crates/dawn-model>

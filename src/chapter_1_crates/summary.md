@@ -14,9 +14,10 @@ your use case. Most of them wrap Discord's various APIs.
 - *model*: All of the structs, enums, and bitflags used by the Discord APIs.
 - *http*: An HTTP client supporting all of the documented features of Discord's
   HTTP API, with support for ratelimiting, proxying, and more.
-- *gateway*: A WebSocket client supporting Discord's gateway API.
+- *gateway*: A client supporting Discord's gateway API.
 - *cache*: Definitions for implementating a cache. An in-process memory
   implementation is included.
+- *voice*: A client supporting Discord's voice API.
 - *command-parser*: A basic command parser for parsing commands and arguments
   out of messages.
 - *dawn*: The root crate, re-exporting all of the other core crates in one
@@ -26,10 +27,10 @@ your use case. Most of them wrap Discord's various APIs.
 
 Additionally, there are some first-party crates maintained by the Dawn
 organization, but not included in the core experience. These might be for more
-advanced use cases or clients for third-party services.
-
-- *cache-redis*: An implementation of a cache using [redis] as a backend.
-- *lavalink*: A client implementation for [Lavalink] using *dawn-gateway*.
+advanced use cases or clients for third-party services. Two examples of
+first-party crates are `dawn-cache-redis` - an implementation of a cache using
+Redis as a backend - and `dawn-lavalink`, an implementation of a client for
+Lavalink.
 
 ### Third-Party Crates
 
