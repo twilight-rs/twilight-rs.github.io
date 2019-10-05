@@ -1,7 +1,8 @@
 # Summary
 
-- [Overview](./overview.md)
-- [Support](./support.md)
+[Overview](./overview.md)
+[Support](./support.md)
+
 - [Crates](./chapter_1_crates/summary.md)
     - [Model](./chapter_1_crates/section_1_model.md)
     - [HTTP](./chapter_1_crates/section_2_http.md)
@@ -24,3 +25,7 @@
     - [Using a Redis Cache](./chapter_3_services/section_3_using_redis.md)
     - [Using a Message Broker](./chapter_3_services/section_4_using_message_broker.md)
     - [Moving Forward](./chapter_3_services/section_5_moving_forward.md)
+- [Bots using Dawn](./chapter_4_bots_using_dawn.md)
+- [Changelogs](./chapter_5_changelogs.md)
+
+[Contributors](./contributors.md)

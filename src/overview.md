@@ -5,6 +5,13 @@
   alt="dawn logo"
 />
 
+[Join us on Discord! :)][server]
+
+> **Warning**: Dawn is still a work in progress, so while some of this stuff
+> exists *right now*, a lot of it doesn't. Features, APIs, and usage of crates
+> not completed is documented for design feedback. You shouldn't try building
+> something yet.
+
 **dawn** is an ecosystem of asynchronous, unopinionated, and extensible
 libraries for using the Discord APIs. It has the additional goals of simplicity,
 fearless breaking changes where needed, and the embracing of third party
