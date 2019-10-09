@@ -14,6 +14,8 @@ pretty much just `up` and `down` to bring the cluster up or down. It implements
 a stream which returns items of the ID of the shard a message came from, and the
 parsed event representing it.
 
+![Shard example][img:shard]
+
 ### Installation
 
 This library requires at least Rust 1.39+.
@@ -68,3 +70,5 @@ async fn main() -> Result<(), Box<dyn Error + Sync + Send>> {
 *docs*: <https://docs.rs/dawn-gateway>
 
 *crates.io*: <https://crates.io/crates/dawn-gateway>
+
+[img:shard]: ./section_3_shard.png
