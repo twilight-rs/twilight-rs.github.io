@@ -24,7 +24,8 @@
     - [Using an HTTP Proxy](./chapter_3_services/section_2_using_http_proxy.md)
     - [Using a Redis Cache](./chapter_3_services/section_3_using_redis.md)
     - [Using a Message Broker](./chapter_3_services/section_4_using_message_broker.md)
-    - [Moving Forward](./chapter_3_services/section_5_moving_forward.md)
+    - [Using the Gateway Queue](./chapter_3_services/section_5_gateway_queue.md)
+    - [Moving Forward](./chapter_3_services/section_6_moving_forward.md)
 - [Bots using Dawn](./chapter_4_bots_using_dawn.md)
 - [Changelogs](./chapter_5_changelogs.md)
 
