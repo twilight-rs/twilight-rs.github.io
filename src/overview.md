@@ -79,6 +79,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
 ```
 
 [crates.io]: https://crates.io/crates/dawn
-[docs:latest]: https://dawn.valley.cafe/docs
+[docs:latest]: https://dawn-rs.github.io
 [github]: https://github.com/dawn-rs
-[server]: https://dawn.valley.cafe/discord
+[server]: https://discord.gg/WBdGJCc

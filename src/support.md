@@ -23,6 +23,6 @@ fearless when it needs to: they won't be avoided for the sake of avoiding a
 change. Breaking changes won't be piled up over the course of a long time, so
 when upgrades need to happen they will be quick and painless.
 
-[Discord server]: https://dawn.valley.cafe/discord
+[Discord server]: https://discord.gg/WBdGJCc
 [GitHub issues]: https://github.com/dawn-rs/dawn/issues
-[api docs]: https://dawn.valley.cafe/docs
+[api docs]: https://dawn-rs.github.io
