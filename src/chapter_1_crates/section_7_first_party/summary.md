@@ -1,6 +1,6 @@
 # First-party
 
-Dawn has a couple of first-party crates maintained by the organization, but not
+Twilight has a couple of first-party crates maintained by the organization, but not
 included as part of the core experience. These are entirely opt-in, and are for
 more advanced use cases or integration with third party software.
 

@@ -10,19 +10,19 @@ The API documentation is [also available][api docs].
 
 ### Supported Rust Versions
 
-Dawn supports Rust versions 1.39 and above.
+Twilight supports Rust versions 1.39 and above.
 
 ### Breaking Changes
 
-Although Dawn aims to design APIs right the first time, that obviously won't
+Although Twilight aims to design APIs right the first time, that obviously won't
 happen. A lot of care is taken into designing them in an unopinionated way,
 leaving more opinionated concepts to userland libraries.
 
-While Dawn takes care to avoid the need for breaking changes, it will be
+While Twilight takes care to avoid the need for breaking changes, it will be
 fearless when it needs to: they won't be avoided for the sake of avoiding a
 change. Breaking changes won't be piled up over the course of a long time, so
 when upgrades need to happen they will be quick and painless.
 
 [Discord server]: https://discord.gg/WBdGJCc
-[GitHub issues]: https://github.com/dawn-rs/dawn/issues
-[api docs]: https://dawn-rs.github.io
+[GitHub issues]: https://github.com/twilight-rs/twilight/issues
+[api docs]: https://twilight-rs.github.io

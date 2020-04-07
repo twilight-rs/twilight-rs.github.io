@@ -9,7 +9,7 @@
     - [Gateway](./chapter_1_crates/section_3_gateway.md)
     - [Cache](./chapter_1_crates/section_4_cache.md)
     - [Command Parser](./chapter_1_crates/section_5_command_parser.md)
-    - [Dawn](./chapter_1_crates/section_6_dawn.md)
+    - [Twilight](./chapter_1_crates/section_6_twilight.md)
     - [First-party](./chapter_1_crates/section_7_first_party/summary.md)
         - [Redis Cache](./chapter_1_crates/section_7_first_party/section_1_cache_redis.md)
         - [Lavalink](./chapter_1_crates/section_7_first_party/section_2_lavalink.md)
@@ -26,7 +26,7 @@
     - [Using a Message Broker](./chapter_3_services/section_4_using_message_broker.md)
     - [Using the Gateway Queue](./chapter_3_services/section_5_gateway_queue.md)
     - [Moving Forward](./chapter_3_services/section_6_moving_forward.md)
-- [Bots using Dawn](./chapter_4_bots_using_dawn.md)
+- [Bots using Twilight](./chapter_4_bots_using_twilight.md)
 - [Changelogs](./chapter_5_changelogs.md)
 
 [Contributors](./contributors.md)

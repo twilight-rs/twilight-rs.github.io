@@ -1,6 +1,6 @@
 # Model
 
-`dawn-model` is a crate of only serde models defining the Discord APIs with
+`twilight-model` is a crate of only serde models defining the Discord APIs with
 no implementations on top of them or functions to work with them.
 
 These are in a single crate for ease of use, a single point of definition,
@@ -24,12 +24,12 @@ This crate requires Rust 1.31+.
 Add the following to your `Cargo.toml`:
 
 ```toml
-dawn-model = { git = "https://github.com/dawn-rs/dawn" }
+twilight-model = { git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ### Features
 
-`dawn-model` has a single feature, `serde-support`. By default it is enabled.
+`twilight-model` has a single feature, `serde-support`. By default it is enabled.
 This enables serde support of the models, which brings in four dependencies:
 
 - `serde`
@@ -41,13 +41,13 @@ If you don't need serde support, you can disable it:
 
 ```toml
 [dependencies]
-dawn-model = { default-features = false, git = "https://github.com/dawn-rs/dawn" }
+twilight-model = { default-features = false, git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ### Links
 
-*source*: <https://github.com/dawn-rs/dawn/tree/master/model>
+*source*: <https://github.com/twilight-rs/twilight/tree/master/model>
 
-*docs*: <https://docs.rs/dawn-model>
+*docs*: <https://docs.rs/twilight-model>
 
-*crates.io*: <https://crates.io/crates/dawn-model>
+*crates.io*: <https://crates.io/crates/twilight-model>

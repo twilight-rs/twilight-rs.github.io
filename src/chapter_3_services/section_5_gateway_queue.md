@@ -39,19 +39,19 @@ The request will get a response once the request has gone through the queue.
 If you're using Docker, you can clone the repo and run:
 
 ```sh
-$ docker build . -t dawn-gateway-queue
-$ docker run -itd -e HOST=0.0.0.0 -e PORT=5000 dawn-gateway-queue 
+$ docker build . -t twilight-gateway-queue
+$ docker run -itd -e HOST=0.0.0.0 -e PORT=5000 twilight-gateway-queue 
 ```
 
 If you're not, you can compile it via Cargo:
 
 ```sh
 $ cargo build --release
-$ HOST=0.0.0.0 PORT=5000 ./target/release/dawn-gateway-queue
+$ HOST=0.0.0.0 PORT=5000 ./target/release/twilight-gateway-queue
 ```
 
 `HOST` and `PORT` are the only two environment variables.
 
 ### Links
 
-*source*: <https://github.com/dawn-rs/gateway-queue>
+*source*: <https://github.com/twilight-rs/gateway-queue>

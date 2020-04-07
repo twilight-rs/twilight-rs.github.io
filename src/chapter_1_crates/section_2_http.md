@@ -1,6 +1,6 @@
 # HTTP
 
-`dawn-http` is an HTTP client wrapping all of the documented Discord HTTP API.
+`twilight-http` is an HTTP client wrapping all of the documented Discord HTTP API.
 It is built on top of [Reqwest], and supports taking any generic Reqwest client,
 allowing you to pick your own TLS backend. By default, it uses [RusTLS], a Rust
 TLS implementation.
@@ -14,7 +14,7 @@ This library requires at least Rust 1.39+.
 Add the following to your `Cargo.toml`:
 
 ```toml
-dawn-http = { git = "https://github.com/dawn-rs/dawn" }
+twilight-http = { git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ### Example
@@ -23,7 +23,7 @@ A quick example showing how to send 10 messages, and then print the current
 user's name:
 
 ```rust
-use dawn::{
+use twilight::{
     http::Client,
     model::id::ChannelId,
 };
@@ -48,11 +48,11 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
 ### Links
 
-*source*: <https://github.com/dawn-rs/dawn/tree/master/http>
+*source*: <https://github.com/twilight-rs/twilight/tree/master/http>
 
-*docs*: <https://docs.rs/dawn-http>
+*docs*: <https://docs.rs/twilight-http>
 
-*crates.io*: <https://crates.io/crates/dawn-http>
+*crates.io*: <https://crates.io/crates/twilight-http>
 
 
 [Reqwest]: https://github.com/seanmonstar/reqwest

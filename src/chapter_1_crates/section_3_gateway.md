@@ -1,6 +1,6 @@
 # Gateway
 
-`dawn-gateway` is an implementation of a client over Discord's websocket
+`twilight-gateway` is an implementation of a client over Discord's websocket
 gateway.
 
 The main type is the `Shard`: it connects to the gateway, receives messages,
@@ -23,7 +23,7 @@ This library requires at least Rust 1.39+.
 Add the following to your `Cargo.toml`:
 
 ```toml
-dawn-gateway = { git = "https://github.com/dawn-rs/dawn" }
+twilight-gateway = { git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ### Example
@@ -32,7 +32,7 @@ Starting a `Shard` and printing the contents of new messages as they come in:
 
 ```rust
 use futures::StreamExt;
-use dawn::gateway::{Config, Event, Shard};
+use twilight::gateway::{Config, Event, Shard};
 use std::{
     env,
     error::Error,
@@ -65,10 +65,10 @@ async fn main() -> Result<(), Box<dyn Error + Sync + Send>> {
 
 ### Links
 
-*source*: <https://github.com/dawn-rs/dawn/tree/master/gateway>
+*source*: <https://github.com/twilight-rs/twilight/tree/master/gateway>
 
-*docs*: <https://docs.rs/dawn-gateway>
+*docs*: <https://docs.rs/twilight-gateway>
 
-*crates.io*: <https://crates.io/crates/dawn-gateway>
+*crates.io*: <https://crates.io/crates/twilight-gateway>
 
 [img:shard]: ./section_3_shard.png

@@ -4,7 +4,7 @@ You'll need a couple of things before you get started with your bot.
 
 ### Rust Setup
 
-Dawn requires async/await support, which is currently in Beta in Rust and
+Twilight requires async/await support, which is currently in Beta in Rust and
 expected to be released with Rust 1.39. To install it, you'll need [rustup]. If
 you haven't installed it, you should.
 
@@ -31,7 +31,7 @@ $ rustup override set nightly
 ### Making a Bot User
 
 > If you already know how to do this, feel free to skip to
-> [Installing Dawn](#installing-dawn).
+> [Installing Twilight](#installing-twilight).
 
 In the [Discord Developer Portal] you'll find a page with a list of your
 applications. Odds are if you don't know how to make a bot user, you haven't
@@ -67,12 +67,12 @@ it, click **Copy**.
 > users, leave all the guilds that the bot is in, burn your house down, and
 > everything.
 
-# Installing Dawn
+# Installing Twilight
 
 > Since this guide assumes familiarity with Rust already, this guide won't
 > explain how using Cargo works.
 
-We're going to add `dawn` as a dependency, which is the root crate re-exporting
+We're going to add `twilight` as a dependency, which is the root crate re-exporting
 all of the core crates, such as the HTTP and gateway clients, the models,
 and cache.
 
@@ -80,7 +80,7 @@ To do that, add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-dawn = { git = "https://github.com/dawn-rs/dawn" }
+twilight = { git = "https://github.com/twilight-rs/twilight" }
 ```
 
 Now you're all set to get programming! In the next chapter you'll learn how to

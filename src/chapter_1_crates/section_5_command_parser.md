@@ -1,6 +1,6 @@
 # Command Parser
 
-The Command Parser is a basic parser for the Dawn ecosystem. We'll get this out
+The Command Parser is a basic parser for the Twilight ecosystem. We'll get this out
 of the way first: it's not a framework, and it doesn't try to be.
 
 The parser, for the most part, takes a configuration of prefixes and commands,
@@ -19,7 +19,7 @@ Add the following to your Cargo.toml:
 
 ```toml
 [dependencies]
-dawn-command-parser = { git = "https://github.com/dawn-rs/dawn" }
+twilight-command-parser = { git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ### Examples
@@ -28,7 +28,7 @@ A simple parser for a bot with one prefix (`"!"`) and two commands, `"echo"`
 and `"ping"`:
 
 ```rust
-use dawn_command_parser::{Config, Output, Parser};
+use twilight_command_parser::{Config, Output, Parser};
 
 fn main() {
     let mut config = Config::new();
@@ -64,8 +64,8 @@ fn main() {
 
 ### Links
 
-*source*: <https://github.com/dawn-rs/dawn/tree/master/command-parser>
+*source*: <https://github.com/twilight-rs/twilight/tree/master/command-parser>
 
-*docs*: <https://docs.rs/dawn-command-parser>
+*docs*: <https://docs.rs/twilight-command-parser>
 
-*crates.io*: <https://crates.io/crates/dawn-command-parser>
+*crates.io*: <https://crates.io/crates/twilight-command-parser>
