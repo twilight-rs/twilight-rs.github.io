@@ -1,6 +1,6 @@
 # Redis Cache
 
-`twilight-cache-redis` is an implementation of a cache using Redis as a backend. It
+`twilight-cache-redis` will be an implementation of a cache using Redis as a backend. It
 is entirely stateless other than the TCP connection used by [`redis`] itself.
 
 Read the section on [the cache crate] for more information on how this is

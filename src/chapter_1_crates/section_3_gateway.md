@@ -14,8 +14,6 @@ pretty much just `up` and `down` to bring the cluster up or down. It implements
 a stream which returns items of the ID of the shard a message came from, and the
 parsed event representing it.
 
-![Shard example][img:shard]
-
 ### Installation
 
 This library requires at least Rust 1.39+.
@@ -32,34 +30,23 @@ Starting a `Shard` and printing the contents of new messages as they come in:
 
 ```rust
 use futures::StreamExt;
-use twilight::gateway::{Config, Event, Shard};
-use std::{
-    env,
-    error::Error,
-};
+use std::{env, error::Error};
+use twilight_gateway::Shard;
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error + Sync + Send>> {
-    let token = env::var("DISCORD_TOKEN")?;
-    
-    let config = Config::builder(&token).build();
-    let mut shard = Shard::new(config);
-    shard.connect().await?;
-    let mut events = shard.events();
-    
+async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
+    pretty_env_logger::init_timed();
+
+    let shard = Shard::new(env::var("DISCORD_TOKEN")?).await?;
+    println!("Created shard");
+
+    let mut events = shard.events().await;
+
     while let Some(event) = events.next().await {
-        match event {
-            Event::Connected(connected) => {
-                println!("Connected on shard {}", connected.shard_id);
-            },
-            Event::Message(msg) => {
-                if msg.content == "!ping" {
-                    http.send_message(msg.channel_id).content("Pong!").await?;
-                }
-            },
-            _ => {},
-        }
+        println!("Event: {:?}", event);
     }
+
+    Ok(())
 }
 ```
 

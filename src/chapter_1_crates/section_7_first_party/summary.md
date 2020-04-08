@@ -6,3 +6,5 @@ more advanced use cases or integration with third party software.
 
 Although not a part of the core experience, these are given the same level of
 support as the core crates.
+
+The crates are still very much a work in progress and will be published as they are finished.

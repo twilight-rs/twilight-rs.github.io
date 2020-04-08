@@ -25,4 +25,4 @@ when upgrades need to happen they will be quick and painless.
 
 [Discord server]: https://discord.gg/WBdGJCc
 [GitHub issues]: https://github.com/twilight-rs/twilight/issues
-[api docs]: https://twilight-rs.github.io
+[api docs]: https://docs.rs/twilight

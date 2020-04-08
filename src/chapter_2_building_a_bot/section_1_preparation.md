@@ -4,28 +4,13 @@ You'll need a couple of things before you get started with your bot.
 
 ### Rust Setup
 
-Twilight requires async/await support, which is currently in Beta in Rust and
-expected to be released with Rust 1.39. To install it, you'll need [rustup]. If
-you haven't installed it, you should.
-
-Although it's in Beta, some of the crates in the async/await ecosystem currently
-require nightly, so we'll go with that. Install the nightly toolchain:
-
-```shell
-$ rustup install nightly
-```
+Twilight requires async/await support, which means that you need to have a fairly recent version of rust, 1.40+ should work. If
+you haven't installed it, you should. Rust can be installed with [rustup].
 
 Now you'll want to make a project for your bot:
 
 ```shell
 $ cargo new bot-name && cd $_
-```
-
-To use nightly Rust, you need to set it to be used for your bot project's
-directory:
-
-```shell
-$ rustup override set nightly
 ```
 
 ### Making a Bot User

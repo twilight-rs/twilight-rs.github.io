@@ -1,4 +1,4 @@
-# dawn-book
+# twilight-book
 
-The book for learning about Dawn. The website can be found at
-<https://dawn-rs.github.io>.
+The book for learning about Twilight. The website can be found at
+<https://twilight-rs.github.io>.

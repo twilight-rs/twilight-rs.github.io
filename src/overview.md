@@ -34,9 +34,6 @@ The API docs are also hosted for the [latest version][docs:latest].
 
 There is a community and support server [on Discord][server].
 
-If you need to email us for some reason (don't have a GitHub account, but don't
-want to join the server?), then we can be reached at `twilight@valley.cafe`.
-
 ### A Quick Example
 
 Below is a quick example of a program printing "Pong!" when a ping command comes
@@ -45,7 +42,7 @@ in from a channel:
 ```rust,ignore
 use futures::StreamExt;
 use twilight::{
-    command_parser::Parser,
+    command_parser::{Command, Config as ParserConfig, Parser},
     gateway::{Config, Event, Shard},
 };
 use std::{
@@ -57,19 +54,21 @@ use std::{
 async fn main() -> Result<(), Box<dyn Error>> {
     let token = env::var("DISCORD_TOKEN")?;
 
-    let parser = Parser::builder()
-        .prefix("!")
-        .command("ping")
-        .build();
+    let shard = Shard::new(token).await?;
 
-    let mut shard = Shard::builder(&token).build();
-    shard.connect().await?;
-    let mut events = shard.events();
+    let parser = {
+        let mut config = Config::new();
+        config.command("ping").add();
+        config.add_prefix("!");
+        Parser::new(config)
+    };
+
+    let mut events = shard.events().await;
 
     while let Some(event) = events.next().await {
         match event {
-            Event::Message(msg) => match parser.parse(msg) {
-                Output::Command { name: "ping", .. } => println!("Pong!"),
+            Event::MessageCreate(msg) => match parser.parse(&msg.content) {
+                Command { name: "ping", .. } => println!("Pong!"),
                 _ => {},
             },
             _ => {},
@@ -79,6 +78,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
 ```
 
 [crates.io]: https://crates.io/crates/twilight
-[docs:latest]: https://twilight-rs.github.io
+[docs:latest]: https://docs.rs/twilight
 [github]: https://github.com/twilight-rs
 [server]: https://discord.gg/WBdGJCc

@@ -28,37 +28,33 @@ A simple parser for a bot with one prefix (`"!"`) and two commands, `"echo"`
 and `"ping"`:
 
 ```rust
-use twilight_command_parser::{Config, Output, Parser};
+use twilight_command_parser::{Command, Config, Parser};
 
-fn main() {
-    let mut config = Config::new();
-    
-    // (Use `Config::add_command` to add a single command)
-    config.add_command("echo");
-    config.add_command("ping");
-    
-    // Add the prefix `"!"`.
-    // (Use `Config::add_prefixes` to add multiple prefixes)
-    config.add_prefix("!");
-    
-    let parser = Parser::new(config);
-    
-    // Now pass a command to the parser
-    match parser.parse_str("!echo a message") {
-        Output::Command { name: "echo", arguments, .. } => {
-            let content = arguments.as_str();
-    
-            println!("Got an echo request to send `{}`", content);
-        },
-        Output::Command { name: "ping", .. } => {
-            println!("Got a ping request");
-        },
-        Output::IgnoredGuild => println!("Message from ignored guild"),
-        Output::IgnoredUser => println!("Message from ignored user"),
-        Output::NoMatch => println!("Message didn't match a prefix and command"),
-        // Ignore all other commands.
-        _ => {},
-    }
+let mut config = Config::new();
+
+// (Use `Config::add_command` to add a single command)
+config.command("echo").add();
+config.command("ping").add();
+
+// Add the prefix `"!"`.
+// (Use `Config::add_prefixes` to add multiple prefixes)
+config.add_prefix("!");
+
+let parser = Parser::new(config);
+
+// Now pass a command to the parser
+match parser.parse("!echo a message") {
+    Some(Command { name: "echo", arguments, .. }) => {
+        let content = arguments.as_str();
+
+        println!("Got an echo request to send `{}`", content);
+    },
+    Some(Command { name: "ping", .. }) => {
+        println!("Got a ping request");
+    },
+    // Ignore all other commands.
+    Some(_) => {},
+    None => println!("Message didn't match a prefix and command"),
 }
 ```
 

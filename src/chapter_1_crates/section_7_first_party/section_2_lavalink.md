@@ -1,6 +1,6 @@
 # Lavalink
 
-`twilight-lavalink` is a client for [Lavalink] using `twilight-gateway`.
+`twilight-lavalink` will be a client for [Lavalink] using `twilight-gateway`.
 
 ### Links
 
