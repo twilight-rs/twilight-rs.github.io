@@ -9,10 +9,21 @@ reconnect, resume, and identify, as well as do some additional connectivity
 checks.
 
 Also provided is the `Cluster`, which will automatically manage a collection of
-shards and unify their messages into one stream. It doesn't have a large API --
-pretty much just `up` and `down` to bring the cluster up or down. It implements
-a stream which returns items of the ID of the shard a message came from, and the
-parsed event representing it.
+shards and unify their messages into one stream. It doesn't have a large API, you
+usually want to spawn a task to bring it up such that you can begin to receive
+tasks as soon as they arrive.
+
+```rust
+let cluster = Cluster::new(config).await?;
+
+let mut events = cluster.events().await;
+
+let cluster_spawn = cluster.clone();
+
+tokio::spawn(async move {
+    cluster_spawn.up().await;
+});
+```
 
 ### Installation
 
@@ -21,8 +32,21 @@ This library requires at least Rust 1.39+.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight-gateway = { git = "https://github.com/twilight-rs/twilight" }
+twilight-gateway = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
 ```
+
+### Features
+
+`twilight-gateway` includes only a feature: `simd-json`.
+
+`simd-json` feature enables [simd-json] support to use simd features of the modern cpus
+to deserialize json data faster. It is not enabled by default since not every cpu has those features.
+To use this feature you need to also add these lines to a file in `<project root>/.cargo/config`
+```toml
+[build]
+rustflags = ["-C", "target-cpu=native"]
+```
+you can also use this environment variable `RUSTFLAGS="-C target-cpu=native"`.
 
 ### Example
 
@@ -35,12 +59,14 @@ use twilight_gateway::Shard;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
-    pretty_env_logger::init_timed();
+    // Initialize the tracing subscriber.
+    tracing_subscriber::fmt::init();
 
-    let shard = Shard::new(env::var("DISCORD_TOKEN")?).await?;
-    println!("Created shard");
-
+    let mut shard = Shard::new(env::var("DISCORD_TOKEN")?);
     let mut events = shard.events().await;
+
+    shard.start().await?;
+    println!("Created shard");
 
     while let Some(event) = events.next().await {
         println!("Event: {:?}", event);
@@ -52,9 +78,9 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
 ### Links
 
-*source*: <https://github.com/twilight-rs/twilight/tree/master/gateway>
+*source*: <https://github.com/twilight-rs/twilight/tree/trunk/gateway>
 
-*docs*: <https://docs.rs/twilight-gateway>
+*docs*: <https://twilight-rs.github.io/twilight/twilight_gateway/index.html>
 
 *crates.io*: <https://crates.io/crates/twilight-gateway>
 

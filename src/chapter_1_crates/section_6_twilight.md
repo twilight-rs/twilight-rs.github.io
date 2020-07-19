@@ -14,6 +14,9 @@ crate exists to provide all of them.
 This is the entire contents of the library:
 
 ```rust
+#[cfg(feature = "builders")]
+pub extern crate twilight_builders as builders;
+
 #[cfg(feature = "cache")]
 pub extern crate twilight_cache as cache;
 
@@ -29,8 +32,8 @@ pub extern crate twilight_http as http;
 #[cfg(feature = "model")]
 pub extern crate twilight_model as model;
 
-#[cfg(feature = "voice")]
-pub extern crate twilight_voice as voice;
+#[cfg(feature = "standby")]
+pub extern crate twilight_standby as standby;
 ```
 
 ### Installation
@@ -40,19 +43,20 @@ This library requires at least Rust 1.39+.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight = { git = "https://github.com/twilight-rs/twilight" }
+twilight = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
 ```
 
 ### Features
 
 All of the crates that are re-exported can be disabled. For example, if you need
-everything but `voice`, then you can disable only voice. This looks like:
+everything but `cache`, then you can disable only voice. This looks like:
 
 ```toml
 [dependencies.twilight]
 default-features = false
-features = ["cache", "command-parser", "gateway", "http", "model"]
+features = ["command-parser", "gateway", "http", "model", "standby"]
 git = "https://github.com/twilight-rs/twilight"
+branch = "trunk"
 ```
 
 This is the list of features, which are all enabled by default:
@@ -62,7 +66,7 @@ This is the list of features, which are all enabled by default:
 - `gateway`
 - `http`
 - `model`
-- `voice`
+- `standby`
 
 If you're developing a library, it's easier for users to know what you depend on
 by depending on the individual crates. If you're making a framework, this might
@@ -70,15 +74,15 @@ look like:
 
 ```toml
 [dependencies]
-twilight-cache = { git = "https://github.com/twilight-rs/twilight" }
-twilight-gateway = { git = "https://github.com/twilight-rs/twilight" }
-twilight-http = { git = "https://github.com/twilight-rs/twilight" }
+twilight-cache = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
+twilight-gateway = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
+twilight-http = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
 ```
 
 ### Links
 
 *source*: <https://github.com/twilight-rs/twilight>
 
-*docs*: <https://docs.rs/twilight>
+*docs*: <https://twilight-rs.github.io/twilight/twilight/index.html>
 
 *crates.io*: <https://crates.io/crates/twilight>

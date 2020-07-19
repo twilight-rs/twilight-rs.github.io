@@ -1,7 +1,7 @@
 # Model
 
 `twilight-model` is a crate of only serde models defining the Discord APIs with
-no implementations on top of them or functions to work with them.
+no implementations on top of them and the amount of methods is very limited.
 
 These are in a single crate for ease of use, a single point of definition,
 and a sort of versioning of the Discord API. Similar to how a database
@@ -24,30 +24,29 @@ This crate requires Rust 1.31+.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight-model = { git = "https://github.com/twilight-rs/twilight" }
+twilight-model = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
 ```
 
 ### Features
 
-`twilight-model` has a single feature, `serde-support`. By default it is enabled.
-This enables serde support of the models, which brings in four dependencies:
+The `simd-json` feature enables simd-json support to use simd features of 
+the modern cpus to deserialize responses faster. It is not enabled by default.
 
-- `serde`
-- `serde_json`
-- `serde-mappable-seq`
-- `serde_repr`
-
-If you don't need serde support, you can disable it:
+To use this feature you need to also add these 
+lines to `<project root>/.cargo/config`:
 
 ```toml
-[dependencies]
-twilight-model = { default-features = false, git = "https://github.com/twilight-rs/twilight" }
+[build]
+rustflags = ["-C", "target-cpu=native"]
 ```
+
+You can also set the environment variable `RUSTFLAGS="-C target-cpu=native"`. 
+
 
 ### Links
 
 *source*: <https://github.com/twilight-rs/twilight/tree/master/model>
 
-*docs*: <https://docs.rs/twilight-model>
+*docs*: <https://twilight-rs.github.io/twilight/twilight_model/index.html>
 
 *crates.io*: <https://crates.io/crates/twilight-model>

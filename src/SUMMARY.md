@@ -11,7 +11,6 @@
     - [Command Parser](./chapter_1_crates/section_5_command_parser.md)
     - [Twilight](./chapter_1_crates/section_6_twilight.md)
     - [First-party](./chapter_1_crates/section_7_first_party/summary.md)
-        - [Redis Cache](./chapter_1_crates/section_7_first_party/section_1_cache_redis.md)
         - [Lavalink](./chapter_1_crates/section_7_first_party/section_2_lavalink.md)
     - [Third-party](./chapter_1_crates/section_8_third_party.md)
 - [Building a Bot](./chapter_2_building_a_bot/summary.md)
@@ -28,5 +27,3 @@
     - [Moving Forward](./chapter_3_services/section_6_moving_forward.md)
 - [Bots using Twilight](./chapter_4_bots_using_twilight.md)
 - [Changelogs](./chapter_5_changelogs.md)
-
-[Contributors](./contributors.md)
