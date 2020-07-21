@@ -30,7 +30,7 @@ organization, but not included in the core experience. These might be for more
 advanced use cases or clients for third-party services. Two examples of
 first-party crates are:
 - `twilight-cache-redis` - an implementation of a cache using
-Redis as a backend (Not yet created)
+Redis as a backend. (Not yet created)
 - `twilight-lavalink`, an implementation of a client for
 Lavalink.
 

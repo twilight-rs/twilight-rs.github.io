@@ -32,7 +32,7 @@ This library requires at least Rust 1.39+.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight-gateway = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
+twilight-gateway = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ### Features

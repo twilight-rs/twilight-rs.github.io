@@ -43,7 +43,7 @@ This library requires at least Rust 1.39+.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
+twilight = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ### Features
@@ -53,10 +53,10 @@ everything but `cache`, then you can disable only voice. This looks like:
 
 ```toml
 [dependencies.twilight]
+branch = "trunk"
 default-features = false
 features = ["command-parser", "gateway", "http", "model", "standby"]
 git = "https://github.com/twilight-rs/twilight"
-branch = "trunk"
 ```
 
 This is the list of features, which are all enabled by default:
@@ -74,9 +74,9 @@ look like:
 
 ```toml
 [dependencies]
-twilight-cache = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
-twilight-gateway = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
-twilight-http = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
+twilight-cache = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
+twilight-gateway = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
+twilight-http = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ### Links

@@ -1,6 +1,6 @@
 [book]
 title = "Twilight"
-authors = ["The Twilight Contributors"]
+authors = ["Twilight Contributors"]
 language = "en"
 multilingual = true
 src = "src"

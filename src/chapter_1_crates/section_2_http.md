@@ -2,7 +2,7 @@
 
 `twilight-http` is an HTTP client wrapping all of the documented Discord HTTP API.
 It is built on top of [Reqwest], and supports taking any generic Reqwest client,
-allowing you to pick your own TLS backend. By default, it uses [RusTLS] a rust tls implementation, 
+allowing you to pick your own TLS backend. By default, it uses [RusTLS] a Rust TLS implementation, 
 but it can be changed to use NativeTLS which uses the TLS native to the platform, and on Unix uses OpenSSL.
 
 Ratelimiting is included out-of-the-box, along with support for proxies.

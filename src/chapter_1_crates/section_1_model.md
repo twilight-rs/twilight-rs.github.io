@@ -24,7 +24,7 @@ This crate requires Rust 1.31+.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight-model = { git = "https://github.com/twilight-rs/twilight", branch = "trunk" }
+twilight-model = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ### Features
@@ -40,8 +40,7 @@ lines to `<project root>/.cargo/config`:
 rustflags = ["-C", "target-cpu=native"]
 ```
 
-You can also set the environment variable `RUSTFLAGS="-C target-cpu=native"`. 
-
+You can also set the environment variable `RUSTFLAGS="-C target-cpu=native"`.
 
 ### Links
 
