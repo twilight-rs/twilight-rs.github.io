@@ -1,7 +1,7 @@
 # Overview
 
 <img
-  src="https://raw.githubusercontent.com/twilight-rs/twilight/master/logo.png" 
+  src="https://raw.githubusercontent.com/twilight-rs/twilight/trunk/logo.png" 
   alt="twilight logo"
 />
 
@@ -54,7 +54,8 @@ use std::{
 async fn main() -> Result<(), Box<dyn Error>> {
     let token = env::var("DISCORD_TOKEN")?;
 
-    let shard = Shard::new(token).await?;
+    let mut shard = Shard::new(env::var("DISCORD_TOKEN")?);
+    let mut events = shard.events().await;
 
     let parser = {
         let mut config = Config::new();
@@ -63,7 +64,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
         Parser::new(config)
     };
 
-    let mut events = shard.events().await;
+    // Start the shard to begin receiving events.
+    shard.start().await?;
 
     while let Some(event) = events.next().await {
         match event {
@@ -78,6 +80,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
 ```
 
 [crates.io]: https://crates.io/crates/twilight
-[docs:latest]: https://docs.rs/twilight
+[docs:latest]: https://twilight-rs.github.io/twilight/
 [github]: https://github.com/twilight-rs
 [server]: https://discord.gg/WBdGJCc

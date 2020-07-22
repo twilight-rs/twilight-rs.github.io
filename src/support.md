@@ -10,7 +10,7 @@ The API documentation is [also available][api docs].
 
 ### Supported Rust Versions
 
-Twilight supports Rust versions 1.39 and above.
+Twilight for now follows the latest released stable.
 
 ### Breaking Changes
 
@@ -25,4 +25,4 @@ when upgrades need to happen they will be quick and painless.
 
 [Discord server]: https://discord.gg/WBdGJCc
 [GitHub issues]: https://github.com/twilight-rs/twilight/issues
-[api docs]: https://docs.rs/twilight
+[api docs]: https://twilight-rs.github.io/twilight/

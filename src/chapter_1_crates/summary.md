@@ -17,7 +17,7 @@ your use case. Most of them wrap Discord's various APIs.
 - *gateway*: A client supporting Discord's gateway API.
 - *cache*: Definitions for implementating a cache. An in-process memory
   implementation is included.
-- *voice*: A client supporting Discord's voice API.
+- *voice*: A client supporting Discord's voice API. (Not yet created)
 - *command-parser*: A basic command parser for parsing commands and arguments
   out of messages.
 - *twilight*: The root crate, re-exporting all of the other core crates in one
@@ -28,8 +28,10 @@ your use case. Most of them wrap Discord's various APIs.
 Additionally, there are some first-party crates maintained by the Twilight
 organization, but not included in the core experience. These might be for more
 advanced use cases or clients for third-party services. Two examples of
-first-party crates are `twilight-cache-redis` - an implementation of a cache using
-Redis as a backend - and `twilight-lavalink`, an implementation of a client for
+first-party crates are:
+- `twilight-cache-redis` - an implementation of a cache using
+Redis as a backend. (Not yet created)
+- `twilight-lavalink`, an implementation of a client for
 Lavalink.
 
 ### Third-Party Crates

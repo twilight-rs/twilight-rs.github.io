@@ -19,7 +19,7 @@ Add the following to your Cargo.toml:
 
 ```toml
 [dependencies]
-twilight-command-parser = { git = "https://github.com/twilight-rs/twilight" }
+twilight-command-parser = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ### Examples
@@ -60,7 +60,7 @@ match parser.parse("!echo a message") {
 
 ### Links
 
-*source*: <https://github.com/twilight-rs/twilight/tree/master/command-parser>
+*source*: <https://github.com/twilight-rs/twilight/tree/trunk/command-parser>
 
 *docs*: <https://docs.rs/twilight-command-parser>
 

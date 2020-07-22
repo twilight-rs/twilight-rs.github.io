@@ -1,6 +1,6 @@
 [book]
 title = "Twilight"
-authors = ["Valdemar Erk"]
+authors = ["Twilight Contributors"]
 language = "en"
 multilingual = true
 src = "src"

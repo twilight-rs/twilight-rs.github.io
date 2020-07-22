@@ -2,8 +2,8 @@
 
 `twilight-http` is an HTTP client wrapping all of the documented Discord HTTP API.
 It is built on top of [Reqwest], and supports taking any generic Reqwest client,
-allowing you to pick your own TLS backend. By default, it uses OpenSLL, but it can be changed to use [RusTLS] a Rust
-TLS implementation.
+allowing you to pick your own TLS backend. By default, it uses [RusTLS] a Rust TLS implementation, 
+but it can be changed to use NativeTLS which uses the TLS native to the platform, and on Unix uses OpenSSL.
 
 Ratelimiting is included out-of-the-box, along with support for proxies.
 
@@ -30,7 +30,8 @@ use twilight_model::id::ChannelId;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
-    pretty_env_logger::init_timed();
+    // Initialize the tracing subscriber.
+    tracing_subscriber::fmt::init();
 
     let client = Client::new(env::var("DISCORD_TOKEN")?);
     let channel_id = ChannelId(381_926_291_785_383_946);
@@ -39,6 +40,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         client
             .create_message(channel_id)
             .content(format!("Ping #{}", x))
+            .expect("content not a valid length")
     }))
     .await;
 
@@ -51,9 +53,9 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
 ### Links
 
-*source*: <https://github.com/twilight-rs/twilight/tree/master/http>
+*source*: <https://github.com/twilight-rs/twilight/tree/trunk/http>
 
-*docs*: <https://docs.rs/twilight-http>
+*docs*: <https://twilight-rs.github.io/twilight/twilight_http/index.html>
 
 *crates.io*: <https://crates.io/crates/twilight-http>
 
