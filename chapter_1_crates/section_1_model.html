@@ -5,12 +5,19 @@
         <meta charset="UTF-8">
         <title>Model - Twilight</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
@@ -19,8 +26,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
@@ -36,7 +44,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "rust" : "rust";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -81,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../overview.html">Overview</a></li><li class="chapter-item expanded affix "><a href="../support.html">Support</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/summary.html"><strong aria-hidden="true">1.</strong> Crates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_1_crates/section_1_model.html" class="active"><strong aria-hidden="true">1.1.</strong> Model</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_2_http.html"><strong aria-hidden="true">1.2.</strong> HTTP</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_3_gateway.html"><strong aria-hidden="true">1.3.</strong> Gateway</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_4_cache.html"><strong aria-hidden="true">1.4.</strong> Cache</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_5_command_parser.html"><strong aria-hidden="true">1.5.</strong> Command Parser</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_6_twilight.html"><strong aria-hidden="true">1.6.</strong> Twilight</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_7_first_party/summary.html"><strong aria-hidden="true">1.7.</strong> First-party</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_1_crates/section_7_first_party/section_1_cache_redis.html"><strong aria-hidden="true">1.7.1.</strong> Redis Cache</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_7_first_party/section_2_lavalink.html"><strong aria-hidden="true">1.7.2.</strong> Lavalink</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_8_third_party.html"><strong aria-hidden="true">1.8.</strong> Third-party</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter_2_building_a_bot/summary.html"><strong aria-hidden="true">2.</strong> Building a Bot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_2_building_a_bot/section_1_preparation.html"><strong aria-hidden="true">2.1.</strong> Preparation</a></li><li class="chapter-item expanded "><a href="../chapter_2_building_a_bot/section_2_pong.html"><strong aria-hidden="true">2.2.</strong> Pong!</a></li><li class="chapter-item expanded "><a href="../chapter_2_building_a_bot/section_3_have_some_fun.html"><strong aria-hidden="true">2.3.</strong> Have Some Fun</a></li><li class="chapter-item expanded "><a href="../chapter_2_building_a_bot/section_4_basic_moderation.html"><strong aria-hidden="true">2.4.</strong> Basic Moderation</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter_3_services/summary.html"><strong aria-hidden="true">3.</strong> Services</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_3_services/section_1_why_build.html"><strong aria-hidden="true">3.1.</strong> Why Build Services?</a></li><li class="chapter-item expanded "><a href="../chapter_3_services/section_2_using_http_proxy.html"><strong aria-hidden="true">3.2.</strong> Using an HTTP Proxy</a></li><li class="chapter-item expanded "><a href="../chapter_3_services/section_3_using_redis.html"><strong aria-hidden="true">3.3.</strong> Using a Redis Cache</a></li><li class="chapter-item expanded "><a href="../chapter_3_services/section_4_using_message_broker.html"><strong aria-hidden="true">3.4.</strong> Using a Message Broker</a></li><li class="chapter-item expanded "><a href="../chapter_3_services/section_5_gateway_queue.html"><strong aria-hidden="true">3.5.</strong> Using the Gateway Queue</a></li><li class="chapter-item expanded "><a href="../chapter_3_services/section_6_moving_forward.html"><strong aria-hidden="true">3.6.</strong> Moving Forward</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter_4_bots_using_twilight.html"><strong aria-hidden="true">4.</strong> Bots using Twilight</a></li><li class="chapter-item expanded "><a href="../chapter_5_changelogs.html"><strong aria-hidden="true">5.</strong> Changelogs</a></li><li class="chapter-item expanded affix "><a href="../contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../overview.html">Overview</a></li><li class="chapter-item expanded affix "><a href="../support.html">Support</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/summary.html"><strong aria-hidden="true">1.</strong> Crates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_1_crates/section_1_model.html" class="active"><strong aria-hidden="true">1.1.</strong> Model</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_2_http.html"><strong aria-hidden="true">1.2.</strong> HTTP</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_3_gateway.html"><strong aria-hidden="true">1.3.</strong> Gateway</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_4_cache.html"><strong aria-hidden="true">1.4.</strong> Cache</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_5_command_parser.html"><strong aria-hidden="true">1.5.</strong> Command Parser</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_6_twilight.html"><strong aria-hidden="true">1.6.</strong> Twilight</a></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_7_first_party/summary.html"><strong aria-hidden="true">1.7.</strong> First-party</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_1_crates/section_7_first_party/section_2_lavalink.html"><strong aria-hidden="true">1.7.1.</strong> Lavalink</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter_1_crates/section_8_third_party.html"><strong aria-hidden="true">1.8.</strong> Third-party</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter_2_building_a_bot/summary.html"><strong aria-hidden="true">2.</strong> Building a Bot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_2_building_a_bot/section_1_preparation.html"><strong aria-hidden="true">2.1.</strong> Preparation</a></li><li class="chapter-item expanded "><a href="../chapter_2_building_a_bot/section_2_pong.html"><strong aria-hidden="true">2.2.</strong> Pong!</a></li><li class="chapter-item expanded "><a href="../chapter_2_building_a_bot/section_3_have_some_fun.html"><strong aria-hidden="true">2.3.</strong> Have Some Fun</a></li><li class="chapter-item expanded "><a href="../chapter_2_building_a_bot/section_4_basic_moderation.html"><strong aria-hidden="true">2.4.</strong> Basic Moderation</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter_3_services/summary.html"><strong aria-hidden="true">3.</strong> Services</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter_3_services/section_1_why_build.html"><strong aria-hidden="true">3.1.</strong> Why Build Services?</a></li><li class="chapter-item expanded "><a href="../chapter_3_services/section_2_using_http_proxy.html"><strong aria-hidden="true">3.2.</strong> Using an HTTP Proxy</a></li><li class="chapter-item expanded "><a href="../chapter_3_services/section_3_using_redis.html"><strong aria-hidden="true">3.3.</strong> Using a Redis Cache</a></li><li class="chapter-item expanded "><a href="../chapter_3_services/section_4_using_message_broker.html"><strong aria-hidden="true">3.4.</strong> Using a Message Broker</a></li><li class="chapter-item expanded "><a href="../chapter_3_services/section_5_gateway_queue.html"><strong aria-hidden="true">3.5.</strong> Using the Gateway Queue</a></li><li class="chapter-item expanded "><a href="../chapter_3_services/section_6_moving_forward.html"><strong aria-hidden="true">3.6.</strong> Moving Forward</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter_4_bots_using_twilight.html"><strong aria-hidden="true">4.</strong> Bots using Twilight</a></li><li class="chapter-item expanded "><a href="../chapter_5_changelogs.html"><strong aria-hidden="true">5.</strong> Changelogs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -149,7 +157,7 @@
                     <main>
                         <h1><a class="header" href="#model" id="model">Model</a></h1>
 <p><code>twilight-model</code> is a crate of only serde models defining the Discord APIs with
-no implementations on top of them or functions to work with them.</p>
+no implementations on top of them and the amount of methods is very limited.</p>
 <p>These are in a single crate for ease of use, a single point of definition,
 and a sort of versioning of the Discord API. Similar to how a database
 schema progresses in versions, the definition of the API also progresses in
@@ -164,24 +172,20 @@ or extended by other crates.</p>
 <h3><a class="header" href="#installation" id="installation">Installation</a></h3>
 <p>This crate requires Rust 1.31+.</p>
 <p>Add the following to your <code>Cargo.toml</code>:</p>
-<pre><code class="language-toml">twilight-model = { git = &quot;https://github.com/twilight-rs/twilight&quot; }
+<pre><code class="language-toml">twilight-model = { branch = &quot;trunk&quot;, git = &quot;https://github.com/twilight-rs/twilight&quot; }
 </code></pre>
 <h3><a class="header" href="#features" id="features">Features</a></h3>
-<p><code>twilight-model</code> has a single feature, <code>serde-support</code>. By default it is enabled.
-This enables serde support of the models, which brings in four dependencies:</p>
-<ul>
-<li><code>serde</code></li>
-<li><code>serde_json</code></li>
-<li><code>serde-mappable-seq</code></li>
-<li><code>serde_repr</code></li>
-</ul>
-<p>If you don't need serde support, you can disable it:</p>
-<pre><code class="language-toml">[dependencies]
-twilight-model = { default-features = false, git = &quot;https://github.com/twilight-rs/twilight&quot; }
+<p>The <code>simd-json</code> feature enables simd-json support to use simd features of 
+the modern cpus to deserialize responses faster. It is not enabled by default.</p>
+<p>To use this feature you need to also add these 
+lines to <code>&lt;project root&gt;/.cargo/config</code>:</p>
+<pre><code class="language-toml">[build]
+rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
 </code></pre>
+<p>You can also set the environment variable <code>RUSTFLAGS=&quot;-C target-cpu=native&quot;</code>.</p>
 <h3><a class="header" href="#links" id="links">Links</a></h3>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/master/model">https://github.com/twilight-rs/twilight/tree/master/model</a></p>
-<p><em>docs</em>: <a href="https://docs.rs/twilight-model">https://docs.rs/twilight-model</a></p>
+<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_model/index.html">https://twilight-rs.github.io/twilight/twilight_model/index.html</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-model">https://crates.io/crates/twilight-model</a></p>
 
                     </main>
@@ -226,10 +230,10 @@ twilight-model = { default-features = false, git = &quot;https://github.com/twil
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 
