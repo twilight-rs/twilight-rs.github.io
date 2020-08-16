@@ -12,6 +12,7 @@
     - [Twilight](./chapter_1_crates/section_6_twilight.md)
     - [First-party](./chapter_1_crates/section_7_first_party/summary.md)
         - [Lavalink](./chapter_1_crates/section_7_first_party/section_2_lavalink.md)
+        - [Mention](./chapter_1_crates/section_7_first_party/section_3_mention.md)
     - [Third-party](./chapter_1_crates/section_8_third_party.md)
 - [Building a Bot](./chapter_2_building_a_bot/summary.md)
     - [Preparation](./chapter_2_building_a_bot/section_1_preparation.md)
