@@ -1,7 +1,7 @@
 # Overview
 
 <img
-  src="https://raw.githubusercontent.com/twilight-rs/twilight/trunk/logo.png" 
+  src="https://raw.githubusercontent.com/twilight-rs/twilight/trunk/logo.png"
   alt="twilight logo"
 />
 
@@ -82,4 +82,4 @@ async fn main() -> Result<(), Box<dyn Error>> {
 [crates.io]: https://crates.io/crates/twilight
 [docs:latest]: https://twilight-rs.github.io/twilight/
 [github]: https://github.com/twilight-rs
-[server]: https://discord.gg/WBdGJCc
+[server]: https://discord.gg/7jj8n7D
