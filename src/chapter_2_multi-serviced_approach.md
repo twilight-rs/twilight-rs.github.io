@@ -35,7 +35,7 @@ then you'll run into ratelimiting issues. Twilight's HTTP client supports
 proxying, and can be combined with something like our very own [http-proxy]
 to proxy requests and ratelimit them.
 
-## The sky isn't the limit
+## The sky is the limit
 
 You can do so much more than just this, and that's the beauty of the ecosystem:
 it's flexible enough to do anything you need, and if you find something it can't
