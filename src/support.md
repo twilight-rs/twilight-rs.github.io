@@ -1,5 +1,10 @@
 # Support
 
+> The guide, and Twilight as a whole, assume familiarity with Rust, Rust's
+> asynchronous features, and bots in general. If you're new to Rust and/or new
+> to bots, consider checking out [serenity], which is a beginner-friendly,
+> batteries-included approach to the Discord API.
+
 Support for the library is provided through the [GitHub issues] section and the
 [Discord server].
 
@@ -10,19 +15,19 @@ The API documentation is [also available][api docs].
 
 ### Supported Rust Versions
 
-Twilight for now follows the latest released stable.
+Twilight currently supports the latest stable Rust version.
 
 ### Breaking Changes
 
 Although Twilight aims to design APIs right the first time, that obviously won't
-happen. A lot of care is taken into designing them in an unopinionated way,
-leaving more opinionated concepts to userland libraries.
+happen. A lot of care is taken into designing clear and correct interfaces.
 
 While Twilight takes care to avoid the need for breaking changes, it will be
-fearless when it needs to: they won't be avoided for the sake of avoiding a
-change. Breaking changes won't be piled up over the course of a long time, so
-when upgrades need to happen they will be quick and painless.
+fearless when it needs to do so: they won't be avoided for the sake of avoiding
+a change. Breaking changes won't be piled up over time to make a single big
+release: major versions will be often and painless.
 
 [Discord server]: https://discord.gg/7jj8n7D
 [GitHub issues]: https://github.com/twilight-rs/twilight/issues
 [api docs]: https://twilight-rs.github.io/twilight/
+[serenity]: https://crates.io/crates/serenity

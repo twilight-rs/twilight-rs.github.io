@@ -9,14 +9,11 @@ in the entire ecosystem of core crates. Most people, though, will need all of
 these crates. To create a single unified experience with easy installation, this
 crate exists to provide all of them.
 
-### Source Code
+## Source Code
 
 This is the entire contents of the library:
 
 ```rust
-#[cfg(feature = "builders")]
-pub extern crate twilight_builders as builders;
-
 #[cfg(feature = "cache")]
 pub extern crate twilight_cache as cache;
 
@@ -36,9 +33,7 @@ pub extern crate twilight_model as model;
 pub extern crate twilight_standby as standby;
 ```
 
-### Installation
-
-This library requires at least Rust 1.39+.
+## Installation
 
 Add the following to your `Cargo.toml`:
 
@@ -46,10 +41,21 @@ Add the following to your `Cargo.toml`:
 twilight = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
-### Features
+## Features
 
-All of the crates that are re-exported can be disabled. For example, if you need
-everything but `cache`, then you can disable only voice. This looks like:
+All of the core crates are re-exported through the main Twilight crate for ease
+of use by default. Each crate can be enabled or disabled. This is a list of
+available features for those:
+
+- `cache`
+- `command-parser`
+- `gateway`
+- `http`
+- `model`
+- `standby`
+
+For example, if you need everything but `cache`, then you can enable everything
+else. This looks like:
 
 ```toml
 [dependencies.twilight]
@@ -58,15 +64,6 @@ default-features = false
 features = ["command-parser", "gateway", "http", "model", "standby"]
 git = "https://github.com/twilight-rs/twilight"
 ```
-
-This is the list of features, which are all enabled by default:
-
-- `cache`
-- `command-parser`
-- `gateway`
-- `http`
-- `model`
-- `standby`
 
 If you're developing a library, it's easier for users to know what you depend on
 by depending on the individual crates. If you're making a framework, this might
@@ -79,7 +76,7 @@ twilight-gateway = { branch = "trunk", git = "https://github.com/twilight-rs/twi
 twilight-http = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
-### Links
+## Links
 
 *source*: <https://github.com/twilight-rs/twilight>
 

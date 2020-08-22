@@ -7,26 +7,32 @@
 
 [Join us on Discord! :)][server]
 
-> **Warning**: Twilight is still a work in progress, so while some of this stuff
-> exists *right now*, a lot of it doesn't. Features, APIs, and usage of crates
-> not completed is documented for design feedback. You shouldn't try building
-> something yet.
+**twilight** is a powerful asynchronous, flexible, and scalable ecosystem of
+Rust libraries for the Discord API.
 
-**twilight** is an ecosystem of asynchronous, unopinionated, and extensible
-libraries for using the Discord APIs. It has the additional goals of simplicity,
-fearless breaking changes where needed, and the embracing of third party
-libraries.
+[Check out the crates on crates.io][crates.io].
 
-### The Guide
+## Who Twilight is For
 
-In this guide you'll learn about the core crates in the twilight ecosystem, useful
-first-party crates for more advanced use cases, and third-party crates giving
-you a tailored experience. You'll build a bot using all of the core crates
-available, and learn why and how to use services for larger bots.
+Twilight is meant for people who are very familiar with Rust and at least
+somewhat familiar with Discord bots. It aims to be the library you use when you
+want - or, maybe for scaling reasons, need - the freedom to structure things
+how you want and do things that other libraries may not strongly cater to.
 
-### Links
+If you're a beginner with Rust, then that's cool and we hope you like it!
+[serenity] is a great library for getting started and offers an opinionated,
+batteries-included approach to making bots. You'll probably have a better
+experience with it and we recommend you check it out.
 
-The organization for the project is [on GitHub, named "twilight-rs"][github].
+## The Guide
+
+In this guide you'll learn about the core crates in the twilight ecosystem,
+useful first-party crates for more advanced use cases, and third-party crates
+giving you a tailored experience.
+
+## Links
+
+The organization for the project is [on GitHub][github].
 
 The crates are available on [crates.io].
 
@@ -34,12 +40,12 @@ The API docs are also hosted for the [latest version][docs:latest].
 
 There is a community and support server [on Discord][server].
 
-### A Quick Example
+## A Quick Example
 
 Below is a quick example of a program printing "Pong!" when a ping command comes
 in from a channel:
 
-```rust,ignore
+```rust
 use futures::StreamExt;
 use twilight::{
     command_parser::{Command, Config as ParserConfig, Parser},
@@ -54,8 +60,12 @@ use std::{
 async fn main() -> Result<(), Box<dyn Error>> {
     let token = env::var("DISCORD_TOKEN")?;
 
+    // Create a shard, which is the driver for an event loop over incoming
+    // events and sending events.
     let mut shard = Shard::new(env::var("DISCORD_TOKEN")?);
-    let mut events = shard.events().await;
+    // Retrieve a new asynchronous stream of the events that the shard will
+    // receive.
+    let mut events = shard.events();
 
     let parser = {
         let mut config = Config::new();
@@ -73,13 +83,15 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 Command { name: "ping", .. } => println!("Pong!"),
                 _ => {},
             },
+            // More events here...
             _ => {},
         }
     }
 }
 ```
 
-[crates.io]: https://crates.io/crates/twilight
+[crates.io]: https://crates.io/teams/github:twilight-rs:core
 [docs:latest]: https://twilight-rs.github.io/twilight/
 [github]: https://github.com/twilight-rs
+[serenity]: https://crates.io/crates/serenity
 [server]: https://discord.gg/7jj8n7D
