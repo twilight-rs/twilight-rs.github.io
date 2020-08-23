@@ -1,13 +1,11 @@
-# Lavalink
+# Mention
 
-`twilight-mention` is a utility crate to mention [`twilight-model`] types.
+`twilight-mention` is a utility crate to mention [model] resources.
 
-With this library, you can create mentions for various types, such as users,
+With this library, you can create mentions for various resources, such as users,
 emojis, roles, members, or channels.
 
-### Installation
-
-This library requires at least Rust 1.45.0+.
+## Installation
 
 Add the following to your `Cargo.toml`:
 
@@ -15,7 +13,7 @@ Add the following to your `Cargo.toml`:
 twilight-mention = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
-### Examples
+## Examples
 
 Create a mention formatter for a user ID, and then format it in a message:
 
@@ -27,7 +25,7 @@ let user_id = UserId(123);
 let message = format!("Hey there, {}!", user_id.mention());
 ```
 
-### Links
+## Links
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/utils/mention>
 
@@ -35,4 +33,4 @@ let message = format!("Hey there, {}!", user_id.mention());
 
 *crates.io*: <https://crates.io/crates/twilight-mention>
 
-[`twilight-model`]: ../section_1_model.html
+[model]: ../section_1_model.html

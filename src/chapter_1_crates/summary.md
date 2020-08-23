@@ -1,46 +1,52 @@
 # Crates
 
-Twilight is, at heart, an ecosystem. These components of the ecosystem generally,
-for the most part, don't depend on each other. The crates in it are sectioned
-into three "parts": the *core crates*, *first-party crates*, and *third-party
+Twilight is, at heart, an ecosystem. These components of the ecosystem don't
+depend on each other in unnecessary ways, allowing you to pick and choose and
+combine the crates that you need for your use case. The crates for Twilight are
+categorised into three groups: the *core crates*, *first-party crates*, and *third-party
 crates*.
 
-### Core Crates
+## Core Crates
 
-Twilight includes a few crates which are the "building blocks" to your success. You
-might not need them all, but generally speaking you'll need most of them for
-your use case. Most of them wrap Discord's various APIs.
+Twilight includes a few crates which are the "building blocks" to most peoples'
+use cases. You might not need them all, but generally speaking you'll need most
+of them. Most of them wrap Discord's various APIs.
 
-- *model*: All of the structs, enums, and bitflags used by the Discord APIs.
-- *http*: An HTTP client supporting all of the documented features of Discord's
+- [model]: All of the structs, enums, and bitflags used by the Discord APIs.
+- [http]: HTTP client supporting all of the documented features of Discord's
   HTTP API, with support for ratelimiting, proxying, and more.
-- *gateway*: A client supporting Discord's gateway API.
-- *cache*: Definitions for implementating a cache. An in-process memory
+- [gateway]: Clients supporting Discord's gateway API.
+- [cache]: Definitions for implementating a cache. An in-process memory
   implementation is included.
-- *voice*: A client supporting Discord's voice API. (Not yet created)
-- *command-parser*: A basic command parser for parsing commands and arguments
+- [command-parser]: Basic command parser for parsing commands and arguments
   out of messages.
-- *twilight*: The root crate, re-exporting all of the other core crates in one
+- [standby]: Utility for asynchronously waiting for certain events, like a new
+  message in a channel or a new reaction to a message.
+- [twilight]: Root crate, re-exporting all of the other core crates in one
   unified crate.
 
-### First-Party Crates
+## First-Party Crates
 
-Additionally, there are some first-party crates maintained by the Twilight
-organization, but not included in the core experience. These might be for more
-advanced use cases or clients for third-party services. Two examples of
-first-party crates are:
-- `twilight-cache-redis` - an implementation of a cache using
-Redis as a backend. (Not yet created)
-- `twilight-lavalink`, an implementation of a client for
-Lavalink.
+There are some first-party crates maintained by the Twilight organization, but
+not included in the core experience. These might be for more advanced or
+specific use cases or clients for third-party services. An example of a
+first-party crate is [`twilight-lavalink`], a Client for interacting with
+[Lavalink].
 
-### Third-Party Crates
+## Third-Party Crates
 
-Third-party crates may start to exist over time. These aren't officially
-supported by the Twilight organization, and are maintained by other people.
+Third-party crates are crates that aren't officially supported by the
+Twilight organization, but are recognised by it. An example is
+[`rarity-rs/permission-calculator`], which has interfaces for things like
+calculating the permissions for a member in a channel.
 
-These are currently no third-party crates. I mean, this thing isn't even at 0.1
-yet.
-
+[`rarity-rs/permission-calculator`]: https://github.com/rarity-rs/permission-calculator
+[`twilight-lavalink`]: ./section_8_first_party/section_3_lavalink.md
+[cache]: ./section_4_cache.md
+[command-parser]: ./section_5_command_parser.md
+[gateway]: ./section_3_gateway.md
+[http]: ./section_2_http.md
+[model]: ./section_1_model.md
+[standby]: ./section_6_standby.md
+[twilight]: ./section_7_twilight.md
 [Lavalink]: https://github.com/Frederikam/Lavalink
-[redis]: https://redis.io

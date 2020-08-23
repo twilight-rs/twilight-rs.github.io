@@ -25,9 +25,7 @@ tokio::spawn(async move {
 });
 ```
 
-### Installation
-
-This library requires at least Rust 1.39+.
+## Installation
 
 Add the following to your `Cargo.toml`:
 
@@ -35,7 +33,7 @@ Add the following to your `Cargo.toml`:
 twilight-gateway = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
-### Features
+## Features
 
 `twilight-gateway` includes only a feature: `simd-json`.
 
@@ -48,7 +46,7 @@ rustflags = ["-C", "target-cpu=native"]
 ```
 you can also use this environment variable `RUSTFLAGS="-C target-cpu=native"`.
 
-### Example
+# Example
 
 Starting a `Shard` and printing the contents of new messages as they come in:
 
@@ -76,7 +74,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 }
 ```
 
-### Links
+## Links
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/gateway>
 

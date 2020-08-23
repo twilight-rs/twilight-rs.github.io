@@ -2,14 +2,12 @@
 
 `twilight-http` is an HTTP client wrapping all of the documented Discord HTTP API.
 It is built on top of [Reqwest], and supports taking any generic Reqwest client,
-allowing you to pick your own TLS backend. By default, it uses [RusTLS] a Rust TLS implementation, 
+allowing you to pick your own TLS backend. By default, it uses [RusTLS] a Rust TLS implementation,
 but it can be changed to use NativeTLS which uses the TLS native to the platform, and on Unix uses OpenSSL.
 
 Ratelimiting is included out-of-the-box, along with support for proxies.
 
-### Installation
-
-This library requires at least Rust 1.39+.
+## Installation
 
 Add the following to your `Cargo.toml`:
 
@@ -17,7 +15,7 @@ Add the following to your `Cargo.toml`:
 twilight-http = { git = "https://github.com/twilight-rs/twilight" }
 ```
 
-### Example
+## Example
 
 A quick example showing how to send 10 messages, and then print the current
 user's name:
@@ -51,7 +49,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 }
 ```
 
-### Links
+## Links
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/http>
 

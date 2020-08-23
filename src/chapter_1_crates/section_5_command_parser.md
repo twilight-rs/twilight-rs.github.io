@@ -13,7 +13,7 @@ names, prefixes, and ignored guilds and users. The parser parses out commands
 matching an available command and prefix and provides the command arguments to
 you.
 
-### Installation
+## Installation
 
 Add the following to your Cargo.toml:
 
@@ -22,7 +22,7 @@ Add the following to your Cargo.toml:
 twilight-command-parser = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
-### Examples
+## Examples
 
 A simple parser for a bot with one prefix (`"!"`) and two commands, `"echo"`
 and `"ping"`:
@@ -58,7 +58,7 @@ match parser.parse("!echo a message") {
 }
 ```
 
-### Links
+## Links
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/command-parser>
 
