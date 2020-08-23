@@ -9,7 +9,7 @@ Add the following to your Cargo.toml:
 
 ```toml
 [dependencies]
-twilight-cache-inmemory { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
+twilight-cache-inmemory = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ## Examples

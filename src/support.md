@@ -20,7 +20,7 @@ Twilight currently supports the latest stable Rust version.
 ### Breaking Changes
 
 Although Twilight aims to design APIs right the first time, that obviously won't
-happen. A lot of care is taken into designing clear and correct interfaces.
+happen. A lot of effort is spent designing clear and correct interfaces.
 
 While Twilight takes care to avoid the need for breaking changes, it will be
 fearless when it needs to do so: they won't be avoided for the sake of avoiding
