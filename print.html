@@ -15,7 +15,7 @@
 
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+        <meta name="description" content="A powerful asynchronous, flexible, and scalable ecosystem of Rust libraries for the Discord API.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -191,7 +191,7 @@ giving you a tailored experience.</p>
 <h2><a class="header" href="#a-quick-example" id="a-quick-example">A Quick Example</a></h2>
 <p>Below is a quick example of a program printing &quot;Pong!&quot; when a ping command comes
 in from a channel:</p>
-<pre><pre class="playground"><code class="language-rust">use futures::StreamExt;
+<pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
 use twilight::{
     command_parser::{Command, Config as ParserConfig, Parser},
     gateway::{Config, Event, Shard},
@@ -332,7 +332,7 @@ but it can be changed to use NativeTLS which uses the TLS native to the platform
 <h2><a class="header" href="#example" id="example">Example</a></h2>
 <p>A quick example showing how to send 10 messages, and then print the current
 user's name:</p>
-<pre><pre class="playground"><code class="language-rust">use futures::future;
+<pre><pre class="playground"><code class="language-rust edition2018">use futures::future;
 use std::{env, error::Error};
 use twilight_http::Client;
 use twilight_model::id::ChannelId;
@@ -374,7 +374,7 @@ checks.</p>
 shards and unify their messages into one stream. It doesn't have a large API, you
 usually want to spawn a task to bring it up such that you can begin to receive
 tasks as soon as they arrive.</p>
-<pre><pre class="playground"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let cluster = Cluster::new(config).await?;
@@ -403,7 +403,7 @@ rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
 <p>you can also use this environment variable <code>RUSTFLAGS=&quot;-C target-cpu=native&quot;</code>.</p>
 <h1><a class="header" href="#example-1" id="example-1">Example</a></h1>
 <p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
-<pre><pre class="playground"><code class="language-rust">use futures::StreamExt;
+<pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
 use std::{env, error::Error};
 use twilight_gateway::Shard;
 
@@ -439,7 +439,7 @@ twilight-cache-inmemory = { branch = &quot;trunk&quot;, git = &quot;https://gith
 </code></pre>
 <h2><a class="header" href="#examples" id="examples">Examples</a></h2>
 <p>Process items that come over a shard into the cache:</p>
-<pre><pre class="playground"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use futures::stream::StreamExt;
@@ -484,7 +484,7 @@ twilight-command-parser = { branch = &quot;trunk&quot;, git = &quot;https://gith
 <h2><a class="header" href="#examples-1" id="examples-1">Examples</a></h2>
 <p>A simple parser for a bot with one prefix (<code>&quot;!&quot;</code>) and two commands, <code>&quot;echo&quot;</code>
 and <code>&quot;ping&quot;</code>:</p>
-<pre><pre class="playground"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use twilight_command_parser::{Command, Config, Parser};
@@ -534,7 +534,7 @@ comes in.</p>
 </code></pre>
 <h2><a class="header" href="#examples-2" id="examples-2">Examples</a></h2>
 <p>Wait for a message in channel 123 by user 456 with the content &quot;test&quot;:</p>
-<pre><pre class="playground"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use twilight_model::{gateway::payload::MessageCreate, id::{ChannelId, UserId}};
@@ -562,7 +562,7 @@ these crates. To create a single unified experience with easy installation, this
 crate exists to provide all of them.</p>
 <h2><a class="header" href="#source-code" id="source-code">Source Code</a></h2>
 <p>This is the entire contents of the library:</p>
-<pre><pre class="playground"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>#[cfg(feature = &quot;cache&quot;)]
@@ -638,7 +638,7 @@ emojis, roles, members, or channels.</p>
 </code></pre>
 <h2><a class="header" href="#examples-3" id="examples-3">Examples</a></h2>
 <p>Build a simple embed:</p>
-<pre><pre class="playground"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use twilight_embed_builder::{EmbedBuilder, EmbedFieldBuilder};
@@ -651,7 +651,7 @@ let embed = EmbedBuilder::new()
 <span class="boring">}
 </span></code></pre></pre>
 <p>Build an embed with an image:</p>
-<pre><pre class="playground"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use twilight_embed_builder::{EmbedBuilder, ImageSource};
@@ -676,7 +676,7 @@ emojis, roles, members, or channels.</p>
 </code></pre>
 <h2><a class="header" href="#examples-4" id="examples-4">Examples</a></h2>
 <p>Create a mention formatter for a user ID, and then format it in a message:</p>
-<pre><pre class="playground"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use twilight_mention::Mention;
@@ -704,7 +704,7 @@ providing models to deserialize their responses.</p>
 <h2><a class="header" href="#examples-5" id="examples-5">Examples</a></h2>
 <p>Create a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html">client</a>, add a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/node/struct.Node.html">node</a>, and give events to the client to <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html#method.process">process</a>
 events:</p>
-<pre><pre class="playground"><code class="language-rust">use futures_util::stream::StreamExt;
+<pre><pre class="playground"><code class="language-rust edition2018">use futures_util::stream::StreamExt;
 use std::{
     convert::TryInto,
     env,

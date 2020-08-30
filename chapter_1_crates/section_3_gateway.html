@@ -13,7 +13,7 @@
 
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+        <meta name="description" content="A powerful asynchronous, flexible, and scalable ecosystem of Rust libraries for the Discord API.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -170,7 +170,7 @@ checks.</p>
 shards and unify their messages into one stream. It doesn't have a large API, you
 usually want to spawn a task to bring it up such that you can begin to receive
 tasks as soon as they arrive.</p>
-<pre><pre class="playground"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let cluster = Cluster::new(config).await?;
@@ -199,7 +199,7 @@ rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
 <p>you can also use this environment variable <code>RUSTFLAGS=&quot;-C target-cpu=native&quot;</code>.</p>
 <h1><a class="header" href="#example" id="example">Example</a></h1>
 <p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
-<pre><pre class="playground"><code class="language-rust">use futures::StreamExt;
+<pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
 use std::{env, error::Error};
 use twilight_gateway::Shard;
 
