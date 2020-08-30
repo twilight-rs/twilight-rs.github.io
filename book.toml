@@ -1,9 +1,13 @@
 [book]
-title = "Twilight"
 authors = ["Twilight Contributors"]
+description = "A powerful asynchronous, flexible, and scalable ecosystem of Rust libraries for the Discord API."
 language = "en"
 multilingual = true
 src = "src"
+title = "Twilight"
+
+[rust]
+edition = "2018"
 
 [output.html]
 theme = "rust"
