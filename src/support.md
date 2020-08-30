@@ -29,5 +29,5 @@ release: major versions will be often and painless.
 
 [Discord server]: https://discord.gg/7jj8n7D
 [GitHub issues]: https://github.com/twilight-rs/twilight/issues
-[api docs]: https://twilight-rs.github.io/twilight/
+[api docs]: https://api.twilight.rs
 [serenity]: https://crates.io/crates/serenity
