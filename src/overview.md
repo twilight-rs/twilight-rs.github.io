@@ -91,7 +91,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 ```
 
 [crates.io]: https://crates.io/teams/github:twilight-rs:core
-[docs:latest]: https://twilight-rs.github.io/twilight/
+[docs:latest]: https://api.twilight.rs
 [github]: https://github.com/twilight-rs
 [serenity]: https://crates.io/crates/serenity
 [server]: https://discord.gg/7jj8n7D
