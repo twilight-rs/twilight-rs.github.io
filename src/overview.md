@@ -47,10 +47,8 @@ in from a channel:
 
 ```rust
 use futures::StreamExt;
-use twilight::{
-    command_parser::{Command, Config as ParserConfig, Parser},
-    gateway::{Config, Event, Shard},
-};
+use twilight_command_parser::{Command, Config as ParserConfig, Parser};
+use twilight_gateway::{Event, Shard};
 use std::{
     env,
     error::Error,
@@ -80,7 +78,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     while let Some(event) = events.next().await {
         match event {
             Event::MessageCreate(msg) => match parser.parse(&msg.content) {
-                Command { name: "ping", .. } => println!("Pong!"),
+                Some(Command { name: "ping", .. }) => println!("Pong!"),
                 _ => {},
             },
             // More events here...
