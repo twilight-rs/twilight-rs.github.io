@@ -192,10 +192,8 @@ giving you a tailored experience.</p>
 <p>Below is a quick example of a program printing &quot;Pong!&quot; when a ping command comes
 in from a channel:</p>
 <pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
-use twilight::{
-    command_parser::{Command, Config as ParserConfig, Parser},
-    gateway::{Config, Event, Shard},
-};
+use twilight_command_parser::{Command, Config as ParserConfig, Parser};
+use twilight_gateway::{Event, Shard};
 use std::{
     env,
     error::Error,
@@ -225,7 +223,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
     while let Some(event) = events.next().await {
         match event {
             Event::MessageCreate(msg) =&gt; match parser.parse(&amp;msg.content) {
-                Command { name: &quot;ping&quot;, .. } =&gt; println!(&quot;Pong!&quot;),
+                Some(Command { name: &quot;ping&quot;, .. }) =&gt; println!(&quot;Pong!&quot;),
                 _ =&gt; {},
             },
             // More events here...
