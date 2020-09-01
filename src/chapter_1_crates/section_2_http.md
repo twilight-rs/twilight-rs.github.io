@@ -12,7 +12,7 @@ Ratelimiting is included out-of-the-box, along with support for proxies.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight-http = { git = "https://github.com/twilight-rs/twilight" }
+twilight-http = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
 ```
 
 ## Example
