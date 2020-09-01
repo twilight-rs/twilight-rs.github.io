@@ -48,12 +48,10 @@ in from a channel:
 ```rust
 use std::{env, error::Error};
 use tokio::stream::StreamExt;
-use twilight::{
-    cache_inmemory::{EventType, InMemoryCache},
-    gateway::{cluster::{Cluster, ShardScheme}, Event},
-    http::Client as HttpClient,
-    model::gateway::GatewayIntents,
-};
+use twilight_cache_inmemory::{EventType, InMemoryCache};
+use twilight_gateway::{cluster::{Cluster, ShardScheme}, Event};
+use twilight_http::Client as HttpClient;
+use twilight_model::gateway::GatewayIntents;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
