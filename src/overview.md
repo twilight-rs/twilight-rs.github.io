@@ -46,45 +46,83 @@ Below is a quick example of a program printing "Pong!" when a ping command comes
 in from a channel:
 
 ```rust
-use futures::StreamExt;
-use twilight_command_parser::{Command, Config as ParserConfig, Parser};
-use twilight_gateway::{Event, Shard};
-use std::{
-    env,
-    error::Error,
+use std::{env, error::Error};
+use tokio::stream::StreamExt;
+use twilight::{
+    cache_inmemory::{EventType, InMemoryCache},
+    gateway::{cluster::{Cluster, ShardScheme}, Event},
+    http::Client as HttpClient,
+    model::gateway::GatewayIntents,
 };
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let token = env::var("DISCORD_TOKEN")?;
 
-    // Create a shard, which is the driver for an event loop over incoming
-    // events and sending events.
-    let mut shard = Shard::new(env::var("DISCORD_TOKEN")?);
-    // Retrieve a new asynchronous stream of the events that the shard will
-    // receive.
-    let mut events = shard.events();
+    // This is also the default.
+    let scheme = ShardScheme::Auto;
 
-    let parser = {
-        let mut config = Config::new();
-        config.command("ping").add();
-        config.add_prefix("!");
-        Parser::new(config)
-    };
+    let cluster = Cluster::builder(&token)
+        .shard_scheme(scheme)
+        // Use intents to only listen to GUILD_MESSAGES events
+        .intents(Some(
+            GatewayIntents::GUILD_MESSAGES | GatewayIntents::DIRECT_MESSAGES,
+        ))
+        .build()
+        .await?;
 
-    // Start the shard to begin receiving events.
-    shard.start().await?;
+    // Start up the cluster
+    let cluster_spawn = cluster.clone();
 
-    while let Some(event) = events.next().await {
-        match event {
-            Event::MessageCreate(msg) => match parser.parse(&msg.content) {
-                Some(Command { name: "ping", .. }) => println!("Pong!"),
-                _ => {},
-            },
-            // More events here...
-            _ => {},
-        }
+    tokio::spawn(async move {
+        cluster_spawn.up().await;
+    });
+
+    // The http client is seperate from the gateway,
+    // so startup a new one
+    let http = HttpClient::new(&token);
+
+    // Since we only care about messages, make the cache only
+    // cache message related events
+    let cache = InMemoryCache::builder()
+        .event_types(
+            EventType::MESSAGE_CREATE
+                | EventType::MESSAGE_DELETE
+                | EventType::MESSAGE_DELETE_BULK
+                | EventType::MESSAGE_UPDATE,
+        )
+        .build();
+
+    let mut events = cluster.events();
+    // Startup an event loop to process each event in the event stream as they
+    // come in.
+    while let Some((shard_id, event)) = events.next().await {
+        // Update the cache.
+        cache.update(&event);
+
+        // Spawn a new task to handle the event
+        tokio::spawn(handle_event(shard_id, event, http.clone()));
     }
+
+    Ok(())
+}
+
+async fn handle_event(
+    shard_id: u64,
+    event: Event,
+    http: HttpClient,
+) -> Result<(), Box<dyn Error + Send + Sync>> {
+    match event {
+        Event::MessageCreate(msg) if msg.content == "!ping" => {
+            http.create_message(msg.channel_id).content("Pong!")?.await?;
+        }
+        Event::ShardConnected(_) => {
+            println!("Connected on shard {}", shard_id);
+        }
+        _ => {}
+    }
+
+    Ok(())
 }
 ```
 
