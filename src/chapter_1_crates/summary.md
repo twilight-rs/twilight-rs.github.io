@@ -42,7 +42,7 @@ calculating the permissions for a member in a channel.
 
 [`rarity-rs/permission-calculator`]: https://github.com/rarity-rs/permission-calculator
 [`twilight-lavalink`]: ./section_8_first_party/section_3_lavalink.md
-[cache]: ./section_4_cache.md
+[cache]: ./section_4_cache_inmemory.md
 [command-parser]: ./section_5_command_parser.md
 [gateway]: ./section_3_gateway.md
 [http]: ./section_2_http.md
