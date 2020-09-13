@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html">Overview</a></li><li class="chapter-item expanded affix "><a href="support.html">Support</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/summary.html"><strong aria-hidden="true">1.</strong> Crates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1_crates/section_1_model.html"><strong aria-hidden="true">1.1.</strong> Model</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_2_http.html"><strong aria-hidden="true">1.2.</strong> HTTP</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_3_gateway.html"><strong aria-hidden="true">1.3.</strong> Gateway</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_4_cache_inmemory.html"><strong aria-hidden="true">1.4.</strong> Cache</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_5_command_parser.html"><strong aria-hidden="true">1.5.</strong> Command Parser</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_6_standby.html"><strong aria-hidden="true">1.6.</strong> Standby</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_twilight.html"><strong aria-hidden="true">1.7.</strong> Twilight</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_8_first_party/summary.html"><strong aria-hidden="true">1.8.</strong> First-party</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1_crates/section_8_first_party/section_1_embed_builder.html"><strong aria-hidden="true">1.8.1.</strong> Embed Builder</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_8_first_party/section_2_mention.html"><strong aria-hidden="true">1.8.2.</strong> Mention</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_8_first_party/section_3_lavalink.html"><strong aria-hidden="true">1.8.3.</strong> Lavalink</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_9_third_party.html"><strong aria-hidden="true">1.9.</strong> Third-party</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_2_multi-serviced_approach.html"><strong aria-hidden="true">2.</strong> Multi-Serviced Approach</a></li><li class="chapter-item expanded "><a href="chapter_3_bots_using_twilight.html"><strong aria-hidden="true">3.</strong> Bots Using Twilight</a></li><li class="chapter-item expanded "><a href="chapter_4_changelogs.html"><strong aria-hidden="true">4.</strong> Changelogs</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html">Overview</a></li><li class="chapter-item expanded affix "><a href="support.html">Support</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/summary.html"><strong aria-hidden="true">1.</strong> Crates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1_crates/section_1_model.html"><strong aria-hidden="true">1.1.</strong> Model</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_2_http.html"><strong aria-hidden="true">1.2.</strong> HTTP</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_3_gateway.html"><strong aria-hidden="true">1.3.</strong> Gateway</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_4_cache_inmemory.html"><strong aria-hidden="true">1.4.</strong> Cache</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_5_command_parser.html"><strong aria-hidden="true">1.5.</strong> Command Parser</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_6_standby.html"><strong aria-hidden="true">1.6.</strong> Standby</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_first_party/summary.html"><strong aria-hidden="true">1.7.</strong> First-party</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_first_party/section_1_embed_builder.html"><strong aria-hidden="true">1.7.1.</strong> Embed Builder</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_first_party/section_2_mention.html"><strong aria-hidden="true">1.7.2.</strong> Mention</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_first_party/section_3_lavalink.html"><strong aria-hidden="true">1.7.3.</strong> Lavalink</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_8_third_party.html"><strong aria-hidden="true">1.8.</strong> Third-party</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_2_multi-serviced_approach.html"><strong aria-hidden="true">2.</strong> Multi-Serviced Approach</a></li><li class="chapter-item expanded "><a href="chapter_3_bots_using_twilight.html"><strong aria-hidden="true">3.</strong> Bots Using Twilight</a></li><li class="chapter-item expanded "><a href="chapter_4_changelogs.html"><strong aria-hidden="true">4.</strong> Changelogs</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -310,14 +310,12 @@ implementation is included.</li>
 out of messages.</li>
 <li><a href="chapter_1_crates/./section_6_standby.html">standby</a>: Utility for asynchronously waiting for certain events, like a new
 message in a channel or a new reaction to a message.</li>
-<li><a href="chapter_1_crates/./section_7_twilight.html">twilight</a>: Root crate, re-exporting all of the other core crates in one
-unified crate.</li>
 </ul>
 <h2><a class="header" href="#first-party-crates" id="first-party-crates">First-Party Crates</a></h2>
 <p>There are some first-party crates maintained by the Twilight organization, but
 not included in the core experience. These might be for more advanced or
 specific use cases or clients for third-party services. An example of a
-first-party crate is <a href="chapter_1_crates/./section_8_first_party/section_3_lavalink.html"><code>twilight-lavalink</code></a>, a Client for interacting with
+first-party crate is <a href="chapter_1_crates/./section_7_first_party/section_3_lavalink.html"><code>twilight-lavalink</code></a>, a Client for interacting with
 <a href="https://github.com/Frederikam/Lavalink">Lavalink</a>.</p>
 <h2><a class="header" href="#third-party-crates" id="third-party-crates">Third-Party Crates</a></h2>
 <p>Third-party crates are crates that aren't officially supported by the
@@ -597,74 +595,6 @@ let message = standby.wait_for_message(ChannelId(123), |event: &amp;MessageCreat
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/standby">https://github.com/twilight-rs/twilight/tree/trunk/standby</a></p>
 <p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_standby/index.html">https://twilight-rs.github.io/twilight/twilight_standby/index.html</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-standby">https://crates.io/crates/twilight-standby</a></p>
-<h1><a class="header" href="#twilight" id="twilight">Twilight</a></h1>
-<p><code>twilight</code> is the root crate of the entire project. It's what could be called a
-&quot;skeleton crate&quot;: all it does is re-export all of the other core crates.</p>
-<p>Since all of the crates in Twilight are building blocks, they aren't very
-intertwined. This means that they can be used separately without having to bring
-in the entire ecosystem of core crates. Most people, though, will need all of
-these crates. To create a single unified experience with easy installation, this
-crate exists to provide all of them.</p>
-<h2><a class="header" href="#source-code" id="source-code">Source Code</a></h2>
-<p>This is the entire contents of the library:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>#[cfg(feature = &quot;cache&quot;)]
-pub extern crate twilight_cache as cache;
-
-#[cfg(feature = &quot;command-parser&quot;)]
-pub extern crate twilight_command_parser as command_parser;
-
-#[cfg(feature = &quot;gateway&quot;)]
-pub extern crate twilight_gateway as gateway;
-
-#[cfg(feature = &quot;http&quot;)]
-pub extern crate twilight_http as http;
-
-#[cfg(feature = &quot;model&quot;)]
-pub extern crate twilight_model as model;
-
-#[cfg(feature = &quot;standby&quot;)]
-pub extern crate twilight_standby as standby;
-<span class="boring">}
-</span></code></pre></pre>
-<h2><a class="header" href="#installation-6" id="installation-6">Installation</a></h2>
-<p>Add the following to your <code>Cargo.toml</code>:</p>
-<pre><code class="language-toml">twilight = { branch = &quot;trunk&quot;, git = &quot;https://github.com/twilight-rs/twilight&quot; }
-</code></pre>
-<h2><a class="header" href="#features-1" id="features-1">Features</a></h2>
-<p>All of the core crates are re-exported through the main Twilight crate for ease
-of use by default. Each crate can be enabled or disabled. This is a list of
-available features for those:</p>
-<ul>
-<li><code>cache</code></li>
-<li><code>command-parser</code></li>
-<li><code>gateway</code></li>
-<li><code>http</code></li>
-<li><code>model</code></li>
-<li><code>standby</code></li>
-</ul>
-<p>For example, if you need everything but <code>cache</code>, then you can enable everything
-else. This looks like:</p>
-<pre><code class="language-toml">[dependencies.twilight]
-branch = &quot;trunk&quot;
-default-features = false
-features = [&quot;command-parser&quot;, &quot;gateway&quot;, &quot;http&quot;, &quot;model&quot;, &quot;standby&quot;]
-git = &quot;https://github.com/twilight-rs/twilight&quot;
-</code></pre>
-<p>If you're developing a library, it's easier for users to know what you depend on
-by depending on the individual crates. If you're making a framework, this might
-look like:</p>
-<pre><code class="language-toml">[dependencies]
-twilight-cache = { branch = &quot;trunk&quot;, git = &quot;https://github.com/twilight-rs/twilight&quot; }
-twilight-gateway = { branch = &quot;trunk&quot;, git = &quot;https://github.com/twilight-rs/twilight&quot; }
-twilight-http = { branch = &quot;trunk&quot;, git = &quot;https://github.com/twilight-rs/twilight&quot; }
-</code></pre>
-<h2><a class="header" href="#links-7" id="links-7">Links</a></h2>
-<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight">https://github.com/twilight-rs/twilight</a></p>
-<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight/index.html">https://twilight-rs.github.io/twilight/twilight/index.html</a></p>
-<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight">https://crates.io/crates/twilight</a></p>
 <h1><a class="header" href="#first-party" id="first-party">First-party</a></h1>
 <p>Twilight includes crates maintained by the organization, but not included as
 part of the core experience. Just like all of the core crates these are entirely
@@ -677,7 +607,7 @@ support as the core crates.</p>
 when creating or updating messages.</p>
 <p>With this library, you can create mentions for various types, such as users,
 emojis, roles, members, or channels.</p>
-<h2><a class="header" href="#installation-7" id="installation-7">Installation</a></h2>
+<h2><a class="header" href="#installation-6" id="installation-6">Installation</a></h2>
 <p>Add the following to your <code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">twilight-embed-builder = { branch = &quot;trunk&quot;, git = &quot;https://github.com/twilight-rs/twilight&quot; }
 </code></pre>
@@ -707,15 +637,15 @@ let embed = EmbedBuilder::new()
     .build();
 <span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links-8" id="links-8">Links</a></h2>
+<h2><a class="header" href="#links-7" id="links-7">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder">https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder</a></p>
 <p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_embed_builder/index.html">https://twilight-rs.github.io/twilight/twilight_embed_builder/index.html</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-embed-builder">https://crates.io/crates/twilight-embed-builder</a></p>
 <h1><a class="header" href="#mention" id="mention">Mention</a></h1>
-<p><code>twilight-mention</code> is a utility crate to mention <a href="chapter_1_crates/section_8_first_party/../section_1_model.html">model</a> resources.</p>
+<p><code>twilight-mention</code> is a utility crate to mention <a href="chapter_1_crates/section_7_first_party/../section_1_model.html">model</a> resources.</p>
 <p>With this library, you can create mentions for various resources, such as users,
 emojis, roles, members, or channels.</p>
-<h2><a class="header" href="#installation-8" id="installation-8">Installation</a></h2>
+<h2><a class="header" href="#installation-7" id="installation-7">Installation</a></h2>
 <p>Add the following to your <code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">twilight-mention = { branch = &quot;trunk&quot;, git = &quot;https://github.com/twilight-rs/twilight&quot; }
 </code></pre>
@@ -731,18 +661,18 @@ let user_id = UserId(123);
 let message = format!(&quot;Hey there, {}!&quot;, user_id.mention());
 <span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links-9" id="links-9">Links</a></h2>
+<h2><a class="header" href="#links-8" id="links-8">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/mention">https://github.com/twilight-rs/twilight/tree/trunk/utils/mention</a></p>
 <p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_mention/index.html">https://twilight-rs.github.io/twilight/twilight_mention/index.html</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-mention">https://crates.io/crates/twilight-mention</a></p>
 <h1><a class="header" href="#lavalink" id="lavalink">Lavalink</a></h1>
-<p><code>twilight-lavalink</code> is a client for <a href="https://github.com/Frederikam/Lavalink">Lavalink</a> for use with <a href="chapter_1_crates/section_8_first_party/../section_1_model.html">model</a> events from
-the <a href="chapter_1_crates/section_8_first_party/../section_3_gateway.html">gateway</a>.</p>
+<p><code>twilight-lavalink</code> is a client for <a href="https://github.com/Frederikam/Lavalink">Lavalink</a> for use with <a href="chapter_1_crates/section_7_first_party/../section_1_model.html">model</a> events from
+the <a href="chapter_1_crates/section_7_first_party/../section_3_gateway.html">gateway</a>.</p>
 <p>It includes support for managing multiple nodes, a player manager for
 conveniently using players to send events and retrieve information for each
 guild, and an HTTP module for creating requests using the http crate and
 providing models to deserialize their responses.</p>
-<h2><a class="header" href="#installation-9" id="installation-9">Installation</a></h2>
+<h2><a class="header" href="#installation-8" id="installation-8">Installation</a></h2>
 <p>Add the following to your <code>Cargo.toml</code>:</p>
 <pre><code class="language-toml">twilight-lavalink = { branch = &quot;trunk&quot;, git = &quot;https://github.com/twilight-rs/twilight&quot; }
 </code></pre>
@@ -791,7 +721,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync + 'static&gt;
     Ok(())
 }
 </code></pre></pre>
-<h2><a class="header" href="#links-10" id="links-10">Links</a></h2>
+<h2><a class="header" href="#links-9" id="links-9">Links</a></h2>
 <p><strong>source</strong>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/lavalink">https://github.com/twilight-rs/twilight/tree/trunk/lavalink</a></p>
 <p><strong>docs</strong>: <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/index.html">https://twilight-rs.github.io/twilight/twilight_lavalink/index.html</a></p>
 <p><strong>crates.io</strong>: <a href="https://crates.io/crates/twilight-lavalink">https://crates.io/crates/twilight-lavalink</a></p>
