@@ -10,7 +10,7 @@ emojis, roles, members, or channels.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight-mention = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
+twilight-mention = "0.1"
 ```
 
 ## Examples
