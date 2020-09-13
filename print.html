@@ -427,15 +427,26 @@ tokio::spawn(async move {
 <pre><code class="language-toml">twilight-gateway = { branch = &quot;trunk&quot;, git = &quot;https://github.com/twilight-rs/twilight&quot; }
 </code></pre>
 <h2><a class="header" href="#features" id="features">Features</a></h2>
-<p><code>twilight-gateway</code> includes only a feature: <code>simd-json</code>.</p>
+<p><code>twilight-gateway</code> includes a few features <code>simd-json</code> for enabling faster json
+parsing and <code>stock-zlib</code>/<code>simd-zlib</code> for choosing between the zlib to use for
+decompressing.</p>
+<h3><a class="header" href="#simd-json" id="simd-json">Simd JSON</a></h3>
 <p><code>simd-json</code> feature enables [simd-json] support to use simd features of the modern cpus
 to deserialize json data faster. It is not enabled by default since not every cpu has those features.
 To use this feature you need to also add these lines to a file in <code>&lt;project root&gt;/.cargo/config</code></p>
 <pre><code class="language-toml">[build]
 rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
 </code></pre>
-<p>you can also use this environment variable <code>RUSTFLAGS=&quot;-C target-cpu=native&quot;</code>.</p>
-<h1><a class="header" href="#example-1" id="example-1">Example</a></h1>
+<p>You can also use the environment variable <code>RUSTFLAGS=&quot;-C target-cpu=native&quot;</code>.</p>
+<h3><a class="header" href="#zlib" id="zlib">Zlib</a></h3>
+<p><code>stock-zlib</code> makes <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> use the stock-zlib which is either upstream or the 
+one included with the operating system.</p>
+<p><code>simd-zlib</code> enables the use of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a> which is a modern fork of zlib that in 
+most cases will be more effective. Though it will add an externel dependency on
+<a href="https://cmake.org/">cmake</a>.</p>
+<p>If both are enabled or if the <code>zlib</code> feature of <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> is enabled anywhere in 
+the dependency tree it will make use of that instead of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a>.</p>
+<h2><a class="header" href="#example-1" id="example-1">Example</a></h2>
 <p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
 <pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
 use std::{env, error::Error};
