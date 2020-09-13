@@ -22,8 +22,6 @@ of them. Most of them wrap Discord's various APIs.
   out of messages.
 - [standby]: Utility for asynchronously waiting for certain events, like a new
   message in a channel or a new reaction to a message.
-- [twilight]: Root crate, re-exporting all of the other core crates in one
-  unified crate.
 
 ## First-Party Crates
 
@@ -41,12 +39,11 @@ Twilight organization, but are recognised by it. An example is
 calculating the permissions for a member in a channel.
 
 [`rarity-rs/permission-calculator`]: https://github.com/rarity-rs/permission-calculator
-[`twilight-lavalink`]: ./section_8_first_party/section_3_lavalink.md
+[`twilight-lavalink`]: ./section_7_first_party/section_3_lavalink.md
 [cache]: ./section_4_cache_inmemory.md
 [command-parser]: ./section_5_command_parser.md
 [gateway]: ./section_3_gateway.md
 [http]: ./section_2_http.md
 [model]: ./section_1_model.md
 [standby]: ./section_6_standby.md
-[twilight]: ./section_7_twilight.md
 [Lavalink]: https://github.com/Frederikam/Lavalink
