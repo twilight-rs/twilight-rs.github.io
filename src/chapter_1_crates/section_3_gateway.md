@@ -35,7 +35,9 @@ twilight-gateway = { branch = "trunk", git = "https://github.com/twilight-rs/twi
 
 ## Features
 
-`twilight-gateway` includes a few features `simd-json` for enabling faster json parsing and `stock-zlib`/`simd-zlib` for choosing between the zlib to use for decompressing.
+`twilight-gateway` includes a few features `simd-json` for enabling faster json
+parsing and `stock-zlib`/`simd-zlib` for choosing between the zlib to use for
+decompressing.
 
 # Simd JSON
 
