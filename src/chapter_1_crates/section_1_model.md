@@ -30,7 +30,7 @@ or extended by other Twilight crates.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight-model = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
+twilight-model = "0.1"
 ```
 
 ## Links

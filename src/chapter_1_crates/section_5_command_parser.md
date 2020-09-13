@@ -19,7 +19,7 @@ Add the following to your Cargo.toml:
 
 ```toml
 [dependencies]
-twilight-command-parser = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
+twilight-command-parser = "0.1"
 ```
 
 ## Examples

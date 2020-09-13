@@ -13,7 +13,7 @@ providing models to deserialize their responses.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight-lavalink = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
+twilight-lavalink = "0.1"
 ```
 
 ## Examples

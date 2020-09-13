@@ -12,7 +12,7 @@ comes in.
 Add the following to your `Cargo.toml`:
 
 ```toml
-twilight-standby = { branch = "trunk", git = "https://github.com/twilight-rs/twilight" }
+twilight-standby = "0.1"
 ```
 
 ## Examples
