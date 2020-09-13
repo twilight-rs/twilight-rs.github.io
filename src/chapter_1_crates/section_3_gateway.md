@@ -35,7 +35,9 @@ twilight-gateway = { branch = "trunk", git = "https://github.com/twilight-rs/twi
 
 ## Features
 
-`twilight-gateway` includes only a feature: `simd-json`.
+`twilight-gateway` includes a few features `simd-json` for enabling faster json parsing and `stock-zlib`/`simd-zlib` for choosing between the zlib to use for decompressing.
+
+# Simd JSON
 
 `simd-json` feature enables [simd-json] support to use simd features of the modern cpus
 to deserialize json data faster. It is not enabled by default since not every cpu has those features.
@@ -46,7 +48,7 @@ rustflags = ["-C", "target-cpu=native"]
 ```
 you can also use this environment variable `RUSTFLAGS="-C target-cpu=native"`.
 
-# Example
+**Example:**
 
 Starting a `Shard` and printing the contents of new messages as they come in:
 
@@ -74,6 +76,18 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 }
 ```
 
+# Zlib
+
+`stock-zlib` makes [flate2] use the stock-zlib which is either upstream or the 
+one included with the operating system.
+
+`simd-zlib` enables the use of [zlib-ng] which is a modern fork of zlib that in 
+most cases will be more effective. Though it will add an externel dependency on
+[cmake].
+
+If both are enabled or if the `zlib` feature of [flate2] is enabled anywhere in 
+the dependency tree it will make use of that instead of [zlib-ng].
+
 ## Links
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/gateway>
@@ -83,3 +97,6 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 *crates.io*: <https://crates.io/crates/twilight-gateway>
 
 [img:shard]: ./section_3_shard.png
+[cmake]: https://cmake.org/
+[flate2]: https://github.com/alexcrichton/flate2-rs
+[zlib-ng]: https://github.com/zlib-ng/zlib-ng
