@@ -1,9 +1,9 @@
 # Gateway queue
 
-`twilight-gateway-queue` is a set of a set of a trait and a few implementations
-of it that is used by the [gateway] to ratelimit `identify` calls. It will most
-of the time not be used directly, but instead through the reexport from the 
-[gateway].
+`twilight-gateway-queue` is a trait and some implementations that are used by
+the [gateway] to ratelimit `identify` calls. Developers should prefer to use the
+re-exports of these crates through the [gateway].
+
 
 ## Installation
 
