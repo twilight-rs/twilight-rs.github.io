@@ -1,8 +1,8 @@
 # Util
 
 `twilight-util` is a utility crate that adds utilities to the twilight
-ecosystem that are not fit in any other crate. Currently it contrains
-a trait to make extracting data from Discord identifiers *Snowflakes* 
+ecosystem that do not fit in any other crate. Currently, it contains
+a trait to make extracting data from Discord identifiers (Snowflakes)
 easier.
 
 ## Installation
