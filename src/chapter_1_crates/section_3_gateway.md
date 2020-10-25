@@ -16,7 +16,7 @@ tasks as soon as they arrive.
 ```rust
 let cluster = Cluster::new(config).await?;
 
-let mut events = cluster.events().await;
+let mut events = cluster.events();
 
 let cluster_spawn = cluster.clone();
 
@@ -77,7 +77,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     tracing_subscriber::fmt::init();
 
     let mut shard = Shard::new(env::var("DISCORD_TOKEN")?);
-    let mut events = shard.events().await;
+    let mut events = shard.events();
 
     shard.start().await?;
     println!("Created shard");
