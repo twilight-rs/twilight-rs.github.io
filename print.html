@@ -1,0 +1,882 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Twilight</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A powerful asynchronous, flexible, and scalable ecosystem of Rust libraries for the Discord API.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html">Overview</a></li><li class="chapter-item expanded affix "><a href="support.html">Support</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/summary.html"><strong aria-hidden="true">1.</strong> Crates</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1_crates/section_1_model.html"><strong aria-hidden="true">1.1.</strong> Model</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_2_http.html"><strong aria-hidden="true">1.2.</strong> HTTP</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_3_gateway.html"><strong aria-hidden="true">1.3.</strong> Gateway</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_4_cache_inmemory.html"><strong aria-hidden="true">1.4.</strong> Cache</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_5_command_parser.html"><strong aria-hidden="true">1.5.</strong> Command Parser</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_6_standby.html"><strong aria-hidden="true">1.6.</strong> Standby</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_first_party/summary.html"><strong aria-hidden="true">1.7.</strong> First-party</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_first_party/section_1_embed_builder.html"><strong aria-hidden="true">1.7.1.</strong> Embed Builder</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_first_party/section_2_mention.html"><strong aria-hidden="true">1.7.2.</strong> Mention</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_first_party/section_3_lavalink.html"><strong aria-hidden="true">1.7.3.</strong> Lavalink</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_first_party/section_4_util.html"><strong aria-hidden="true">1.7.4.</strong> Util</a></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_7_first_party/section_5_gateway_queue.html"><strong aria-hidden="true">1.7.5.</strong> Gateway Queue</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1_crates/section_8_third_party.html"><strong aria-hidden="true">1.8.</strong> Third-party</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_2_multi-serviced_approach.html"><strong aria-hidden="true">2.</strong> Multi-Serviced Approach</a></li><li class="chapter-item expanded "><a href="chapter_3_bots_using_twilight.html"><strong aria-hidden="true">3.</strong> Bots Using Twilight</a></li><li class="chapter-item expanded "><a href="chapter_4_changelogs.html"><strong aria-hidden="true">4.</strong> Changelogs</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Twilight</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#overview" id="overview">Overview</a></h1>
+<p><img
+  src="https://raw.githubusercontent.com/twilight-rs/twilight/trunk/logo.png"
+  alt="twilight logo"
+/></p>
+<p><a href="https://discord.gg/7jj8n7D">Join us on Discord! :)</a></p>
+<p><strong>twilight</strong> is a powerful asynchronous, flexible, and scalable ecosystem of
+Rust libraries for the Discord API.</p>
+<p><a href="https://crates.io/teams/github:twilight-rs:core">Check out the crates on crates.io</a>.</p>
+<h2><a class="header" href="#who-twilight-is-for" id="who-twilight-is-for">Who Twilight is For</a></h2>
+<p>Twilight is meant for people who are very familiar with Rust and at least
+somewhat familiar with Discord bots. It aims to be the library you use when you
+want - or, maybe for scaling reasons, need - the freedom to structure things
+how you want and do things that other libraries may not strongly cater to.</p>
+<p>If you're a beginner with Rust, then that's cool and we hope you like it!
+<a href="https://crates.io/crates/serenity">serenity</a> is a great library for getting started and offers an opinionated,
+batteries-included approach to making bots. You'll probably have a better
+experience with it and we recommend you check it out.</p>
+<h2><a class="header" href="#the-guide" id="the-guide">The Guide</a></h2>
+<p>In this guide you'll learn about the core crates in the twilight ecosystem,
+useful first-party crates for more advanced use cases, and third-party crates
+giving you a tailored experience.</p>
+<h2><a class="header" href="#links" id="links">Links</a></h2>
+<p>The organization for the project is <a href="https://github.com/twilight-rs">on GitHub</a>.</p>
+<p>The crates are available on <a href="https://crates.io/teams/github:twilight-rs:core">crates.io</a>.</p>
+<p>The API docs are also hosted for the <a href="https://api.twilight.rs">latest version</a>.</p>
+<p>There is a community and support server <a href="https://discord.gg/7jj8n7D">on Discord</a>.</p>
+<h2><a class="header" href="#a-quick-example" id="a-quick-example">A Quick Example</a></h2>
+<p>Below is a quick example of a program printing &quot;Pong!&quot; when a ping command comes
+in from a channel:</p>
+<pre><pre class="playground"><code class="language-rust edition2018">use std::{env, error::Error};
+use tokio::stream::StreamExt;
+use twilight_cache_inmemory::{EventType, InMemoryCache};
+use twilight_gateway::{cluster::{Cluster, ShardScheme}, Event};
+use twilight_http::Client as HttpClient;
+use twilight_model::gateway::Intents;
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
+    let token = env::var(&quot;DISCORD_TOKEN&quot;)?;
+
+    // This is also the default.
+    let scheme = ShardScheme::Auto;
+
+    let cluster = Cluster::builder(&amp;token)
+        .shard_scheme(scheme)
+        // Use intents to only listen to GUILD_MESSAGES events
+        .intents(Intents::GUILD_MESSAGES | Intents::DIRECT_MESSAGES)
+        .build()
+        .await?;
+
+    // Start up the cluster
+    let cluster_spawn = cluster.clone();
+
+    tokio::spawn(async move {
+        cluster_spawn.up().await;
+    });
+
+    // The http client is seperate from the gateway,
+    // so startup a new one
+    let http = HttpClient::new(&amp;token);
+
+    // Since we only care about messages, make the cache only
+    // cache message related events
+    let cache = InMemoryCache::builder()
+        .event_types(
+            EventType::MESSAGE_CREATE
+                | EventType::MESSAGE_DELETE
+                | EventType::MESSAGE_DELETE_BULK
+                | EventType::MESSAGE_UPDATE,
+        )
+        .build();
+
+    let mut events = cluster.events();
+    // Startup an event loop to process each event in the event stream as they
+    // come in.
+    while let Some((shard_id, event)) = events.next().await {
+        // Update the cache.
+        cache.update(&amp;event);
+
+        // Spawn a new task to handle the event
+        tokio::spawn(handle_event(shard_id, event, http.clone()));
+    }
+
+    Ok(())
+}
+
+async fn handle_event(
+    shard_id: u64,
+    event: Event,
+    http: HttpClient,
+) -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
+    match event {
+        Event::MessageCreate(msg) if msg.content == &quot;!ping&quot; =&gt; {
+            http.create_message(msg.channel_id).content(&quot;Pong!&quot;)?.await?;
+        }
+        Event::ShardConnected(_) =&gt; {
+            println!(&quot;Connected on shard {}&quot;, shard_id);
+        }
+        _ =&gt; {}
+    }
+
+    Ok(())
+}
+</code></pre></pre>
+<h1><a class="header" href="#support" id="support">Support</a></h1>
+<blockquote>
+<p>The guide, and Twilight as a whole, assume familiarity with Rust, Rust's
+asynchronous features, and bots in general. If you're new to Rust and/or new
+to bots, consider checking out <a href="https://crates.io/crates/serenity">serenity</a>, which is a beginner-friendly,
+batteries-included approach to the Discord API.</p>
+</blockquote>
+<p>Support for the library is provided through the <a href="https://github.com/twilight-rs/twilight/issues">GitHub issues</a> section and the
+<a href="https://discord.gg/7jj8n7D">Discord server</a>.</p>
+<p>If you have a question, then the issues or the server are both good fits for it.
+If you find a bug, then the issues section is the best place.</p>
+<p>The API documentation is <a href="https://api.twilight.rs">also available</a>.</p>
+<h3><a class="header" href="#supported-rust-versions" id="supported-rust-versions">Supported Rust Versions</a></h3>
+<p>Twilight currently supports the latest stable Rust version.</p>
+<h3><a class="header" href="#breaking-changes" id="breaking-changes">Breaking Changes</a></h3>
+<p>Although Twilight aims to design APIs right the first time, that obviously won't
+happen. A lot of effort is spent designing clear and correct interfaces.</p>
+<p>While Twilight takes care to avoid the need for breaking changes, it will be
+fearless when it needs to do so: they won't be avoided for the sake of avoiding
+a change. Breaking changes won't be piled up over time to make a single big
+release: major versions will be often and painless.</p>
+<h1><a class="header" href="#crates" id="crates">Crates</a></h1>
+<p>Twilight is, at heart, an ecosystem. These components of the ecosystem don't
+depend on each other in unnecessary ways, allowing you to pick and choose and
+combine the crates that you need for your use case. The crates for Twilight are
+categorised into three groups: the <em>core crates</em>, <em>first-party crates</em>, and <em>third-party
+crates</em>.</p>
+<h2><a class="header" href="#core-crates" id="core-crates">Core Crates</a></h2>
+<p>Twilight includes a few crates which are the &quot;building blocks&quot; to most peoples'
+use cases. You might not need them all, but generally speaking you'll need most
+of them. Most of them wrap Discord's various APIs.</p>
+<ul>
+<li><a href="chapter_1_crates/./section_1_model.html">model</a>: All of the structs, enums, and bitflags used by the Discord APIs.</li>
+<li><a href="chapter_1_crates/./section_2_http.html">http</a>: HTTP client supporting all of the documented features of Discord's
+HTTP API, with support for ratelimiting, proxying, and more.</li>
+<li><a href="chapter_1_crates/./section_3_gateway.html">gateway</a>: Clients supporting Discord's gateway API.</li>
+<li><a href="chapter_1_crates/./section_4_cache_inmemory.html">cache</a>: Definitions for implementating a cache. An in-process memory
+implementation is included.</li>
+<li><a href="chapter_1_crates/./section_5_command_parser.html">command-parser</a>: Basic command parser for parsing commands and arguments
+out of messages.</li>
+<li><a href="chapter_1_crates/./section_6_standby.html">standby</a>: Utility for asynchronously waiting for certain events, like a new
+message in a channel or a new reaction to a message.</li>
+</ul>
+<h2><a class="header" href="#first-party-crates" id="first-party-crates">First-Party Crates</a></h2>
+<p>There are some first-party crates maintained by the Twilight organization, but
+not included in the core experience. These might be for more advanced or
+specific use cases or clients for third-party services. An example of a
+first-party crate is <a href="chapter_1_crates/./section_7_first_party/section_3_lavalink.html"><code>twilight-lavalink</code></a>, a Client for interacting with
+<a href="https://github.com/Frederikam/Lavalink">Lavalink</a>.</p>
+<h2><a class="header" href="#third-party-crates" id="third-party-crates">Third-Party Crates</a></h2>
+<p>Third-party crates are crates that aren't officially supported by the
+Twilight organization, but are recognised by it. An example is
+<a href="https://github.com/rarity-rs/permission-calculator"><code>rarity-rs/permission-calculator</code></a>, which has interfaces for things like
+calculating the permissions for a member in a channel.</p>
+<h1><a class="header" href="#model" id="model">Model</a></h1>
+<p><code>twilight-model</code> is a crate of models for use with <a href="https://serde.rs/">serde</a> defining the Discord
+APIs with limited implementations on top of them.</p>
+<p>These are in a single crate for ease of use, a single point of definition,
+and a sort of versioning of the Discord API. Similar to how a database
+schema progresses in versions, the definition of the API also progresses in
+versions.</p>
+<p>Most other Twilight crates use types from this crate. For example, the
+<a href="chapter_1_crates/a">Embed Builder</a> crate primarily uses types having to do with channel message
+embeds, while the <a href="chapter_1_crates/./section_7_first_party/section_2_lavalink.html">Lavalink</a> crate works with a few of the events received from
+the gateway. These types being in a single versioned definition is beneficial
+because it removes the need for crates to rely on other large and unnecessary
+crates.</p>
+<p>The types in this crate are reproducible: deserializing a payload into a
+type, serializing it, and then deserializing it again will result in the same
+instance.</p>
+<p>Defined are a number of modules defining types returned by or owned by
+resource categories. For example, <code>gateway</code> contains types used to interact with
+and returned by the gateway API. <code>guild</code> contains types owned by the Guild
+resource category. These types may be directly returned by, built on top of,
+or extended by other Twilight crates.</p>
+<h2><a class="header" href="#installation" id="installation">Installation</a></h2>
+<p>Add the following to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">twilight-model = &quot;0.1&quot;
+</code></pre>
+<h2><a class="header" href="#links-1" id="links-1">Links</a></h2>
+<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/master/model">https://github.com/twilight-rs/twilight/tree/master/model</a></p>
+<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_model/index.html">https://twilight-rs.github.io/twilight/twilight_model/index.html</a></p>
+<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-model">https://crates.io/crates/twilight-model</a></p>
+<h1><a class="header" href="#http" id="http">HTTP</a></h1>
+<p><code>twilight-http</code> is an HTTP client wrapping all of the documented Discord HTTP API.
+It is built on top of <a href="https://github.com/seanmonstar/reqwest">Reqwest</a>, and supports taking any generic Reqwest client,
+allowing you to pick your own TLS backend. By default, it uses <a href="https://github.com/ctz/rustls">RusTLS</a> a Rust TLS implementation,
+but it can be changed to use NativeTLS which uses the TLS native to the platform, and on Unix uses OpenSSL.</p>
+<p>Ratelimiting is included out-of-the-box, along with support for proxies.</p>
+<h2><a class="header" href="#installation-1" id="installation-1">Installation</a></h2>
+<p>Add the following to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">twilight-http = &quot;0.1&quot;
+</code></pre>
+<h2><a class="header" href="#example" id="example">Example</a></h2>
+<p>A quick example showing how to send 10 messages, and then print the current
+user's name:</p>
+<pre><pre class="playground"><code class="language-rust edition2018">use futures::future;
+use std::{env, error::Error};
+use twilight_http::Client;
+use twilight_model::id::ChannelId;
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
+    // Initialize the tracing subscriber.
+    tracing_subscriber::fmt::init();
+
+    let client = Client::new(env::var(&quot;DISCORD_TOKEN&quot;)?);
+    let channel_id = ChannelId(381_926_291_785_383_946);
+
+    future::join_all((1u8..=10).map(|x| {
+        client
+            .create_message(channel_id)
+            .content(format!(&quot;Ping #{}&quot;, x))
+            .expect(&quot;content not a valid length&quot;)
+    }))
+    .await;
+
+    let me = client.current_user().await?;
+    println!(&quot;Current user: {}#{}&quot;, me.name, me.discriminator);
+
+    Ok(())
+}
+</code></pre></pre>
+<h2><a class="header" href="#links-2" id="links-2">Links</a></h2>
+<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/http">https://github.com/twilight-rs/twilight/tree/trunk/http</a></p>
+<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_http/index.html">https://twilight-rs.github.io/twilight/twilight_http/index.html</a></p>
+<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-http">https://crates.io/crates/twilight-http</a></p>
+<h1><a class="header" href="#gateway" id="gateway">Gateway</a></h1>
+<p><code>twilight-gateway</code> is an implementation of a client over Discord's websocket
+gateway.</p>
+<p>The main type is the <code>Shard</code>: it connects to the gateway, receives messages,
+parses and processes them, and then gives them to you. It will automatically
+reconnect, resume, and identify, as well as do some additional connectivity
+checks.</p>
+<p>Also provided is the <code>Cluster</code>, which will automatically manage a collection of
+shards and unify their messages into one stream. It doesn't have a large API, you
+usually want to spawn a task to bring it up such that you can begin to receive
+tasks as soon as they arrive.</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let cluster = Cluster::new(config).await?;
+
+let mut events = cluster.events();
+
+let cluster_spawn = cluster.clone();
+
+tokio::spawn(async move {
+    cluster_spawn.up().await;
+});
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#installation-2" id="installation-2">Installation</a></h2>
+<p>Add the following to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">twilight-gateway = &quot;0.1&quot;
+</code></pre>
+<h2><a class="header" href="#features" id="features">Features</a></h2>
+<p><code>twilight-gateway</code> includes a few features <code>simd-json</code> for enabling faster json
+parsing and <code>stock-zlib</code>/<code>simd-zlib</code> for choosing between the zlib to use for
+decompressing.</p>
+<h3><a class="header" href="#simd-json" id="simd-json">Simd JSON</a></h3>
+<p><code>simd-json</code> feature enables [simd-json] support to use simd features of the modern cpus
+to deserialize json data faster. It is not enabled by default since not every cpu has those features.
+To use this feature you need to also add these lines to a file in <code>&lt;project root&gt;/.cargo/config</code></p>
+<pre><code class="language-toml">[build]
+rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
+</code></pre>
+<p>You can also use the environment variable <code>RUSTFLAGS=&quot;-C target-cpu=native&quot;</code>.</p>
+<h3><a class="header" href="#zlib" id="zlib">Zlib</a></h3>
+<p><code>stock-zlib</code> makes <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> use the stock-zlib which is either upstream or the 
+one included with the operating system.</p>
+<p><code>simd-zlib</code> enables the use of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a> which is a modern fork of zlib that in 
+most cases will be more effective. Though it will add an externel dependency on
+<a href="https://cmake.org/">cmake</a>.</p>
+<p>If both are enabled or if the <code>zlib</code> feature of <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> is enabled anywhere in 
+the dependency tree it will make use of that instead of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a>.</p>
+<h2><a class="header" href="#example-1" id="example-1">Example</a></h2>
+<p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
+<pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
+use std::{env, error::Error};
+use twilight_gateway::Shard;
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
+    // Initialize the tracing subscriber.
+    tracing_subscriber::fmt::init();
+
+    let mut shard = Shard::new(env::var(&quot;DISCORD_TOKEN&quot;)?);
+    let mut events = shard.events();
+
+    shard.start().await?;
+    println!(&quot;Created shard&quot;);
+
+    while let Some(event) = events.next().await {
+        println!(&quot;Event: {:?}&quot;, event);
+    }
+
+    Ok(())
+}
+</code></pre></pre>
+<h2><a class="header" href="#links-3" id="links-3">Links</a></h2>
+<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/gateway">https://github.com/twilight-rs/twilight/tree/trunk/gateway</a></p>
+<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_gateway/index.html">https://twilight-rs.github.io/twilight/twilight_gateway/index.html</a></p>
+<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-gateway">https://crates.io/crates/twilight-gateway</a></p>
+<h1><a class="header" href="#cache" id="cache">Cache</a></h1>
+<p>Twilight includes an in-process-memory cache. It's responsible for processing
+events and caching things like guilds, channels, users, and voice states.</p>
+<h2><a class="header" href="#installation-3" id="installation-3">Installation</a></h2>
+<p>Add the following to your Cargo.toml:</p>
+<pre><code class="language-toml">[dependencies]
+twilight-cache-inmemory = &quot;0.1&quot;
+</code></pre>
+<h2><a class="header" href="#examples" id="examples">Examples</a></h2>
+<p>Process items that come over a shard into the cache:</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use futures::stream::StreamExt;
+use std::env;
+use twilight_cache_inmemory::InMemoryCache;
+use twilight_gateway::Shard;
+
+let token = env::var(&quot;DISCORD_TOKEN&quot;)?;
+
+let shard = Shard::new(token);
+shard.start().await?;
+
+let cache = InMemoryCache::new();
+
+let mut events = shard.events();
+
+while let Some(event) = events.next().await {
+    cache.process(&amp;event);
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#links-4" id="links-4">Links</a></h2>
+<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory">https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-cache-inmemory">https://docs.rs/twilight-cache-inmemory</a></p>
+<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-cache-inmemory">https://crates.io/crates/twilight-cache-inmemory</a></p>
+<h1><a class="header" href="#command-parser" id="command-parser">Command Parser</a></h1>
+<p>The Command Parser is a basic parser for the Twilight ecosystem. We'll get this out
+of the way first: it's not a framework, and it doesn't try to be.</p>
+<p>The parser, for the most part, takes a configuration of prefixes and commands,
+and attempts to match it to provided strings, returning what command and prefix
+it matched, if any. The parser will also return a lazy iterator of arguments
+given to the command.</p>
+<p>Included is a mutable configuration that allows you to specify the command
+names, prefixes, and ignored guilds and users. The parser parses out commands
+matching an available command and prefix and provides the command arguments to
+you.</p>
+<h2><a class="header" href="#installation-4" id="installation-4">Installation</a></h2>
+<p>Add the following to your Cargo.toml:</p>
+<pre><code class="language-toml">[dependencies]
+twilight-command-parser = &quot;0.1&quot;
+</code></pre>
+<h2><a class="header" href="#examples-1" id="examples-1">Examples</a></h2>
+<p>A simple parser for a bot with one prefix (<code>&quot;!&quot;</code>) and two commands, <code>&quot;echo&quot;</code>
+and <code>&quot;ping&quot;</code>:</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use twilight_command_parser::{Command, Config, Parser};
+
+let mut config = Config::new();
+
+// (Use `Config::add_command` to add a single command)
+config.command(&quot;echo&quot;).add();
+config.command(&quot;ping&quot;).add();
+
+// Add the prefix `&quot;!&quot;`.
+// (Use `Config::add_prefixes` to add multiple prefixes)
+config.add_prefix(&quot;!&quot;);
+
+let parser = Parser::new(config);
+
+// Now pass a command to the parser
+match parser.parse(&quot;!echo a message&quot;) {
+    Some(Command { name: &quot;echo&quot;, arguments, .. }) =&gt; {
+        let content = arguments.as_str();
+
+        println!(&quot;Got an echo request to send `{}`&quot;, content);
+    },
+    Some(Command { name: &quot;ping&quot;, .. }) =&gt; {
+        println!(&quot;Got a ping request&quot;);
+    },
+    // Ignore all other commands.
+    Some(_) =&gt; {},
+    None =&gt; println!(&quot;Message didn't match a prefix and command&quot;),
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#links-5" id="links-5">Links</a></h2>
+<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/command-parser">https://github.com/twilight-rs/twilight/tree/trunk/command-parser</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-command-parser">https://docs.rs/twilight-command-parser</a></p>
+<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-command-parser">https://crates.io/crates/twilight-command-parser</a></p>
+<h1><a class="header" href="#standby" id="standby">Standby</a></h1>
+<p>Standby is a utility to wait for an event to happen based on a predicate check.
+For example, you may have a command that makes a reaction menu of ✅ and ❌. If
+you want to handle a reaction to these, using something like an
+application-level state or event stream may not suit your use case. It may be
+cleaner to wait for a reaction inline to your function. This is where Standby
+comes in.</p>
+<h2><a class="header" href="#installation-5" id="installation-5">Installation</a></h2>
+<p>Add the following to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">twilight-standby = &quot;0.1&quot;
+</code></pre>
+<h2><a class="header" href="#examples-2" id="examples-2">Examples</a></h2>
+<p>Wait for a message in channel 123 by user 456 with the content &quot;test&quot;:</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use twilight_model::{gateway::payload::MessageCreate, id::{ChannelId, UserId}};
+use twilight_standby::Standby;
+
+let standby = Standby::new();
+
+// Later on in the application...
+let message = standby.wait_for_message(ChannelId(123), |event: &amp;MessageCreate| {
+    event.author.id == UserId(456) &amp;&amp; event.content == &quot;test&quot;
+}).await?;
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#links-6" id="links-6">Links</a></h2>
+<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/standby">https://github.com/twilight-rs/twilight/tree/trunk/standby</a></p>
+<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_standby/index.html">https://twilight-rs.github.io/twilight/twilight_standby/index.html</a></p>
+<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-standby">https://crates.io/crates/twilight-standby</a></p>
+<h1><a class="header" href="#first-party" id="first-party">First-party</a></h1>
+<p>Twilight includes crates maintained by the organization, but not included as
+part of the core experience. Just like all of the core crates these are entirely
+opt-in, but are for more advanced or specific use cases, such as integration
+with other software.</p>
+<p>Although not a part of the core experience, these are given the same level of
+support as the core crates.</p>
+<h1><a class="header" href="#embed-builder" id="embed-builder">Embed Builder</a></h1>
+<p><code>twilight-embed-builder</code> is a utility crate to create validated embeds, useful
+when creating or updating messages.</p>
+<p>With this library, you can create mentions for various types, such as users,
+emojis, roles, members, or channels.</p>
+<h2><a class="header" href="#installation-6" id="installation-6">Installation</a></h2>
+<p>Add the following to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">twilight-embed-builder = &quot;0.1&quot;
+</code></pre>
+<h2><a class="header" href="#examples-3" id="examples-3">Examples</a></h2>
+<p>Build a simple embed:</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use twilight_embed_builder::{EmbedBuilder, EmbedFieldBuilder};
+
+let embed = EmbedBuilder::new()
+    .description(&quot;Here's a list of reasons why Twilight is the best pony:&quot;)?
+    .field(EmbedFieldBuilder::new(&quot;Wings&quot;, &quot;She has wings.&quot;)?.inline())
+    .field(EmbedFieldBuilder::new(&quot;Horn&quot;, &quot;She can do magic, and she's really good at it.&quot;)?.inline())
+    .build();
+<span class="boring">}
+</span></code></pre></pre>
+<p>Build an embed with an image:</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use twilight_embed_builder::{EmbedBuilder, ImageSource};
+
+let embed = EmbedBuilder::new()
+    .description(&quot;Here's a cool image of Twilight Sparkle&quot;)?
+    .image(ImageSource::attachment(&quot;bestpony.png&quot;)?)
+    .build();
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#links-7" id="links-7">Links</a></h2>
+<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder">https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder</a></p>
+<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_embed_builder/index.html">https://twilight-rs.github.io/twilight/twilight_embed_builder/index.html</a></p>
+<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-embed-builder">https://crates.io/crates/twilight-embed-builder</a></p>
+<h1><a class="header" href="#mention" id="mention">Mention</a></h1>
+<p><code>twilight-mention</code> is a utility crate to mention <a href="chapter_1_crates/section_7_first_party/../section_1_model.html">model</a> resources.</p>
+<p>With this library, you can create mentions for various resources, such as users,
+emojis, roles, members, or channels.</p>
+<h2><a class="header" href="#installation-7" id="installation-7">Installation</a></h2>
+<p>Add the following to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">twilight-mention = &quot;0.1&quot;
+</code></pre>
+<h2><a class="header" href="#examples-4" id="examples-4">Examples</a></h2>
+<p>Create a mention formatter for a user ID, and then format it in a message:</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use twilight_mention::Mention;
+use twilight_model::id::UserId;
+
+let user_id = UserId(123);
+let message = format!(&quot;Hey there, {}!&quot;, user_id.mention());
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#links-8" id="links-8">Links</a></h2>
+<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/mention">https://github.com/twilight-rs/twilight/tree/trunk/utils/mention</a></p>
+<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_mention/index.html">https://twilight-rs.github.io/twilight/twilight_mention/index.html</a></p>
+<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-mention">https://crates.io/crates/twilight-mention</a></p>
+<h1><a class="header" href="#lavalink" id="lavalink">Lavalink</a></h1>
+<p><code>twilight-lavalink</code> is a client for <a href="https://github.com/Frederikam/Lavalink">Lavalink</a> for use with <a href="chapter_1_crates/section_7_first_party/../section_1_model.html">model</a> events from
+the <a href="chapter_1_crates/section_7_first_party/../section_3_gateway.html">gateway</a>.</p>
+<p>It includes support for managing multiple nodes, a player manager for
+conveniently using players to send events and retrieve information for each
+guild, and an HTTP module for creating requests using the http crate and
+providing models to deserialize their responses.</p>
+<h2><a class="header" href="#installation-8" id="installation-8">Installation</a></h2>
+<p>Add the following to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">twilight-lavalink = &quot;0.1&quot;
+</code></pre>
+<h2><a class="header" href="#examples-5" id="examples-5">Examples</a></h2>
+<p>Create a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html">client</a>, add a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/node/struct.Node.html">node</a>, and give events to the client to <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html#method.process">process</a>
+events:</p>
+<pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
+use std::{
+    env,
+    error::Error,
+    net::SocketAddr,
+    str::FromStr,
+};
+use twilight_gateway::Shard;
+use twilight_http::Client as HttpClient;
+use twilight_lavalink::Lavalink;
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync + 'static&gt;&gt; {
+    let token = env::var(&quot;DISCORD_TOKEN&quot;)?;
+    let lavalink_host = SocketAddr::from_str(&amp;env::var(&quot;LAVALINK_HOST&quot;)?)?;
+    let lavalink_auth = env::var(&quot;LAVALINK_AUTHORIZATION&quot;)?;
+    let shard_count = 1_u64;
+
+    let http = HttpClient::new(&amp;token);
+    let user_id = http.current_user().await?.id;
+
+    let lavalink = Lavalink::new(user_id, shard_count);
+    lavalink.add(lavalink_host, lavalink_auth).await?;
+
+    let mut shard = Shard::new(token);
+    let mut events = shard.events();
+
+    shard.start().await?;
+
+    while let Some(event) = events.next().await {
+        lavalink.process(&amp;event).await?;
+    }
+
+    Ok(())
+}
+</code></pre></pre>
+<h2><a class="header" href="#links-9" id="links-9">Links</a></h2>
+<p><strong>source</strong>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/lavalink">https://github.com/twilight-rs/twilight/tree/trunk/lavalink</a></p>
+<p><strong>docs</strong>: <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/index.html">https://twilight-rs.github.io/twilight/twilight_lavalink/index.html</a></p>
+<p><strong>crates.io</strong>: <a href="https://crates.io/crates/twilight-lavalink">https://crates.io/crates/twilight-lavalink</a></p>
+<h1><a class="header" href="#util" id="util">Util</a></h1>
+<p><code>twilight-util</code> is a utility crate that adds utilities to the twilight
+ecosystem that do not fit in any other crate. Currently, it contains
+a trait to make extracting data from Discord identifiers (Snowflakes)
+easier.</p>
+<h2><a class="header" href="#installation-9" id="installation-9">Installation</a></h2>
+<p>Add the following to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">twilight-util = { features = [&quot;snowflake&quot;], version = &quot;0.1&quot; }
+</code></pre>
+<h2><a class="header" href="#examples-6" id="examples-6">Examples</a></h2>
+<p>The snowflake trait can be used like this</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use twilight_util::snowflake::Snowflake;
+use twilight_model::id::UserId;
+
+let user = UserId(123456);
+let timestamp = user.timestamp();
+<span class="boring">}
+</span></code></pre></pre>
+<h2><a class="header" href="#links-10" id="links-10">Links</a></h2>
+<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/util">https://github.com/twilight-rs/twilight/tree/trunk/util</a></p>
+<p><em>docs</em>: <a href="https://api.twilight.rs/twilight_util/index.html">https://api.twilight.rs/twilight_util/index.html</a></p>
+<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-util">https://crates.io/crates/twilight-util</a></p>
+<h1><a class="header" href="#gateway-queue" id="gateway-queue">Gateway queue</a></h1>
+<p><code>twilight-gateway-queue</code> is a trait and some implementations that are used by
+the <a href="chapter_1_crates/section_7_first_party/../section_3_gateway.html">gateway</a> to ratelimit <code>identify</code> calls. Developers should prefer to use the
+re-exports of these crates through the <a href="chapter_1_crates/section_7_first_party/../section_3_gateway.html">gateway</a>.</p>
+<h2><a class="header" href="#installation-10" id="installation-10">Installation</a></h2>
+<p>Add the following yo your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">twilight-gateway-queue = &quot;0.1.0&quot;
+</code></pre>
+<h2><a class="header" href="#links-11" id="links-11">Links</a></h2>
+<p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/gateway/queue">https://github.com/twilight-rs/twilight/tree/trunk/gateway/queue</a></p>
+<p><em>docs</em>: <a href="https://api.twilight.rs/twilight_gateway_queue/index.html">https://api.twilight.rs/twilight_gateway_queue/index.html</a></p>
+<p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-gateway-queue">https://crates.io/crates/twilight-gateway-queue</a></p>
+<h1><a class="header" href="#third-party" id="third-party">Third-party</a></h1>
+<p>Third-party crates are crates that aren't supported by the Twilight organization
+but are recognised by it. Of course, use these at your own risk. :)</p>
+<p>Third-party crates may become first-party crates if they end up becoming useful
+enough for a large number of users.</p>
+<h2><a class="header" href="#list-of-crates" id="list-of-crates">List of Crates</a></h2>
+<p>Below is a list of crates. If you want yours added, feel free to ask!</p>
+<h3><a class="header" href="#rarity-rspermission-calculator" id="rarity-rspermission-calculator"><code>rarity-rs/permission-calculator</code></a></h3>
+<p>The permission calculator is a crate for calculating the permissions of a
+member in a channel, taking into account its roles and permission overwrites.</p>
+<p>You can check it out <a href="https://github.com/rarity-rs/permission-calculator">here</a></p>
+<h1><a class="header" href="#services" id="services">Services</a></h1>
+<p>Twilight is built with a service-minded approach. This means that it caters to
+both monolithic and multi-serviced applications equally. If you have a very
+large bot and have a multi-serviced application and feel like Rust is a good
+language to use for some of your services, then Twilight is a great choice. If
+you have a small bot and just want to get it going in a monolithic application,
+then it's also a good choice. It's easy to split off parts of your application
+into other services as your application grows.</p>
+<h2><a class="header" href="#gateway-clusters" id="gateway-clusters">Gateway clusters</a></h2>
+<p>One of the popular design choices when creating a multi-serviced application is
+to have a service that simply connects shards to the gateway and sends the
+events to a broker to be processed. As bots grow into hundreds or thousands of
+shards, multiple instances of the application can be created and clusters -
+groups of shards - can be managed by each. Twilight is a good choice for this
+use case: you can receive either events that come in in a loop and send the
+payloads to the appropriate broker stream, or you can loop over received
+payloads' bytes to send off.</p>
+<h2><a class="header" href="#gateway-session-ratelimiting" id="gateway-session-ratelimiting">Gateway session ratelimiting</a></h2>
+<p>If you have multiple clusters, then you need to queue and ratelimit your
+initialized sessions. The Gateway includes a Queue trait which you can
+implement, and the gateway will submit a request to the queue before starting a
+session. Twilight comes with a queue that supports sharding and Large Bot
+sharding, but when you start to have multiple clusters you'll want to implement
+your own. Our <a href="https://github.com/twilight-rs/gateway-queue">gateway-queue</a> is an example of this.</p>
+<h2><a class="header" href="#http-proxy-ratelimiting" id="http-proxy-ratelimiting">HTTP proxy ratelimiting</a></h2>
+<p>If you have multiple services or lambda functions that can make HTTP requests,
+then you'll run into ratelimiting issues. Twilight's HTTP client supports
+proxying, and can be combined with something like our very own <a href="https://github.com/twilight-rs/http-proxy">http-proxy</a>
+to proxy requests and ratelimit them.</p>
+<h2><a class="header" href="#the-sky-is-the-limit" id="the-sky-is-the-limit">The sky is the limit</a></h2>
+<p>You can do so much more than just this, and that's the beauty of the ecosystem:
+it's flexible enough to do anything you need, and if you find something it can't
+then we'll fix it. The goal is to remove all limitations on designs and allow
+you to do what you need.</p>
+<h1><a class="header" href="#bots-using-twilight" id="bots-using-twilight">Bots using Twilight</a></h1>
+<p>Below is a list of bots known to be using the Twilight ecosystem. The use could
+be as small as only <a href="./chapter_1_crates/section_3_gateway.html">the gateway</a> or <a href="./chapter_1_crates/section_2_http.html">HTTP client</a>, or as large as all of the
+<a href="./chapter_1_crates/summary.html">core crates</a>.</p>
+<p>Want your bot added? Feel free to send a PR to the <a href="https://github.com/twilight-rs/twilight-rs.github.io">repo</a>!</p>
+<h2><a class="header" href="#gearbot" id="gearbot">Gearbot</a></h2>
+<p>The GearBot team are rewriting their bot to use Twilight, with a need for
+performance and scalability in mind.</p>
+<p><em>Source</em>: <a href="https://github.com/gearbot/GearBot-2">GitHub</a></p>
+<h2><a class="header" href="#lasagne-bot" id="lasagne-bot">Lasagne bot</a></h2>
+<p>Lasagne bot is a bot that posts garfield comics.</p>
+<p><em>Source</em>: <a href="https://git.sr.ht/%7Eerk/lasagna">Sr.ht</a></p>
+<h1><a class="header" href="#changelogs" id="changelogs">Changelogs</a></h1>
+<h2><a class="header" href="#a-hrefhttpsgithubcomrust-langrustreleasestag010010a---2020-09-13" id="a-hrefhttpsgithubcomrust-langrustreleasestag010010a---2020-09-13"><a href="https://github.com/rust-lang/rust/releases/tag/0.1.0">0.1.0</a> - 2020-09-13</a></h2>
+<p>Initial release.</p>
+<p>Check out the crates on <a href="https://crates.io/teams/github:twilight-rs:core">crates.io</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
