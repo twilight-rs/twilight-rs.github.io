@@ -29,7 +29,7 @@ let cluster_spawn = cluster.clone();
 tokio::spawn(async move {
     cluster_spawn.up().await;
 });
-# let _ = events.next().await {
+# let _ = events.next().await;
 #     Ok(())
 # }
 ```
