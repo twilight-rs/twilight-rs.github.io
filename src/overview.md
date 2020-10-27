@@ -51,7 +51,7 @@ use tokio::stream::StreamExt;
 use twilight_cache_inmemory::{EventType, InMemoryCache};
 use twilight_gateway::{cluster::{Cluster, ShardScheme}, Event};
 use twilight_http::Client as HttpClient;
-use twilight_model::gateway::GatewayIntents;
+use twilight_model::gateway::Intents;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
@@ -63,9 +63,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let cluster = Cluster::builder(&token)
         .shard_scheme(scheme)
         // Use intents to only listen to GUILD_MESSAGES events
-        .intents(Some(
-            GatewayIntents::GUILD_MESSAGES | GatewayIntents::DIRECT_MESSAGES,
-        ))
+        .intents(Intents::GUILD_MESSAGES | Intents::DIRECT_MESSAGES)
         .build()
         .await?;
 

@@ -22,22 +22,16 @@ Create a [client], add a [node], and give events to the client to [process]
 events:
 
 ```rust
-use futures_util::stream::StreamExt;
+use futures::StreamExt;
 use std::{
-    convert::TryInto,
     env,
     error::Error,
-    future::Future,
     net::SocketAddr,
     str::FromStr,
 };
-use twilight_gateway::{Event, Shard};
+use twilight_gateway::Shard;
 use twilight_http::Client as HttpClient;
-use twilight_lavalink::{http::LoadedTracks, model::Play, Lavalink};
-use twilight_model::{
-    channel::Message,
-    gateway::payload::MessageCreate,
-};
+use twilight_lavalink::Lavalink;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
