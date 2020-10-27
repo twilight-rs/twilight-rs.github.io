@@ -45,7 +45,7 @@ There is a community and support server [on Discord][server].
 Below is a quick example of a program printing "Pong!" when a ping command comes
 in from a channel:
 
-```rust
+```rust,no_run
 use std::{env, error::Error};
 use tokio::stream::StreamExt;
 use twilight_cache_inmemory::{EventType, InMemoryCache};

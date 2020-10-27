@@ -16,15 +16,17 @@ twilight-cache-inmemory = "0.1"
 
 Process items that come over a shard into the cache:
 
-```rust
-use futures::stream::StreamExt;
+```rust,no_run
+# #[tokio::main]
+# async fn main() -> Result<(), Box<dyn std::error::Error>> {
+use futures::StreamExt;
 use std::env;
 use twilight_cache_inmemory::InMemoryCache;
 use twilight_gateway::Shard;
 
 let token = env::var("DISCORD_TOKEN")?;
 
-let shard = Shard::new(token);
+let mut shard = Shard::new(token);
 shard.start().await?;
 
 let cache = InMemoryCache::new();
@@ -32,8 +34,10 @@ let cache = InMemoryCache::new();
 let mut events = shard.events();
 
 while let Some(event) = events.next().await {
-    cache.process(&event);
+    cache.update(&event);
 }
+#     Ok(())
+# }
 ```
 
 ## Links

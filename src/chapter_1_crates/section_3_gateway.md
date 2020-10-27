@@ -13,8 +13,14 @@ shards and unify their messages into one stream. It doesn't have a large API, yo
 usually want to spawn a task to bring it up such that you can begin to receive
 tasks as soon as they arrive.
 
-```rust
-let cluster = Cluster::new(config).await?;
+```rust,no_run
+# use futures::StreamExt;
+# use twilight_gateway::Cluster;
+#
+# #[tokio::main]
+# async fn main() -> Result<(), Box<dyn std::error::Error>> {
+#    let token = "dummy";
+let cluster = Cluster::new(token).await?;
 
 let mut events = cluster.events();
 
@@ -23,6 +29,9 @@ let cluster_spawn = cluster.clone();
 tokio::spawn(async move {
     cluster_spawn.up().await;
 });
+# let _ = events.next().await {
+#     Ok(())
+# }
 ```
 
 ## Installation
@@ -66,7 +75,7 @@ the dependency tree it will make use of that instead of [zlib-ng].
 
 Starting a `Shard` and printing the contents of new messages as they come in:
 
-```rust
+```rust,no_run
 use futures::StreamExt;
 use std::{env, error::Error};
 use twilight_gateway::Shard;

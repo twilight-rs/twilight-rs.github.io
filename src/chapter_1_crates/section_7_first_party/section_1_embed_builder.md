@@ -19,6 +19,8 @@ twilight-embed-builder = "0.1"
 Build a simple embed:
 
 ```rust
+# #[allow(unused_variables)]
+# fn main() -> Result<(), Box<dyn std::error::Error>> {
 use twilight_embed_builder::{EmbedBuilder, EmbedFieldBuilder};
 
 let embed = EmbedBuilder::new()
@@ -26,17 +28,23 @@ let embed = EmbedBuilder::new()
     .field(EmbedFieldBuilder::new("Wings", "She has wings.")?.inline())
     .field(EmbedFieldBuilder::new("Horn", "She can do magic, and she's really good at it.")?.inline())
     .build();
+#     Ok(())
+# }
 ```
 
 Build an embed with an image:
 
 ```rust
+# #[allow(unused_variables)]
+# fn main() -> Result<(), Box<dyn std::error::Error>> {
 use twilight_embed_builder::{EmbedBuilder, ImageSource};
 
 let embed = EmbedBuilder::new()
     .description("Here's a cool image of Twilight Sparkle")?
     .image(ImageSource::attachment("bestpony.png")?)
     .build();
+#     Ok(())
+# }
 ```
 
 ## Links

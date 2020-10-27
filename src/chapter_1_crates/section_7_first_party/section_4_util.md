@@ -15,11 +15,14 @@ twilight-util = { features = ["snowflake"], version = "0.1" }
 ## Examples
 The snowflake trait can be used like this
 ```rust
+# #[allow(unused_variables)]
+# fn main() {
 use twilight_util::snowflake::Snowflake;
 use twilight_model::id::UserId;
 
 let user = UserId(123456);
 let timestamp = user.timestamp();
+# }
 ```
 
 ## Links

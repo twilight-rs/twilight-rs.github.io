@@ -19,7 +19,10 @@ twilight-standby = "0.1"
 
 Wait for a message in channel 123 by user 456 with the content "test":
 
-```rust
+```rust,no_run
+# #[allow(unused_variables)]
+# #[tokio::main]
+# async fn main() -> Result<(), Box<dyn std::error::Error>> {
 use twilight_model::{gateway::payload::MessageCreate, id::{ChannelId, UserId}};
 use twilight_standby::Standby;
 
@@ -29,6 +32,8 @@ let standby = Standby::new();
 let message = standby.wait_for_message(ChannelId(123), |event: &MessageCreate| {
     event.author.id == UserId(456) && event.content == "test"
 }).await?;
+#     Ok(())
+# }
 ```
 
 ## Links
