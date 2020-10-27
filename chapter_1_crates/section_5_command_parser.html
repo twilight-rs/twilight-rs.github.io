@@ -182,16 +182,14 @@ twilight-command-parser = &quot;0.1&quot;
 <h2><a class="header" href="#examples" id="examples">Examples</a></h2>
 <p>A simple parser for a bot with one prefix (<code>&quot;!&quot;</code>) and two commands, <code>&quot;echo&quot;</code>
 and <code>&quot;ping&quot;</code>:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>use twilight_command_parser::{Command, Config, Parser};
+<pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">fn main() {
+</span>use twilight_command_parser::{Command, CommandParserConfig, Parser};
 
-let mut config = Config::new();
+let mut config = CommandParserConfig::new();
 
 // (Use `Config::add_command` to add a single command)
-config.command(&quot;echo&quot;).add();
-config.command(&quot;ping&quot;).add();
+config.add_command(&quot;echo&quot;, true);
+config.add_command(&quot;ping&quot;, true);
 
 // Add the prefix `&quot;!&quot;`.
 // (Use `Config::add_prefixes` to add multiple prefixes)

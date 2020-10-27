@@ -173,17 +173,16 @@ twilight-cache-inmemory = &quot;0.1&quot;
 </code></pre>
 <h2><a class="header" href="#examples" id="examples">Examples</a></h2>
 <p>Process items that come over a shard into the cache:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>use futures::stream::StreamExt;
+<pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[tokio::main]
+</span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+</span>use futures::StreamExt;
 use std::env;
 use twilight_cache_inmemory::InMemoryCache;
 use twilight_gateway::Shard;
 
 let token = env::var(&quot;DISCORD_TOKEN&quot;)?;
 
-let shard = Shard::new(token);
+let mut shard = Shard::new(token);
 shard.start().await?;
 
 let cache = InMemoryCache::new();
@@ -191,9 +190,10 @@ let cache = InMemoryCache::new();
 let mut events = shard.events();
 
 while let Some(event) = events.next().await {
-    cache.process(&amp;event);
+    cache.update(&amp;event);
 }
-<span class="boring">}
+<span class="boring">    Ok(())
+</span><span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#links" id="links">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory">https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory</a></p>

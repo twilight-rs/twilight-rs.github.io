@@ -195,7 +195,7 @@ giving you a tailored experience.</p>
 <h2><a class="header" href="#a-quick-example" id="a-quick-example">A Quick Example</a></h2>
 <p>Below is a quick example of a program printing &quot;Pong!&quot; when a ping command comes
 in from a channel:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">use std::{env, error::Error};
+<pre><pre class="playground"><code class="language-rust no_run edition2018">use std::{env, error::Error};
 use tokio::stream::StreamExt;
 use twilight_cache_inmemory::{EventType, InMemoryCache};
 use twilight_gateway::{cluster::{Cluster, ShardScheme}, Event};
@@ -366,7 +366,7 @@ but it can be changed to use NativeTLS which uses the TLS native to the platform
 <h2><a class="header" href="#example" id="example">Example</a></h2>
 <p>A quick example showing how to send 10 messages, and then print the current
 user's name:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">use futures::future;
+<pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::future;
 use std::{env, error::Error};
 use twilight_http::Client;
 use twilight_model::id::ChannelId;
@@ -408,10 +408,13 @@ checks.</p>
 shards and unify their messages into one stream. It doesn't have a large API, you
 usually want to spawn a task to bring it up such that you can begin to receive
 tasks as soon as they arrive.</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let cluster = Cluster::new(config).await?;
+<pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">use futures::StreamExt;
+</span><span class="boring">use twilight_gateway::Cluster;
+</span><span class="boring">
+</span><span class="boring">#[tokio::main]
+</span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+</span><span class="boring">   let token = &quot;dummy&quot;;
+</span>let cluster = Cluster::new(token).await?;
 
 let mut events = cluster.events();
 
@@ -420,7 +423,9 @@ let cluster_spawn = cluster.clone();
 tokio::spawn(async move {
     cluster_spawn.up().await;
 });
-<span class="boring">}
+<span class="boring">let _ = events.next().await;
+</span><span class="boring">    Ok(())
+</span><span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#installation-2" id="installation-2">Installation</a></h2>
 <p>Add the following to your <code>Cargo.toml</code>:</p>
@@ -448,7 +453,7 @@ most cases will be more effective. Though it will add an externel dependency on
 the dependency tree it will make use of that instead of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a>.</p>
 <h2><a class="header" href="#example-1" id="example-1">Example</a></h2>
 <p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
+<pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::StreamExt;
 use std::{env, error::Error};
 use twilight_gateway::Shard;
 
@@ -484,17 +489,16 @@ twilight-cache-inmemory = &quot;0.1&quot;
 </code></pre>
 <h2><a class="header" href="#examples" id="examples">Examples</a></h2>
 <p>Process items that come over a shard into the cache:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>use futures::stream::StreamExt;
+<pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[tokio::main]
+</span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+</span>use futures::StreamExt;
 use std::env;
 use twilight_cache_inmemory::InMemoryCache;
 use twilight_gateway::Shard;
 
 let token = env::var(&quot;DISCORD_TOKEN&quot;)?;
 
-let shard = Shard::new(token);
+let mut shard = Shard::new(token);
 shard.start().await?;
 
 let cache = InMemoryCache::new();
@@ -502,9 +506,10 @@ let cache = InMemoryCache::new();
 let mut events = shard.events();
 
 while let Some(event) = events.next().await {
-    cache.process(&amp;event);
+    cache.update(&amp;event);
 }
-<span class="boring">}
+<span class="boring">    Ok(())
+</span><span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#links-4" id="links-4">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory">https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory</a></p>
@@ -529,16 +534,14 @@ twilight-command-parser = &quot;0.1&quot;
 <h2><a class="header" href="#examples-1" id="examples-1">Examples</a></h2>
 <p>A simple parser for a bot with one prefix (<code>&quot;!&quot;</code>) and two commands, <code>&quot;echo&quot;</code>
 and <code>&quot;ping&quot;</code>:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>use twilight_command_parser::{Command, Config, Parser};
+<pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">fn main() {
+</span>use twilight_command_parser::{Command, CommandParserConfig, Parser};
 
-let mut config = Config::new();
+let mut config = CommandParserConfig::new();
 
 // (Use `Config::add_command` to add a single command)
-config.command(&quot;echo&quot;).add();
-config.command(&quot;ping&quot;).add();
+config.add_command(&quot;echo&quot;, true);
+config.add_command(&quot;ping&quot;, true);
 
 // Add the prefix `&quot;!&quot;`.
 // (Use `Config::add_prefixes` to add multiple prefixes)
@@ -579,9 +582,9 @@ comes in.</p>
 </code></pre>
 <h2><a class="header" href="#examples-2" id="examples-2">Examples</a></h2>
 <p>Wait for a message in channel 123 by user 456 with the content &quot;test&quot;:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[allow(unused_variables)]
+</span><span class="boring">#[tokio::main]
+</span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 </span>use twilight_model::{gateway::payload::MessageCreate, id::{ChannelId, UserId}};
 use twilight_standby::Standby;
 
@@ -591,7 +594,8 @@ let standby = Standby::new();
 let message = standby.wait_for_message(ChannelId(123), |event: &amp;MessageCreate| {
     event.author.id == UserId(456) &amp;&amp; event.content == &quot;test&quot;
 }).await?;
-<span class="boring">}
+<span class="boring">    Ok(())
+</span><span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#links-6" id="links-6">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/standby">https://github.com/twilight-rs/twilight/tree/trunk/standby</a></p>
@@ -615,9 +619,8 @@ emojis, roles, members, or channels.</p>
 </code></pre>
 <h2><a class="header" href="#examples-3" id="examples-3">Examples</a></h2>
 <p>Build a simple embed:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
+</span><span class="boring">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 </span>use twilight_embed_builder::{EmbedBuilder, EmbedFieldBuilder};
 
 let embed = EmbedBuilder::new()
@@ -625,19 +628,20 @@ let embed = EmbedBuilder::new()
     .field(EmbedFieldBuilder::new(&quot;Wings&quot;, &quot;She has wings.&quot;)?.inline())
     .field(EmbedFieldBuilder::new(&quot;Horn&quot;, &quot;She can do magic, and she's really good at it.&quot;)?.inline())
     .build();
-<span class="boring">}
+<span class="boring">    Ok(())
+</span><span class="boring">}
 </span></code></pre></pre>
 <p>Build an embed with an image:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
+</span><span class="boring">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 </span>use twilight_embed_builder::{EmbedBuilder, ImageSource};
 
 let embed = EmbedBuilder::new()
     .description(&quot;Here's a cool image of Twilight Sparkle&quot;)?
     .image(ImageSource::attachment(&quot;bestpony.png&quot;)?)
     .build();
-<span class="boring">}
+<span class="boring">    Ok(())
+</span><span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#links-7" id="links-7">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder">https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder</a></p>
@@ -653,8 +657,7 @@ emojis, roles, members, or channels.</p>
 </code></pre>
 <h2><a class="header" href="#examples-4" id="examples-4">Examples</a></h2>
 <p>Create a mention formatter for a user ID, and then format it in a message:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
+<pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
 </span><span class="boring">fn main() {
 </span>use twilight_mention::Mention;
 use twilight_model::id::UserId;
@@ -681,7 +684,7 @@ providing models to deserialize their responses.</p>
 <h2><a class="header" href="#examples-5" id="examples-5">Examples</a></h2>
 <p>Create a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html">client</a>, add a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/node/struct.Node.html">node</a>, and give events to the client to <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html#method.process">process</a>
 events:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
+<pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::StreamExt;
 use std::{
     env,
     error::Error,
@@ -732,8 +735,7 @@ easier.</p>
 </code></pre>
 <h2><a class="header" href="#examples-6" id="examples-6">Examples</a></h2>
 <p>The snowflake trait can be used like this</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
+<pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
 </span><span class="boring">fn main() {
 </span>use twilight_util::snowflake::Snowflake;
 use twilight_model::id::UserId;

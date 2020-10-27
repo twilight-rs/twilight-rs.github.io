@@ -176,9 +176,9 @@ comes in.</p>
 </code></pre>
 <h2><a class="header" href="#examples" id="examples">Examples</a></h2>
 <p>Wait for a message in channel 123 by user 456 with the content &quot;test&quot;:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[allow(unused_variables)]
+</span><span class="boring">#[tokio::main]
+</span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 </span>use twilight_model::{gateway::payload::MessageCreate, id::{ChannelId, UserId}};
 use twilight_standby::Standby;
 
@@ -188,7 +188,8 @@ let standby = Standby::new();
 let message = standby.wait_for_message(ChannelId(123), |event: &amp;MessageCreate| {
     event.author.id == UserId(456) &amp;&amp; event.content == &quot;test&quot;
 }).await?;
-<span class="boring">}
+<span class="boring">    Ok(())
+</span><span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#links" id="links">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/standby">https://github.com/twilight-rs/twilight/tree/trunk/standby</a></p>

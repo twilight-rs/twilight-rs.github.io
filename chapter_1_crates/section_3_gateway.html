@@ -174,10 +174,13 @@ checks.</p>
 shards and unify their messages into one stream. It doesn't have a large API, you
 usually want to spawn a task to bring it up such that you can begin to receive
 tasks as soon as they arrive.</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let cluster = Cluster::new(config).await?;
+<pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">use futures::StreamExt;
+</span><span class="boring">use twilight_gateway::Cluster;
+</span><span class="boring">
+</span><span class="boring">#[tokio::main]
+</span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+</span><span class="boring">   let token = &quot;dummy&quot;;
+</span>let cluster = Cluster::new(token).await?;
 
 let mut events = cluster.events();
 
@@ -186,7 +189,9 @@ let cluster_spawn = cluster.clone();
 tokio::spawn(async move {
     cluster_spawn.up().await;
 });
-<span class="boring">}
+<span class="boring">let _ = events.next().await;
+</span><span class="boring">    Ok(())
+</span><span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#installation" id="installation">Installation</a></h2>
 <p>Add the following to your <code>Cargo.toml</code>:</p>
@@ -214,7 +219,7 @@ most cases will be more effective. Though it will add an externel dependency on
 the dependency tree it will make use of that instead of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a>.</p>
 <h2><a class="header" href="#example" id="example">Example</a></h2>
 <p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
+<pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::StreamExt;
 use std::{env, error::Error};
 use twilight_gateway::Shard;
 

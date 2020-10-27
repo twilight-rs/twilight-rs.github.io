@@ -174,9 +174,8 @@ emojis, roles, members, or channels.</p>
 </code></pre>
 <h2><a class="header" href="#examples" id="examples">Examples</a></h2>
 <p>Build a simple embed:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
+</span><span class="boring">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 </span>use twilight_embed_builder::{EmbedBuilder, EmbedFieldBuilder};
 
 let embed = EmbedBuilder::new()
@@ -184,19 +183,20 @@ let embed = EmbedBuilder::new()
     .field(EmbedFieldBuilder::new(&quot;Wings&quot;, &quot;She has wings.&quot;)?.inline())
     .field(EmbedFieldBuilder::new(&quot;Horn&quot;, &quot;She can do magic, and she's really good at it.&quot;)?.inline())
     .build();
-<span class="boring">}
+<span class="boring">    Ok(())
+</span><span class="boring">}
 </span></code></pre></pre>
 <p>Build an embed with an image:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
+</span><span class="boring">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 </span>use twilight_embed_builder::{EmbedBuilder, ImageSource};
 
 let embed = EmbedBuilder::new()
     .description(&quot;Here's a cool image of Twilight Sparkle&quot;)?
     .image(ImageSource::attachment(&quot;bestpony.png&quot;)?)
     .build();
-<span class="boring">}
+<span class="boring">    Ok(())
+</span><span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#links" id="links">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder">https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder</a></p>
