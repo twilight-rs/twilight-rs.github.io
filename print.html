@@ -28,7 +28,9 @@
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
+        
         <link rel="stylesheet" href="css/print.css" media="print">
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
@@ -130,9 +132,11 @@
                     <h1 class="menu-title">Twilight</h1>
 
                     <div class="right-buttons">
+                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        
                         
                     </div>
                 </div>
@@ -196,7 +200,7 @@ use tokio::stream::StreamExt;
 use twilight_cache_inmemory::{EventType, InMemoryCache};
 use twilight_gateway::{cluster::{Cluster, ShardScheme}, Event};
 use twilight_http::Client as HttpClient;
-use twilight_model::gateway::GatewayIntents;
+use twilight_model::gateway::Intents;
 
 #[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
@@ -208,9 +212,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
     let cluster = Cluster::builder(&amp;token)
         .shard_scheme(scheme)
         // Use intents to only listen to GUILD_MESSAGES events
-        .intents(Some(
-            GatewayIntents::GUILD_MESSAGES | GatewayIntents::DIRECT_MESSAGES,
-        ))
+        .intents(Intents::GUILD_MESSAGES | Intents::DIRECT_MESSAGES)
         .build()
         .await?;
 
@@ -411,7 +413,7 @@ tasks as soon as they arrive.</p>
 </span><span class="boring">fn main() {
 </span>let cluster = Cluster::new(config).await?;
 
-let mut events = cluster.events().await;
+let mut events = cluster.events();
 
 let cluster_spawn = cluster.clone();
 
@@ -456,7 +458,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
     tracing_subscriber::fmt::init();
 
     let mut shard = Shard::new(env::var(&quot;DISCORD_TOKEN&quot;)?);
-    let mut events = shard.events().await;
+    let mut events = shard.events();
 
     shard.start().await?;
     println!(&quot;Created shard&quot;);
@@ -679,22 +681,16 @@ providing models to deserialize their responses.</p>
 <h2><a class="header" href="#examples-5" id="examples-5">Examples</a></h2>
 <p>Create a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html">client</a>, add a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/node/struct.Node.html">node</a>, and give events to the client to <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html#method.process">process</a>
 events:</p>
-<pre><pre class="playground"><code class="language-rust edition2018">use futures_util::stream::StreamExt;
+<pre><pre class="playground"><code class="language-rust edition2018">use futures::StreamExt;
 use std::{
-    convert::TryInto,
     env,
     error::Error,
-    future::Future,
     net::SocketAddr,
     str::FromStr,
 };
-use twilight_gateway::{Event, Shard};
+use twilight_gateway::Shard;
 use twilight_http::Client as HttpClient;
-use twilight_lavalink::{http::LoadedTracks, model::Play, Lavalink};
-use twilight_model::{
-    channel::Message,
-    gateway::payload::MessageCreate,
-};
+use twilight_lavalink::Lavalink;
 
 #[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync + 'static&gt;&gt; {
