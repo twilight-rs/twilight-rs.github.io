@@ -27,14 +27,15 @@ twilight-command-parser = "0.1"
 A simple parser for a bot with one prefix (`"!"`) and two commands, `"echo"`
 and `"ping"`:
 
-```rust
-use twilight_command_parser::{Command, Config, Parser};
+```rust,no_run
+# fn main() {
+use twilight_command_parser::{Command, CommandParserConfig, Parser};
 
-let mut config = Config::new();
+let mut config = CommandParserConfig::new();
 
 // (Use `Config::add_command` to add a single command)
-config.command("echo").add();
-config.command("ping").add();
+config.add_command("echo", true);
+config.add_command("ping", true);
 
 // Add the prefix `"!"`.
 // (Use `Config::add_prefixes` to add multiple prefixes)
@@ -56,6 +57,7 @@ match parser.parse("!echo a message") {
     Some(_) => {},
     None => println!("Message didn't match a prefix and command"),
 }
+# }
 ```
 
 ## Links

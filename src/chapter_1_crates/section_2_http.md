@@ -20,7 +20,7 @@ twilight-http = "0.1"
 A quick example showing how to send 10 messages, and then print the current
 user's name:
 
-```rust
+```rust,no_run
 use futures::future;
 use std::{env, error::Error};
 use twilight_http::Client;

@@ -21,7 +21,7 @@ twilight-lavalink = "0.1"
 Create a [client], add a [node], and give events to the client to [process]
 events:
 
-```rust
+```rust,no_run
 use futures::StreamExt;
 use std::{
     env,

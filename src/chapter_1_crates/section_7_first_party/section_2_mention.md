@@ -18,11 +18,14 @@ twilight-mention = "0.1"
 Create a mention formatter for a user ID, and then format it in a message:
 
 ```rust
+# #[allow(unused_variables)]
+# fn main() {
 use twilight_mention::Mention;
 use twilight_model::id::UserId;
 
 let user_id = UserId(123);
 let message = format!("Hey there, {}!", user_id.mention());
+# }
 ```
 
 ## Links
