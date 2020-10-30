@@ -6,9 +6,7 @@ edition = "2018"
 
 [dependencies]
 futures = { version = "0.3", default-features = false }
-# skeptic = "0.13" # is broken
-# see https://github.com/budziq/rust-skeptic/issues/120
-skeptic = { git = 'https://github.com/andygauge/rust-skeptic'}
+skeptic = "0.13.5"
 tokio = { version = "0.2", features = ["full"] }
 twilight-gateway = { version = "0.1" }
 twilight-http = { version = "0.1" }
@@ -24,6 +22,4 @@ twilight-util = { version = "0.1", features = ["snowflake"] }
 tracing-subscriber = "0.2"
 
 [build-dependencies]
-# skeptic = "0.13"
-skeptic = { git = 'https://github.com/andygauge/rust-skeptic'}
-
+skeptic = "0.13.5"
