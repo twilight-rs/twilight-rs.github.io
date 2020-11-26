@@ -6,18 +6,26 @@ be as small as only [the gateway] or [HTTP client], or as large as all of the
 
 Want your bot added? Feel free to send a PR to the [repo]!
 
-## Gearbot
+## Open-Source
+
+### Gearbot
 
 The GearBot team are rewriting their bot to use Twilight, with a need for
 performance and scalability in mind.
 
 *Source*: [GitHub][bot:gearbot:source]
 
-## Lasagne bot
+### Lasagne bot
 
 Lasagne bot is a bot that posts garfield comics.
 
 *Source*: [Sr.ht][bot:lasagna:source]
+
+## Closed-Source
+
+### HarTex
+
+HarTex is a Discord bot built and optimized for server administration and moderation needs in mind.
 
 [HTTP client]: ./chapter_1_crates/section_2_http.html
 [core crates]: ./chapter_1_crates/summary.html
