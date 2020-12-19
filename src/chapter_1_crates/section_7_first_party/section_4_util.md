@@ -29,6 +29,6 @@ let timestamp = user.timestamp();
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/util>
 
-*docs*: <https://api.twilight.rs/twilight_util/index.html>
+*docs*: <https://docs.rs/twilight-util>
 
 *crates.io*: <https://crates.io/crates/twilight-util>

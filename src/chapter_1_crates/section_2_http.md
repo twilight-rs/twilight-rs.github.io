@@ -53,7 +53,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/http>
 
-*docs*: <https://twilight-rs.github.io/twilight/twilight_http/index.html>
+*docs*: <https://docs.rs/twilight-http>
 
 *crates.io*: <https://crates.io/crates/twilight-http>
 

@@ -15,7 +15,7 @@ twilight-gateway-queue = "0.1.0"
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/gateway/queue>
 
-*docs*: <https://api.twilight.rs/twilight_gateway_queue/index.html>
+*docs*: <https://docs.rs/twilight-gateway-queue>
 
 *crates.io*: <https://crates.io/crates/twilight-gateway-queue>
 
