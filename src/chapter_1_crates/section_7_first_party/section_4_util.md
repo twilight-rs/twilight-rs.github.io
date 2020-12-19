@@ -5,13 +5,6 @@ ecosystem that do not fit in any other crate. Currently, it contains
 a trait to make extracting data from Discord identifiers (Snowflakes)
 easier.
 
-## Installation
-
-Add the following to your `Cargo.toml`:
-```toml
-twilight-util = { features = ["snowflake"], version = "0.1" }
-```
-
 ## Examples
 The snowflake trait can be used like this
 ```rust

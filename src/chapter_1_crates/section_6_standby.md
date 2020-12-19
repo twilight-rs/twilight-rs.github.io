@@ -7,14 +7,6 @@ application-level state or event stream may not suit your use case. It may be
 cleaner to wait for a reaction inline to your function. This is where Standby
 comes in.
 
-## Installation
-
-Add the following to your `Cargo.toml`:
-
-```toml
-twilight-standby = "0.1"
-```
-
 ## Examples
 
 Wait for a message in channel 123 by user 456 with the content "test":

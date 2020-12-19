@@ -3,14 +3,6 @@
 Twilight includes an in-process-memory cache. It's responsible for processing
 events and caching things like guilds, channels, users, and voice states.
 
-## Installation
-
-Add the following to your Cargo.toml:
-
-```toml
-[dependencies]
-twilight-cache-inmemory = "0.1"
-```
 
 ## Examples
 

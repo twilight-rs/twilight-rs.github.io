@@ -25,14 +25,6 @@ and returned by the gateway API. `guild` contains types owned by the Guild
 resource category. These types may be directly returned by, built on top of,
 or extended by other Twilight crates.
 
-## Installation
-
-Add the following to your `Cargo.toml`:
-
-```toml
-twilight-model = "0.1"
-```
-
 ## Links
 
 *source*: <https://github.com/twilight-rs/twilight/tree/master/model>
