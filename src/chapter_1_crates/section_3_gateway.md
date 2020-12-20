@@ -61,14 +61,14 @@ You can also use the environment variable `RUSTFLAGS="-C target-cpu=native"`.
 
 ### Zlib
 
-`stock-zlib` makes [flate2] use the stock-zlib which is either upstream or the 
+`stock-zlib` makes [flate2] use the stock-zlib which is either upstream or the
 one included with the operating system.
 
-`simd-zlib` enables the use of [zlib-ng] which is a modern fork of zlib that in 
+`simd-zlib` enables the use of [zlib-ng] which is a modern fork of zlib that in
 most cases will be more effective. Though it will add an externel dependency on
 [cmake].
 
-If both are enabled or if the `zlib` feature of [flate2] is enabled anywhere in 
+If both are enabled or if the `zlib` feature of [flate2] is enabled anywhere in
 the dependency tree it will make use of that instead of [zlib-ng].
 
 ## Example
@@ -103,7 +103,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/gateway>
 
-*docs*: <https://twilight-rs.github.io/twilight/twilight_gateway/index.html>
+*docs*: <https://docs.rs/twilight-gateway>
 
 *crates.io*: <https://crates.io/crates/twilight-gateway>
 

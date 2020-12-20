@@ -40,6 +40,6 @@ let message = standby.wait_for_message(ChannelId(123), |event: &MessageCreate| {
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/standby>
 
-*docs*: <https://twilight-rs.github.io/twilight/twilight_standby/index.html>
+*docs*: <https://docs.rs/twilight-standby>
 
 *crates.io*: <https://crates.io/crates/twilight-standby>

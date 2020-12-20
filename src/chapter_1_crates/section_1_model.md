@@ -37,7 +37,7 @@ twilight-model = "0.1"
 
 *source*: <https://github.com/twilight-rs/twilight/tree/master/model>
 
-*docs*: <https://twilight-rs.github.io/twilight/twilight_model/index.html>
+*docs*: <https://docs.rs/twilight-model>
 
 *crates.io*: <https://crates.io/crates/twilight-model>
 

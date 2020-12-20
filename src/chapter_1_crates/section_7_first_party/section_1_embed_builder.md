@@ -51,6 +51,6 @@ let embed = EmbedBuilder::new()
 
 *source*: <https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder>
 
-*docs*: <https://twilight-rs.github.io/twilight/twilight_embed_builder/index.html>
+*docs*: <https://docs.rs/twilight-embed-builder>
 
 *crates.io*: <https://crates.io/crates/twilight-embed-builder>
