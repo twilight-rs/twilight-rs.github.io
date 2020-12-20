@@ -210,12 +210,12 @@ rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
 </code></pre>
 <p>You can also use the environment variable <code>RUSTFLAGS=&quot;-C target-cpu=native&quot;</code>.</p>
 <h3><a class="header" href="#zlib" id="zlib">Zlib</a></h3>
-<p><code>stock-zlib</code> makes <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> use the stock-zlib which is either upstream or the 
+<p><code>stock-zlib</code> makes <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> use the stock-zlib which is either upstream or the
 one included with the operating system.</p>
-<p><code>simd-zlib</code> enables the use of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a> which is a modern fork of zlib that in 
+<p><code>simd-zlib</code> enables the use of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a> which is a modern fork of zlib that in
 most cases will be more effective. Though it will add an externel dependency on
 <a href="https://cmake.org/">cmake</a>.</p>
-<p>If both are enabled or if the <code>zlib</code> feature of <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> is enabled anywhere in 
+<p>If both are enabled or if the <code>zlib</code> feature of <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> is enabled anywhere in
 the dependency tree it will make use of that instead of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a>.</p>
 <h2><a class="header" href="#example" id="example">Example</a></h2>
 <p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
@@ -243,7 +243,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
 </code></pre></pre>
 <h2><a class="header" href="#links" id="links">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/gateway">https://github.com/twilight-rs/twilight/tree/trunk/gateway</a></p>
-<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_gateway/index.html">https://twilight-rs.github.io/twilight/twilight_gateway/index.html</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-gateway">https://docs.rs/twilight-gateway</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-gateway">https://crates.io/crates/twilight-gateway</a></p>
 
                     </main>

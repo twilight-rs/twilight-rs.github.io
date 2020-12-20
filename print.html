@@ -351,7 +351,7 @@ or extended by other Twilight crates.</p>
 </code></pre>
 <h2><a class="header" href="#links-1" id="links-1">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/master/model">https://github.com/twilight-rs/twilight/tree/master/model</a></p>
-<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_model/index.html">https://twilight-rs.github.io/twilight/twilight_model/index.html</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-model">https://docs.rs/twilight-model</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-model">https://crates.io/crates/twilight-model</a></p>
 <h1><a class="header" href="#http" id="http">HTTP</a></h1>
 <p><code>twilight-http</code> is an HTTP client wrapping all of the documented Discord HTTP API.
@@ -395,7 +395,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
 </code></pre></pre>
 <h2><a class="header" href="#links-2" id="links-2">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/http">https://github.com/twilight-rs/twilight/tree/trunk/http</a></p>
-<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_http/index.html">https://twilight-rs.github.io/twilight/twilight_http/index.html</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-http">https://docs.rs/twilight-http</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-http">https://crates.io/crates/twilight-http</a></p>
 <h1><a class="header" href="#gateway" id="gateway">Gateway</a></h1>
 <p><code>twilight-gateway</code> is an implementation of a client over Discord's websocket
@@ -444,12 +444,12 @@ rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
 </code></pre>
 <p>You can also use the environment variable <code>RUSTFLAGS=&quot;-C target-cpu=native&quot;</code>.</p>
 <h3><a class="header" href="#zlib" id="zlib">Zlib</a></h3>
-<p><code>stock-zlib</code> makes <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> use the stock-zlib which is either upstream or the 
+<p><code>stock-zlib</code> makes <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> use the stock-zlib which is either upstream or the
 one included with the operating system.</p>
-<p><code>simd-zlib</code> enables the use of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a> which is a modern fork of zlib that in 
+<p><code>simd-zlib</code> enables the use of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a> which is a modern fork of zlib that in
 most cases will be more effective. Though it will add an externel dependency on
 <a href="https://cmake.org/">cmake</a>.</p>
-<p>If both are enabled or if the <code>zlib</code> feature of <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> is enabled anywhere in 
+<p>If both are enabled or if the <code>zlib</code> feature of <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> is enabled anywhere in
 the dependency tree it will make use of that instead of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a>.</p>
 <h2><a class="header" href="#example-1" id="example-1">Example</a></h2>
 <p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
@@ -477,7 +477,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
 </code></pre></pre>
 <h2><a class="header" href="#links-3" id="links-3">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/gateway">https://github.com/twilight-rs/twilight/tree/trunk/gateway</a></p>
-<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_gateway/index.html">https://twilight-rs.github.io/twilight/twilight_gateway/index.html</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-gateway">https://docs.rs/twilight-gateway</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-gateway">https://crates.io/crates/twilight-gateway</a></p>
 <h1><a class="header" href="#cache" id="cache">Cache</a></h1>
 <p>Twilight includes an in-process-memory cache. It's responsible for processing
@@ -599,7 +599,7 @@ let message = standby.wait_for_message(ChannelId(123), |event: &amp;MessageCreat
 </span></code></pre></pre>
 <h2><a class="header" href="#links-6" id="links-6">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/standby">https://github.com/twilight-rs/twilight/tree/trunk/standby</a></p>
-<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_standby/index.html">https://twilight-rs.github.io/twilight/twilight_standby/index.html</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-standby">https://docs.rs/twilight-standby</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-standby">https://crates.io/crates/twilight-standby</a></p>
 <h1><a class="header" href="#first-party" id="first-party">First-party</a></h1>
 <p>Twilight includes crates maintained by the organization, but not included as
@@ -645,7 +645,7 @@ let embed = EmbedBuilder::new()
 </span></code></pre></pre>
 <h2><a class="header" href="#links-7" id="links-7">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder">https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder</a></p>
-<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_embed_builder/index.html">https://twilight-rs.github.io/twilight/twilight_embed_builder/index.html</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-embed-builder">https://docs.rs/twilight-embed-builder</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-embed-builder">https://crates.io/crates/twilight-embed-builder</a></p>
 <h1><a class="header" href="#mention" id="mention">Mention</a></h1>
 <p><code>twilight-mention</code> is a utility crate to mention <a href="chapter_1_crates/section_7_first_party/../section_1_model.html">model</a> resources.</p>
@@ -668,7 +668,7 @@ let message = format!(&quot;Hey there, {}!&quot;, user_id.mention());
 </span></code></pre></pre>
 <h2><a class="header" href="#links-8" id="links-8">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/mention">https://github.com/twilight-rs/twilight/tree/trunk/utils/mention</a></p>
-<p><em>docs</em>: <a href="https://twilight-rs.github.io/twilight/twilight_mention/index.html">https://twilight-rs.github.io/twilight/twilight_mention/index.html</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-mention">https://docs.rs/twilight-mention</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-mention">https://crates.io/crates/twilight-mention</a></p>
 <h1><a class="header" href="#lavalink" id="lavalink">Lavalink</a></h1>
 <p><code>twilight-lavalink</code> is a client for <a href="https://github.com/Frederikam/Lavalink">Lavalink</a> for use with <a href="chapter_1_crates/section_7_first_party/../section_1_model.html">model</a> events from
@@ -722,7 +722,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync + 'static&gt;
 </code></pre></pre>
 <h2><a class="header" href="#links-9" id="links-9">Links</a></h2>
 <p><strong>source</strong>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/lavalink">https://github.com/twilight-rs/twilight/tree/trunk/lavalink</a></p>
-<p><strong>docs</strong>: <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/index.html">https://twilight-rs.github.io/twilight/twilight_lavalink/index.html</a></p>
+<p><strong>docs</strong>: <a href="https://docs.rs/twilight-lavalink">https://docs.rs/twilight-lavalink</a></p>
 <p><strong>crates.io</strong>: <a href="https://crates.io/crates/twilight-lavalink">https://crates.io/crates/twilight-lavalink</a></p>
 <h1><a class="header" href="#util" id="util">Util</a></h1>
 <p><code>twilight-util</code> is a utility crate that adds utilities to the twilight
@@ -746,7 +746,7 @@ let timestamp = user.timestamp();
 </span></code></pre></pre>
 <h2><a class="header" href="#links-10" id="links-10">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/util">https://github.com/twilight-rs/twilight/tree/trunk/util</a></p>
-<p><em>docs</em>: <a href="https://api.twilight.rs/twilight_util/index.html">https://api.twilight.rs/twilight_util/index.html</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-util">https://docs.rs/twilight-util</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-util">https://crates.io/crates/twilight-util</a></p>
 <h1><a class="header" href="#gateway-queue" id="gateway-queue">Gateway queue</a></h1>
 <p><code>twilight-gateway-queue</code> is a trait and some implementations that are used by
@@ -758,7 +758,7 @@ re-exports of these crates through the <a href="chapter_1_crates/section_7_first
 </code></pre>
 <h2><a class="header" href="#links-11" id="links-11">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/gateway/queue">https://github.com/twilight-rs/twilight/tree/trunk/gateway/queue</a></p>
-<p><em>docs</em>: <a href="https://api.twilight.rs/twilight_gateway_queue/index.html">https://api.twilight.rs/twilight_gateway_queue/index.html</a></p>
+<p><em>docs</em>: <a href="https://docs.rs/twilight-gateway-queue">https://docs.rs/twilight-gateway-queue</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-gateway-queue">https://crates.io/crates/twilight-gateway-queue</a></p>
 <h1><a class="header" href="#third-party" id="third-party">Third-party</a></h1>
 <p>Third-party crates are crates that aren't supported by the Twilight organization
