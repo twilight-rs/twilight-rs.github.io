@@ -8,14 +8,6 @@ conveniently using players to send events and retrieve information for each
 guild, and an HTTP module for creating requests using the http crate and
 providing models to deserialize their responses.
 
-## Installation
-
-Add the following to your `Cargo.toml`:
-
-```toml
-twilight-lavalink = "0.1"
-```
-
 ## Examples
 
 Create a [client], add a [node], and give events to the client to [process]

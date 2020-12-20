@@ -6,14 +6,6 @@ when creating or updating messages.
 With this library, you can create mentions for various types, such as users,
 emojis, roles, members, or channels.
 
-## Installation
-
-Add the following to your `Cargo.toml`:
-
-```toml
-twilight-embed-builder = "0.1"
-```
-
 ## Examples
 
 Build a simple embed:

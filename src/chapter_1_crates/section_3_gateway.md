@@ -34,14 +34,6 @@ tokio::spawn(async move {
 # }
 ```
 
-## Installation
-
-Add the following to your `Cargo.toml`:
-
-```toml
-twilight-gateway = "0.1"
-```
-
 ## Features
 
 `twilight-gateway` includes a few features `simd-json` for enabling faster json
