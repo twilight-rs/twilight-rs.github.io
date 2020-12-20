@@ -1,1 +1,4 @@
 book
+tests/target/
+tests/Cargo.lock
+tests/libtest.rmeta
