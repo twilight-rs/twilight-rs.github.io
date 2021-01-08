@@ -19,6 +19,8 @@ as parsing and formatting webhook links or links to a user's avatar.
 Parse a webhook URL with a token:
 
 ```rust,no_run
+# #[allow(unused_variables)]
+# fn main() -> Result<(), Box<dyn std::error::Error>> {
 use twilight_model::id::WebhookId;
 use twilight_util::link::webhook;
 
@@ -30,6 +32,7 @@ assert_eq!(
     Some("tjxHaPHLKp9aEdSwJuLeHhHHGEqIxt1aay4I67FOP9uzsYEWmj0eJmDn-2ZvCYLyOb_K"),
     token,
 );
+# Ok(()) }
 ```
 
 ### Snowflake

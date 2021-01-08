@@ -17,7 +17,7 @@ twilight-command-parser = { version = "0.3" }
 twilight-embed-builder = { version = "0.3" }
 twilight-mention = { version = "0.3" }
 twilight-standby = { version = "0.3" }
-twilight-util = { version = "0.3", features = ["snowflake"] }
+twilight-util = { version = "0.3", features = ["full"] }
 tracing-subscriber = "0.2"
 
 [build-dependencies]
