@@ -46,12 +46,11 @@ Below is a quick example of a program printing "Pong!" when a ping command comes
 in from a channel:
 
 ```rust,no_run
+use futures::stream::StreamExt;
 use std::{env, error::Error};
-use tokio::stream::StreamExt;
-use twilight_cache_inmemory::{EventType, InMemoryCache};
-use twilight_gateway::{cluster::{Cluster, ShardScheme}, Event};
+use twilight_cache_inmemory::{InMemoryCache, ResourceType};
+use twilight_gateway::{cluster::{Cluster, ShardScheme}, Event, Intents};
 use twilight_http::Client as HttpClient;
-use twilight_model::gateway::Intents;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
@@ -60,10 +59,12 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     // This is also the default.
     let scheme = ShardScheme::Auto;
 
-    let cluster = Cluster::builder(&token)
+    // Specify intents requesting events about things like new and updated
+    // messages in a guild and direct messages.
+    let intents = Intents::GUILD_MESSAGES | Intents::DIRECT_MESSAGES;
+
+    let cluster = Cluster::builder(&token, intents)
         .shard_scheme(scheme)
-        // Use intents to only listen to GUILD_MESSAGES events
-        .intents(Intents::GUILD_MESSAGES | Intents::DIRECT_MESSAGES)
         .build()
         .await?;
 
@@ -78,15 +79,9 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     // so startup a new one
     let http = HttpClient::new(&token);
 
-    // Since we only care about messages, make the cache only
-    // cache message related events
+    // Since we only care about messages, make the cache only process messages.
     let cache = InMemoryCache::builder()
-        .event_types(
-            EventType::MESSAGE_CREATE
-                | EventType::MESSAGE_DELETE
-                | EventType::MESSAGE_DELETE_BULK
-                | EventType::MESSAGE_UPDATE,
-        )
+        .resource_types(ResourceType::MESSAGE)
         .build();
 
     let mut events = cluster.events();
