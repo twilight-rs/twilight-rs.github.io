@@ -195,23 +195,45 @@ tokio::spawn(async move {
 </span><span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#features" id="features">Features</a></h2>
-<p><code>twilight-gateway</code> includes a few features <code>simd-json</code> for enabling faster json
-parsing and <code>stock-zlib</code>/<code>simd-zlib</code> for choosing between the zlib to use for
-decompressing.</p>
-<h3><a class="header" href="#simd-json" id="simd-json">Simd JSON</a></h3>
-<p><code>simd-json</code> feature enables [simd-json] support to use simd features of the modern cpus
-to deserialize json data faster. It is not enabled by default since not every cpu has those features.
-To use this feature you need to also add these lines to a file in <code>&lt;project root&gt;/.cargo/config</code></p>
+<p><code>twilight-gateway</code> includes a number of features for things ranging from
+payload deserialization to TLS features.</p>
+<h3><a class="header" href="#deserialization" id="deserialization">Deserialization</a></h3>
+<p><code>twilight-gateway</code> supports <a href="https://crates.io/crates/serde_json"><code>serde_json</code></a> and <a href="https://crates.io/crates/simd-json"><code>simd-json</code></a> for deserializing
+and serializing events.</p>
+<h4><a class="header" href="#simd" id="simd">SIMD</a></h4>
+<p>The <code>simd-json</code> feature enables usage of <a href="https://crates.io/crates/simd-json"><code>simd-json</code></a>, which uses modern CPU
+features to more efficiently deserialize JSON data. It is not enabled by
+default.</p>
+<p>In addition to enabling the feature, you will need to add the following to your
+<code>&lt;project_root&gt;/.cargo/config</code>:</p>
 <pre><code class="language-toml">[build]
 rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
 </code></pre>
-<p>You can also use the environment variable <code>RUSTFLAGS=&quot;-C target-cpu=native&quot;</code>.</p>
+<h3><a class="header" href="#metrics" id="metrics">Metrics</a></h3>
+<p>The <code>metrics</code> feature provides metrics information via the <a href="https://crates.io/crates/metrics"><code>metrics</code></a> crate.
+Some of the metrics logged are counters about received event counts and their
+types and gauges about the capacity and efficiency of the inflater of each
+shard.</p>
+<p>This is disabled by default.</p>
+<h3><a class="header" href="#tls" id="tls">TLS</a></h3>
+<p><code>twilight-gateway</code> has features to enable <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a> and
+<a href="./section_2_http.html"><code>twilight-http</code></a>'s TLS features. These features are mutually exclusive. <code>rustls</code>
+is enabled by default.</p>
+<h4><a class="header" href="#native" id="native">Native</a></h4>
+<p>The <code>native</code> feature enables <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s <code>tokio-native-tls</code> feature
+as well as <a href="./section_2_http.html"><code>twilight-http</code></a>'s <code>native</code> feature which uses <code>hyper-tls</code>.</p>
+<h4><a class="header" href="#rustls" id="rustls">RusTLS</a></h4>
+<p>The <code>rustls</code> feature enables <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s <code>tokio-rustls</code> feature and
+<a href="./section_2_http.html"><code>twilight-http</code></a>'s <code>rustls</code> feature, which use <a href="https://crates.io/crates/rustls">RusTLS</a> as the TLS backend.</p>
+<p>This is enabled by default.</p>
 <h3><a class="header" href="#zlib" id="zlib">Zlib</a></h3>
-<p><code>stock-zlib</code> makes <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> use the stock-zlib which is either upstream or the
-one included with the operating system.</p>
+<h4><a class="header" href="#stock" id="stock">Stock</a></h4>
+<p>The <code>stock-zlib</code> feature makes <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> use of the stock Zlib which is either
+upstream or the one included with the operating system.</p>
+<h4><a class="header" href="#simd-1" id="simd-1">SIMD</a></h4>
 <p><code>simd-zlib</code> enables the use of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a> which is a modern fork of zlib that in
-most cases will be more effective. Though it will add an externel dependency on
-<a href="https://cmake.org/">cmake</a>.</p>
+most cases will be more effective. However, this will add an externel dependency
+on <a href="https://cmake.org/">cmake</a>.</p>
 <p>If both are enabled or if the <code>zlib</code> feature of <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> is enabled anywhere in
 the dependency tree it will make use of that instead of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a>.</p>
 <h2><a class="header" href="#example" id="example">Example</a></h2>

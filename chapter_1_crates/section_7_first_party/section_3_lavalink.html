@@ -170,6 +170,22 @@ the <a href="../section_3_gateway.html">gateway</a>.</p>
 conveniently using players to send events and retrieve information for each
 guild, and an HTTP module for creating requests using the http crate and
 providing models to deserialize their responses.</p>
+<h2><a class="header" href="#features" id="features">Features</a></h2>
+<h3><a class="header" href="#http-support" id="http-support">HTTP Support</a></h3>
+<p>The <code>http-support</code> feature adds types for creating requests and deserializing
+response bodies of Lavalink's HTTP routes via the <code>http</code> crate.</p>
+<p>This is enabled by default.</p>
+<h3><a class="header" href="#tls" id="tls">TLS</a></h3>
+<p><code>twilight-lavalink</code> has features to enable <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s TLS features.
+These features are mutually exclusive.</p>
+<p><code>rustls</code> is enabled by default.</p>
+<h4><a class="header" href="#native" id="native">Native</a></h4>
+<p>The <code>native</code> feature enables <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s <code>tokio-native-tls</code> feature.
+This will use native TLS support, for example OpenSSL on Linux.</p>
+<h4><a class="header" href="#rustls" id="rustls">RusTLS</a></h4>
+<p>The <code>rustls</code> feature enables <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s <code>tokio-rustls</code> which uses
+the <a href="https://crates.io/crates/rustls">RusTLS</a> crate as the TLS backend.</p>
+<p>This is enabled by default.</p>
 <h2><a class="header" href="#examples" id="examples">Examples</a></h2>
 <p>Create a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html">client</a>, add a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/node/struct.Node.html">node</a>, and give events to the client to <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html#method.process">process</a>
 events:</p>

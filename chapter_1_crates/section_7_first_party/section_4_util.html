@@ -165,11 +165,37 @@
                     <main>
                         <h1><a class="header" href="#util" id="util">Util</a></h1>
 <p><code>twilight-util</code> is a utility crate that adds utilities to the twilight
-ecosystem that do not fit in any other crate. Currently, it contains
-a trait to make extracting data from Discord identifiers (Snowflakes)
-easier.</p>
-<h2><a class="header" href="#examples" id="examples">Examples</a></h2>
-<p>The snowflake trait can be used like this</p>
+ecosystem that do not fit in any other crate. One example feature of the crate
+is a trait to make extracting data from Discord identifiers (snowflakes) easier.</p>
+<h2><a class="header" href="#features" id="features">Features</a></h2>
+<p><code>twilight-util</code> by default exports nothing. Features must be individually
+enabled via feature flags.</p>
+<h3><a class="header" href="#link" id="link">Link</a></h3>
+<p>The <code>link</code> feature enables the parsing and formatting of URLs to resources, such
+as parsing and formatting webhook links or links to a user's avatar.</p>
+<h4><a class="header" href="#examples" id="examples">Examples</a></h4>
+<p>Parse a webhook URL with a token:</p>
+<pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[allow(unused_variables)]
+</span><span class="boring">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+</span>use twilight_model::id::WebhookId;
+use twilight_util::link::webhook;
+
+let url = &quot;https://discord.com/api/webhooks/794590023369752587/tjxHaPHLKp9aEdSwJuLeHhHHGEqIxt1aay4I67FOP9uzsYEWmj0eJmDn-2ZvCYLyOb_K&quot;;
+
+let (id, token) = webhook::parse(url)?;
+assert_eq!(WebhookId(794590023369752587), id);
+assert_eq!(
+    Some(&quot;tjxHaPHLKp9aEdSwJuLeHhHHGEqIxt1aay4I67FOP9uzsYEWmj0eJmDn-2ZvCYLyOb_K&quot;),
+    token,
+);
+<span class="boring">Ok(()) }
+</span></code></pre></pre>
+<h3><a class="header" href="#snowflake" id="snowflake">Snowflake</a></h3>
+<p>The <code>snowflake</code> feature calculates information out of snowflakes, such as the
+timestamp or the ID of the worker that created it.</p>
+<h4><a class="header" href="#examples-1" id="examples-1">Examples</a></h4>
+<p>Retrieve the timestamp of a snowflake in milliseconds from the Unix epoch as a
+64-bit integer:</p>
 <pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
 </span><span class="boring">fn main() {
 </span>use twilight_util::snowflake::Snowflake;
