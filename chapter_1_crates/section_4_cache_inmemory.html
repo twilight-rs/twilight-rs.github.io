@@ -167,17 +167,17 @@
 <p>Twilight includes an in-process-memory cache. It's responsible for processing
 events and caching things like guilds, channels, users, and voice states.</p>
 <h2><a class="header" href="#examples" id="examples">Examples</a></h2>
-<p>Process items that come over a shard into the cache:</p>
+<p>Process new messages that come over a shard into the cache:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 </span>use futures::StreamExt;
 use std::env;
 use twilight_cache_inmemory::InMemoryCache;
-use twilight_gateway::Shard;
+use twilight_gateway::{Intents, Shard};
 
 let token = env::var(&quot;DISCORD_TOKEN&quot;)?;
 
-let mut shard = Shard::new(token);
+let mut shard = Shard::new(token, Intents::GUILD_MESSAGES);
 shard.start().await?;
 
 let cache = InMemoryCache::new();

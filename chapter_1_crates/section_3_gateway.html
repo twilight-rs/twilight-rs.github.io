@@ -175,12 +175,13 @@ shards and unify their messages into one stream. It doesn't have a large API, yo
 usually want to spawn a task to bring it up such that you can begin to receive
 tasks as soon as they arrive.</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">use futures::StreamExt;
-</span><span class="boring">use twilight_gateway::Cluster;
+</span><span class="boring">use twilight_gateway::{Cluster, Intents};
 </span><span class="boring">
 </span><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 </span><span class="boring">   let token = &quot;dummy&quot;;
-</span>let cluster = Cluster::new(token).await?;
+</span>let intents = Intents::GUILD_MESSAGES | Intents::GUILDS;
+let cluster = Cluster::new(token, intents).await?;
 
 let mut events = cluster.events();
 
@@ -217,14 +218,15 @@ the dependency tree it will make use of that instead of <a href="https://github.
 <p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::StreamExt;
 use std::{env, error::Error};
-use twilight_gateway::Shard;
+use twilight_gateway::{Intents, Shard};
 
 #[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
     // Initialize the tracing subscriber.
     tracing_subscriber::fmt::init();
 
-    let mut shard = Shard::new(env::var(&quot;DISCORD_TOKEN&quot;)?);
+    let token = env::var(&quot;DISCORD_TOKEN&quot;)?;
+    let mut shard = Shard::new(token, Intents::GUILD_MESSAGES);
     let mut events = shard.events();
 
     shard.start().await?;

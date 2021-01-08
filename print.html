@@ -195,12 +195,11 @@ giving you a tailored experience.</p>
 <h2><a class="header" href="#a-quick-example" id="a-quick-example">A Quick Example</a></h2>
 <p>Below is a quick example of a program printing &quot;Pong!&quot; when a ping command comes
 in from a channel:</p>
-<pre><pre class="playground"><code class="language-rust no_run edition2018">use std::{env, error::Error};
-use tokio::stream::StreamExt;
-use twilight_cache_inmemory::{EventType, InMemoryCache};
-use twilight_gateway::{cluster::{Cluster, ShardScheme}, Event};
+<pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::stream::StreamExt;
+use std::{env, error::Error};
+use twilight_cache_inmemory::{InMemoryCache, ResourceType};
+use twilight_gateway::{cluster::{Cluster, ShardScheme}, Event, Intents};
 use twilight_http::Client as HttpClient;
-use twilight_model::gateway::Intents;
 
 #[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
@@ -209,10 +208,12 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
     // This is also the default.
     let scheme = ShardScheme::Auto;
 
-    let cluster = Cluster::builder(&amp;token)
+    // Specify intents requesting events about things like new and updated
+    // messages in a guild and direct messages.
+    let intents = Intents::GUILD_MESSAGES | Intents::DIRECT_MESSAGES;
+
+    let cluster = Cluster::builder(&amp;token, intents)
         .shard_scheme(scheme)
-        // Use intents to only listen to GUILD_MESSAGES events
-        .intents(Intents::GUILD_MESSAGES | Intents::DIRECT_MESSAGES)
         .build()
         .await?;
 
@@ -227,15 +228,9 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
     // so startup a new one
     let http = HttpClient::new(&amp;token);
 
-    // Since we only care about messages, make the cache only
-    // cache message related events
+    // Since we only care about messages, make the cache only process messages.
     let cache = InMemoryCache::builder()
-        .event_types(
-            EventType::MESSAGE_CREATE
-                | EventType::MESSAGE_DELETE
-                | EventType::MESSAGE_DELETE_BULK
-                | EventType::MESSAGE_UPDATE,
-        )
+        .resource_types(ResourceType::MESSAGE)
         .build();
 
     let mut events = cluster.events();
@@ -356,8 +351,7 @@ allowing you to pick your own TLS backend. By default, it uses <a href="https://
 but it can be changed to use NativeTLS which uses the TLS native to the platform, and on Unix uses OpenSSL.</p>
 <p>Ratelimiting is included out-of-the-box, along with support for proxies.</p>
 <h2><a class="header" href="#example" id="example">Example</a></h2>
-<p>A quick example showing how to send 10 messages, and then print the current
-user's name:</p>
+<p>A quick example showing how to get the current user's name:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::future;
 use std::{env, error::Error};
 use twilight_http::Client;
@@ -369,15 +363,6 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
     tracing_subscriber::fmt::init();
 
     let client = Client::new(env::var(&quot;DISCORD_TOKEN&quot;)?);
-    let channel_id = ChannelId(381_926_291_785_383_946);
-
-    future::join_all((1u8..=10).map(|x| {
-        client
-            .create_message(channel_id)
-            .content(format!(&quot;Ping #{}&quot;, x))
-            .expect(&quot;content not a valid length&quot;)
-    }))
-    .await;
 
     let me = client.current_user().await?;
     println!(&quot;Current user: {}#{}&quot;, me.name, me.discriminator);
@@ -401,12 +386,13 @@ shards and unify their messages into one stream. It doesn't have a large API, yo
 usually want to spawn a task to bring it up such that you can begin to receive
 tasks as soon as they arrive.</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">use futures::StreamExt;
-</span><span class="boring">use twilight_gateway::Cluster;
+</span><span class="boring">use twilight_gateway::{Cluster, Intents};
 </span><span class="boring">
 </span><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 </span><span class="boring">   let token = &quot;dummy&quot;;
-</span>let cluster = Cluster::new(token).await?;
+</span>let intents = Intents::GUILD_MESSAGES | Intents::GUILDS;
+let cluster = Cluster::new(token, intents).await?;
 
 let mut events = cluster.events();
 
@@ -443,14 +429,15 @@ the dependency tree it will make use of that instead of <a href="https://github.
 <p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::StreamExt;
 use std::{env, error::Error};
-use twilight_gateway::Shard;
+use twilight_gateway::{Intents, Shard};
 
 #[tokio::main]
 async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
     // Initialize the tracing subscriber.
     tracing_subscriber::fmt::init();
 
-    let mut shard = Shard::new(env::var(&quot;DISCORD_TOKEN&quot;)?);
+    let token = env::var(&quot;DISCORD_TOKEN&quot;)?;
+    let mut shard = Shard::new(token, Intents::GUILD_MESSAGES);
     let mut events = shard.events();
 
     shard.start().await?;
@@ -471,17 +458,17 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
 <p>Twilight includes an in-process-memory cache. It's responsible for processing
 events and caching things like guilds, channels, users, and voice states.</p>
 <h2><a class="header" href="#examples" id="examples">Examples</a></h2>
-<p>Process items that come over a shard into the cache:</p>
+<p>Process new messages that come over a shard into the cache:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
 </span>use futures::StreamExt;
 use std::env;
 use twilight_cache_inmemory::InMemoryCache;
-use twilight_gateway::Shard;
+use twilight_gateway::{Intents, Shard};
 
 let token = env::var(&quot;DISCORD_TOKEN&quot;)?;
 
-let mut shard = Shard::new(token);
+let mut shard = Shard::new(token, Intents::GUILD_MESSAGES);
 shard.start().await?;
 
 let cache = InMemoryCache::new();
@@ -653,7 +640,7 @@ use std::{
     net::SocketAddr,
     str::FromStr,
 };
-use twilight_gateway::Shard;
+use twilight_gateway::{Intents, Shard};
 use twilight_http::Client as HttpClient;
 use twilight_lavalink::Lavalink;
 
@@ -670,7 +657,8 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync + 'static&gt;
     let lavalink = Lavalink::new(user_id, shard_count);
     lavalink.add(lavalink_host, lavalink_auth).await?;
 
-    let mut shard = Shard::new(token);
+    let intents = Intents::GUILD_MESSAGES | Intents::GUILD_VOICE_STATES;
+    let mut shard = Shard::new(token, intents);
     let mut events = shard.events();
 
     shard.start().await?;
