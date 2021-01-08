@@ -8,6 +8,34 @@ conveniently using players to send events and retrieve information for each
 guild, and an HTTP module for creating requests using the http crate and
 providing models to deserialize their responses.
 
+## Features
+
+### HTTP Support
+
+The `http-support` feature adds types for creating requests and deserializing
+response bodies of Lavalink's HTTP routes via the `http` crate.
+
+This is enabled by default.
+
+### TLS
+
+`twilight-lavalink` has features to enable [`async-tungstenite`]'s TLS features.
+These features are mutually exclusive.
+
+`rustls` is enabled by default.
+
+#### Native
+
+The `native` feature enables [`async-tungstenite`]'s `tokio-native-tls` feature.
+This will use native TLS support, for example OpenSSL on Linux.
+
+#### RusTLS
+
+The `rustls` feature enables [`async-tungstenite`]'s `tokio-rustls` which uses
+the [RusTLS] crate as the TLS backend.
+
+This is enabled by default.
+
 ## Examples
 
 Create a [client], add a [node], and give events to the client to [process]
@@ -60,9 +88,11 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 
 **crates.io**: <https://crates.io/crates/twilight-lavalink>
 
+[RusTLS]: https://crates.io/crates/rustls
 [Lavalink]: https://github.com/Frederikam/Lavalink
 [client]: https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html
 [gateway]: ../section_3_gateway.html
 [model]: ../section_1_model.html
 [node]: https://twilight-rs.github.io/twilight/twilight_lavalink/node/struct.Node.html
 [process]: https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html#method.process
+[`async-tungstenite`]: https://crates.io/crates/async-tungstenite
