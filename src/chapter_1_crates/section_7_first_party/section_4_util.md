@@ -6,13 +6,13 @@ is a trait to make extracting data from Discord identifiers (snowflakes) easier.
 
 ## Features
 
-`twilight-util` by default exports nothing. Features must be individually opted
-into via feature flags.
+`twilight-util` by default exports nothing. Features must be individually
+enabled via feature flags.
 
 ### Link
 
-Enables the parsing and formatting of URLs to resources, such as parsing and
-formatting webhook links or links to a user's avatar.
+The `link` feature enables the parsing and formatting of URLs to resources, such
+as parsing and formatting webhook links or links to a user's avatar.
 
 #### Examples
 
@@ -34,8 +34,8 @@ assert_eq!(
 
 ### Snowflake
 
-Calculate information out of snowflakes, such as the timestamp or the ID of the
-worker that created it.
+The `snowflake` feature calculates information out of snowflakes, such as the
+timestamp or the ID of the worker that created it.
 
 #### Examples
 

@@ -46,7 +46,7 @@ payload deserialization to TLS features.
 `twilight-gateway` supports [`serde_json`] and [`simd-json`] for deserializing
 and serializing events.
 
-#### Simd JSON
+#### SIMD
 
 The `simd-json` feature enables usage of [`simd-json`], which uses modern CPU
 features to more efficiently deserialize JSON data. It is not enabled by
