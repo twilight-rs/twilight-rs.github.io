@@ -6,7 +6,7 @@ events and caching things like guilds, channels, users, and voice states.
 
 ## Examples
 
-Process items that come over a shard into the cache:
+Process new messages that come over a shard into the cache:
 
 ```rust,no_run
 # #[tokio::main]
@@ -14,11 +14,11 @@ Process items that come over a shard into the cache:
 use futures::StreamExt;
 use std::env;
 use twilight_cache_inmemory::InMemoryCache;
-use twilight_gateway::Shard;
+use twilight_gateway::{Intents, Shard};
 
 let token = env::var("DISCORD_TOKEN")?;
 
-let mut shard = Shard::new(token);
+let mut shard = Shard::new(token, Intents::GUILD_MESSAGES);
 shard.start().await?;
 
 let cache = InMemoryCache::new();

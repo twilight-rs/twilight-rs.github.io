@@ -21,7 +21,7 @@ use std::{
     net::SocketAddr,
     str::FromStr,
 };
-use twilight_gateway::Shard;
+use twilight_gateway::{Intents, Shard};
 use twilight_http::Client as HttpClient;
 use twilight_lavalink::Lavalink;
 
@@ -38,7 +38,8 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     let lavalink = Lavalink::new(user_id, shard_count);
     lavalink.add(lavalink_host, lavalink_auth).await?;
 
-    let mut shard = Shard::new(token);
+    let intents = Intents::GUILD_MESSAGES | Intents::GUILD_VOICE_STATES;
+    let mut shard = Shard::new(token, intents);
     let mut events = shard.events();
 
     shard.start().await?;

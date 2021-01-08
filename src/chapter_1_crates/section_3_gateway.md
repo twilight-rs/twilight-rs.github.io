@@ -15,12 +15,13 @@ tasks as soon as they arrive.
 
 ```rust,no_run
 # use futures::StreamExt;
-# use twilight_gateway::Cluster;
+# use twilight_gateway::{Cluster, Intents};
 #
 # #[tokio::main]
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 #    let token = "dummy";
-let cluster = Cluster::new(token).await?;
+let intents = Intents::GUILD_MESSAGES | Intents::GUILDS;
+let cluster = Cluster::new(token, intents).await?;
 
 let mut events = cluster.events();
 
@@ -70,14 +71,15 @@ Starting a `Shard` and printing the contents of new messages as they come in:
 ```rust,no_run
 use futures::StreamExt;
 use std::{env, error::Error};
-use twilight_gateway::Shard;
+use twilight_gateway::{Intents, Shard};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     // Initialize the tracing subscriber.
     tracing_subscriber::fmt::init();
 
-    let mut shard = Shard::new(env::var("DISCORD_TOKEN")?);
+    let token = env::var("DISCORD_TOKEN")?;
+    let mut shard = Shard::new(token, Intents::GUILD_MESSAGES);
     let mut events = shard.events();
 
     shard.start().await?;
