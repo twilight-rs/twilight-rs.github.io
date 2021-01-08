@@ -37,29 +37,68 @@ tokio::spawn(async move {
 
 ## Features
 
-`twilight-gateway` includes a few features `simd-json` for enabling faster json
-parsing and `stock-zlib`/`simd-zlib` for choosing between the zlib to use for
-decompressing.
 
-### Simd JSON
+`twilight-gateway` includes a number of features for things ranging from
+payload deserialization to TLS features.
 
-`simd-json` feature enables [simd-json] support to use simd features of the modern cpus
-to deserialize json data faster. It is not enabled by default since not every cpu has those features.
-To use this feature you need to also add these lines to a file in `<project root>/.cargo/config`
+### Deserialization
+
+`twilight-gateway` supports [`serde_json`] and [`simd-json`] for deserializing
+and serializing events.
+
+#### Simd JSON
+
+The `simd-json` feature enables usage of [`simd-json`], which uses modern CPU
+features to more efficiently deserialize JSON data. It is not enabled by
+default.
+
+In addition to enabling the feature, you will need to add the following to your
+`<project_root>/.cargo/config`:
+
 ```toml
 [build]
 rustflags = ["-C", "target-cpu=native"]
 ```
-You can also use the environment variable `RUSTFLAGS="-C target-cpu=native"`.
+
+### Metrics
+
+The `metrics` feature provides metrics information via the [`metrics`] crate.
+Some of the metrics logged are counters about received event counts and their
+types and gauges about the capacity and efficiency of the inflater of each
+shard.
+
+This is disabled by default.
+
+### TLS
+
+`twilight-gateway` has features to enable [`async-tungstenite`] and
+[`twilight-http`]'s TLS features. These features are mutually exclusive. `rustls`
+is enabled by default.
+
+#### Native
+
+The `native` feature enables [`async-tungstenite`]'s `tokio-native-tls` feature
+as well as [`twilight-http`]'s `native` feature which uses `hyper-tls`.
+
+#### RusTLS
+
+The `rustls` feature enables [`async-tungstenite`]'s `tokio-rustls` feature and
+[`twilight-http`]'s `rustls` feature, which use [RusTLS] as the TLS backend.
+
+This is enabled by default.
 
 ### Zlib
 
-`stock-zlib` makes [flate2] use the stock-zlib which is either upstream or the
-one included with the operating system.
+#### Stock
+
+The `stock-zlib` feature makes [flate2] use of the stock Zlib which is either
+upstream or the one included with the operating system.
+
+#### SIMD
 
 `simd-zlib` enables the use of [zlib-ng] which is a modern fork of zlib that in
-most cases will be more effective. Though it will add an externel dependency on
-[cmake].
+most cases will be more effective. However, this will add an externel dependency
+on [cmake].
 
 If both are enabled or if the `zlib` feature of [flate2] is enabled anywhere in
 the dependency tree it will make use of that instead of [zlib-ng].
@@ -102,6 +141,14 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 *crates.io*: <https://crates.io/crates/twilight-gateway>
 
 [img:shard]: ./section_3_shard.png
+[RusTLS]: https://crates.io/crates/rustls
 [cmake]: https://cmake.org/
 [flate2]: https://github.com/alexcrichton/flate2-rs
 [zlib-ng]: https://github.com/zlib-ng/zlib-ng
+[`async-tungstenite`]: https://crates.io/crates/async-tungstenite
+[`hyper-rustls`]: https://crates.io/crates/hyper-rustls
+[`hyper-tls`]: https://crates.io/crates/hyper-tls
+[`metrics`]: https://crates.io/crates/metrics
+[`serde_json`]: https://crates.io/crates/serde_json
+[`simd-json`]: https://crates.io/crates/simd-json
+[`twilight-http`]: ./section_2_http.md
