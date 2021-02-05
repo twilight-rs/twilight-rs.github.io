@@ -21,9 +21,9 @@ Lasagne bot is a bot that posts garfield comics.
 
 *Source*: [Sr.ht][bot:lasagna:source]
 
-## Closed-Source
-
 ### HarTex
+
+*Source*: [GitHub][bot:hartex:source]
 
 HarTex is a Discord bot built and optimized for server administration and moderation needs in mind.
 
@@ -34,3 +34,4 @@ HarTex is a Discord bot built and optimized for server administration and modera
 
 [bot:gearbot:source]: https://github.com/gearbot/GearBot-2
 [bot:lasagna:source]: https://git.sr.ht/~erk/lasagna
+[bot:hartex:source]: https://github.com/HT-Studios/HarTex-rust-discord-bot
