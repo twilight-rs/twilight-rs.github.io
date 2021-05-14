@@ -33,6 +33,6 @@ or extended by other Twilight crates.
 
 *crates.io*: <https://crates.io/crates/twilight-model>
 
-[Embed Builder]: a
+[Embed Builder]: ./section_7_first_party/section_1_embed_builder.md
 [Lavalink]: ./section_7_first_party/section_2_lavalink.md
 [serde]: https://serde.rs/
