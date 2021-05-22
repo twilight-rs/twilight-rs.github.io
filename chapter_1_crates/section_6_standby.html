@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,14 +165,14 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#standby" id="standby">Standby</a></h1>
+                        <h1 id="standby"><a class="header" href="#standby">Standby</a></h1>
 <p>Standby is a utility to wait for an event to happen based on a predicate check.
 For example, you may have a command that makes a reaction menu of ✅ and ❌. If
 you want to handle a reaction to these, using something like an
 application-level state or event stream may not suit your use case. It may be
 cleaner to wait for a reaction inline to your function. This is where Standby
 comes in.</p>
-<h2><a class="header" href="#examples" id="examples">Examples</a></h2>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <p>Wait for a message in channel 123 by user 456 with the content &quot;test&quot;:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[allow(unused_variables)]
 </span><span class="boring">#[tokio::main]
@@ -187,7 +189,7 @@ let message = standby.wait_for_message(ChannelId(123), |event: &amp;MessageCreat
 <span class="boring">    Ok(())
 </span><span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links" id="links">Links</a></h2>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/standby">https://github.com/twilight-rs/twilight/tree/trunk/standby</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-standby">https://docs.rs/twilight-standby</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-standby">https://crates.io/crates/twilight-standby</a></p>

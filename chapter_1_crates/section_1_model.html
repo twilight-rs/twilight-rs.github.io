@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#model" id="model">Model</a></h1>
+                        <h1 id="model"><a class="header" href="#model">Model</a></h1>
 <p><code>twilight-model</code> is a crate of models for use with <a href="https://serde.rs/">serde</a> defining the Discord
 APIs with limited implementations on top of them.</p>
 <p>These are in a single crate for ease of use, a single point of definition,
@@ -171,7 +173,7 @@ and a sort of versioning of the Discord API. Similar to how a database
 schema progresses in versions, the definition of the API also progresses in
 versions.</p>
 <p>Most other Twilight crates use types from this crate. For example, the
-<a href="a">Embed Builder</a> crate primarily uses types having to do with channel message
+<a href="./section_7_first_party/section_1_embed_builder.html">Embed Builder</a> crate primarily uses types having to do with channel message
 embeds, while the <a href="./section_7_first_party/section_2_lavalink.html">Lavalink</a> crate works with a few of the events received from
 the gateway. These types being in a single versioned definition is beneficial
 because it removes the need for crates to rely on other large and unnecessary
@@ -184,7 +186,7 @@ resource categories. For example, <code>gateway</code> contains types used to in
 and returned by the gateway API. <code>guild</code> contains types owned by the Guild
 resource category. These types may be directly returned by, built on top of,
 or extended by other Twilight crates.</p>
-<h2><a class="header" href="#links" id="links">Links</a></h2>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/master/model">https://github.com/twilight-rs/twilight/tree/master/model</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-model">https://docs.rs/twilight-model</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-model">https://crates.io/crates/twilight-model</a></p>

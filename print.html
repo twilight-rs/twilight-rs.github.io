@@ -138,13 +138,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -165,7 +167,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#overview" id="overview">Overview</a></h1>
+                        <h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
 <p><img
   src="https://raw.githubusercontent.com/twilight-rs/twilight/trunk/logo.png"
   alt="twilight logo"
@@ -174,7 +176,7 @@
 <p><strong>twilight</strong> is a powerful asynchronous, flexible, and scalable ecosystem of
 Rust libraries for the Discord API.</p>
 <p><a href="https://crates.io/teams/github:twilight-rs:core">Check out the crates on crates.io</a>.</p>
-<h2><a class="header" href="#who-twilight-is-for" id="who-twilight-is-for">Who Twilight is For</a></h2>
+<h2 id="who-twilight-is-for"><a class="header" href="#who-twilight-is-for">Who Twilight is For</a></h2>
 <p>Twilight is meant for people who are very familiar with Rust and at least
 somewhat familiar with Discord bots. It aims to be the library you use when you
 want - or, maybe for scaling reasons, need - the freedom to structure things
@@ -183,16 +185,16 @@ how you want and do things that other libraries may not strongly cater to.</p>
 <a href="https://crates.io/crates/serenity">serenity</a> is a great library for getting started and offers an opinionated,
 batteries-included approach to making bots. You'll probably have a better
 experience with it and we recommend you check it out.</p>
-<h2><a class="header" href="#the-guide" id="the-guide">The Guide</a></h2>
+<h2 id="the-guide"><a class="header" href="#the-guide">The Guide</a></h2>
 <p>In this guide you'll learn about the core crates in the twilight ecosystem,
 useful first-party crates for more advanced use cases, and third-party crates
 giving you a tailored experience.</p>
-<h2><a class="header" href="#links" id="links">Links</a></h2>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p>The organization for the project is <a href="https://github.com/twilight-rs">on GitHub</a>.</p>
 <p>The crates are available on <a href="https://crates.io/teams/github:twilight-rs:core">crates.io</a>.</p>
 <p>The API docs are also hosted for the <a href="https://api.twilight.rs">latest version</a>.</p>
 <p>There is a community and support server <a href="https://discord.gg/7jj8n7D">on Discord</a>.</p>
-<h2><a class="header" href="#a-quick-example" id="a-quick-example">A Quick Example</a></h2>
+<h2 id="a-quick-example"><a class="header" href="#a-quick-example">A Quick Example</a></h2>
 <p>Below is a quick example of a program printing &quot;Pong!&quot; when a ping command comes
 in from a channel:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::stream::StreamExt;
@@ -265,7 +267,7 @@ async fn handle_event(
     Ok(())
 }
 </code></pre></pre>
-<h1><a class="header" href="#support" id="support">Support</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="support"><a class="header" href="#support">Support</a></h1>
 <blockquote>
 <p>The guide, and Twilight as a whole, assume familiarity with Rust, Rust's
 asynchronous features, and bots in general. If you're new to Rust and/or new
@@ -277,22 +279,22 @@ batteries-included approach to the Discord API.</p>
 <p>If you have a question, then the issues or the server are both good fits for it.
 If you find a bug, then the issues section is the best place.</p>
 <p>The API documentation is <a href="https://api.twilight.rs">also available</a>.</p>
-<h3><a class="header" href="#supported-rust-versions" id="supported-rust-versions">Supported Rust Versions</a></h3>
+<h3 id="supported-rust-versions"><a class="header" href="#supported-rust-versions">Supported Rust Versions</a></h3>
 <p>Twilight currently supports an MSRV of Rust 1.48+.</p>
-<h3><a class="header" href="#breaking-changes" id="breaking-changes">Breaking Changes</a></h3>
+<h3 id="breaking-changes"><a class="header" href="#breaking-changes">Breaking Changes</a></h3>
 <p>Although Twilight aims to design APIs right the first time, that obviously won't
 happen. A lot of effort is spent designing clear and correct interfaces.</p>
 <p>While Twilight takes care to avoid the need for breaking changes, it will be
 fearless when it needs to do so: they won't be avoided for the sake of avoiding
 a change. Breaking changes won't be piled up over time to make a single big
 release: major versions will be often and painless.</p>
-<h1><a class="header" href="#crates" id="crates">Crates</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="crates"><a class="header" href="#crates">Crates</a></h1>
 <p>Twilight is, at heart, an ecosystem. These components of the ecosystem don't
 depend on each other in unnecessary ways, allowing you to pick and choose and
 combine the crates that you need for your use case. The crates for Twilight are
 categorised into three groups: the <em>core crates</em>, <em>first-party crates</em>, and <em>third-party
 crates</em>.</p>
-<h2><a class="header" href="#core-crates" id="core-crates">Core Crates</a></h2>
+<h2 id="core-crates"><a class="header" href="#core-crates">Core Crates</a></h2>
 <p>Twilight includes a few crates which are the &quot;building blocks&quot; to most peoples'
 use cases. You might not need them all, but generally speaking you'll need most
 of them. Most of them wrap Discord's various APIs.</p>
@@ -308,18 +310,18 @@ out of messages.</li>
 <li><a href="chapter_1_crates/./section_6_standby.html">standby</a>: Utility for asynchronously waiting for certain events, like a new
 message in a channel or a new reaction to a message.</li>
 </ul>
-<h2><a class="header" href="#first-party-crates" id="first-party-crates">First-Party Crates</a></h2>
+<h2 id="first-party-crates"><a class="header" href="#first-party-crates">First-Party Crates</a></h2>
 <p>There are some first-party crates maintained by the Twilight organization, but
 not included in the core experience. These might be for more advanced or
 specific use cases or clients for third-party services. An example of a
 first-party crate is <a href="chapter_1_crates/./section_7_first_party/section_3_lavalink.html"><code>twilight-lavalink</code></a>, a Client for interacting with
 <a href="https://github.com/Frederikam/Lavalink">Lavalink</a>.</p>
-<h2><a class="header" href="#third-party-crates" id="third-party-crates">Third-Party Crates</a></h2>
+<h2 id="third-party-crates"><a class="header" href="#third-party-crates">Third-Party Crates</a></h2>
 <p>Third-party crates are crates that aren't officially supported by the
 Twilight organization, but are recognised by it. An example is
 <a href="https://github.com/rarity-rs/permission-calculator"><code>rarity-rs/permission-calculator</code></a>, which has interfaces for things like
 calculating the permissions for a member in a channel.</p>
-<h1><a class="header" href="#model" id="model">Model</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="model"><a class="header" href="#model">Model</a></h1>
 <p><code>twilight-model</code> is a crate of models for use with <a href="https://serde.rs/">serde</a> defining the Discord
 APIs with limited implementations on top of them.</p>
 <p>These are in a single crate for ease of use, a single point of definition,
@@ -327,7 +329,7 @@ and a sort of versioning of the Discord API. Similar to how a database
 schema progresses in versions, the definition of the API also progresses in
 versions.</p>
 <p>Most other Twilight crates use types from this crate. For example, the
-<a href="chapter_1_crates/a">Embed Builder</a> crate primarily uses types having to do with channel message
+<a href="chapter_1_crates/./section_7_first_party/section_1_embed_builder.html">Embed Builder</a> crate primarily uses types having to do with channel message
 embeds, while the <a href="chapter_1_crates/./section_7_first_party/section_2_lavalink.html">Lavalink</a> crate works with a few of the events received from
 the gateway. These types being in a single versioned definition is beneficial
 because it removes the need for crates to rely on other large and unnecessary
@@ -340,21 +342,21 @@ resource categories. For example, <code>gateway</code> contains types used to in
 and returned by the gateway API. <code>guild</code> contains types owned by the Guild
 resource category. These types may be directly returned by, built on top of,
 or extended by other Twilight crates.</p>
-<h2><a class="header" href="#links-1" id="links-1">Links</a></h2>
+<h2 id="links-1"><a class="header" href="#links-1">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/master/model">https://github.com/twilight-rs/twilight/tree/master/model</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-model">https://docs.rs/twilight-model</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-model">https://crates.io/crates/twilight-model</a></p>
-<h1><a class="header" href="#http" id="http">HTTP</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="http"><a class="header" href="#http">HTTP</a></h1>
 <p><code>twilight-http</code> is an HTTP client wrapping all of the documented Discord HTTP API.
 It is built on top of <a href="https://github.com/seanmonstar/reqwest">Reqwest</a>, and supports taking any generic Reqwest client,
 allowing you to pick your own TLS backend. By default, it uses <a href="https://github.com/ctz/rustls">RusTLS</a> a Rust TLS implementation,
 but it can be changed to use NativeTLS which uses the TLS native to the platform, and on Unix uses OpenSSL.</p>
 <p>Ratelimiting is included out-of-the-box, along with support for proxies.</p>
-<h2><a class="header" href="#features" id="features">Features</a></h2>
-<h3><a class="header" href="#deserialization" id="deserialization">Deserialization</a></h3>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<h3 id="deserialization"><a class="header" href="#deserialization">Deserialization</a></h3>
 <p><code>twilight-gateway</code> supports <a href="https://crates.io/crates/serde_json"><code>serde_json</code></a> and <a href="https://crates.io/crates/simd-json"><code>simd-json</code></a> for deserializing
 and serializing events.</p>
-<h4><a class="header" href="#simd" id="simd">SIMD</a></h4>
+<h4 id="simd"><a class="header" href="#simd">SIMD</a></h4>
 <p>The <code>simd-json</code> feature enables usage of <a href="https://crates.io/crates/simd-json"><code>simd-json</code></a>, which uses modern CPU
 features to more efficiently deserialize JSON data. It is not enabled by
 default.</p>
@@ -363,17 +365,17 @@ default.</p>
 <pre><code class="language-toml">[build]
 rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
 </code></pre>
-<h3><a class="header" href="#tls" id="tls">TLS</a></h3>
+<h3 id="tls"><a class="header" href="#tls">TLS</a></h3>
 <p><code>twilight-http</code> has features to enable certain HTTPS TLS connectors.</p>
 <p>These features are mutually exclusive. <code>rustls</code> is enabled by default.</p>
-<h4><a class="header" href="#native" id="native">Native</a></h4>
+<h4 id="native"><a class="header" href="#native">Native</a></h4>
 <p>The <code>native</code> feature causes the client to use <a href="https://crates.io/crates/hyper-tls"><code>hyper-tls</code></a>. This will use the
 native TLS backend, such as OpenSSL on Linux.</p>
-<h4><a class="header" href="#rustls" id="rustls">RusTLS</a></h4>
+<h4 id="rustls"><a class="header" href="#rustls">RusTLS</a></h4>
 <p>The <code>rustls</code> feature causes the client to use <a href="https://crates.io/crates/hyper-rustls"><code>hyper-rustls</code></a>. This enables
 usage of the <a href="https://github.com/ctz/rustls">RusTLS</a> crate as the TLS backend.</p>
 <p>This is enabled by default.</p>
-<h2><a class="header" href="#example" id="example">Example</a></h2>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
 <p>A quick example showing how to get the current user's name:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::future;
 use std::{env, error::Error};
@@ -393,11 +395,11 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
     Ok(())
 }
 </code></pre></pre>
-<h2><a class="header" href="#links-2" id="links-2">Links</a></h2>
+<h2 id="links-2"><a class="header" href="#links-2">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/http">https://github.com/twilight-rs/twilight/tree/trunk/http</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-http">https://docs.rs/twilight-http</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-http">https://crates.io/crates/twilight-http</a></p>
-<h1><a class="header" href="#gateway" id="gateway">Gateway</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="gateway"><a class="header" href="#gateway">Gateway</a></h1>
 <p><code>twilight-gateway</code> is an implementation of a client over Discord's websocket
 gateway.</p>
 <p>The main type is the <code>Shard</code>: it connects to the gateway, receives messages,
@@ -428,13 +430,13 @@ tokio::spawn(async move {
 </span><span class="boring">    Ok(())
 </span><span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#features-1" id="features-1">Features</a></h2>
+<h2 id="features-1"><a class="header" href="#features-1">Features</a></h2>
 <p><code>twilight-gateway</code> includes a number of features for things ranging from
 payload deserialization to TLS features.</p>
-<h3><a class="header" href="#deserialization-1" id="deserialization-1">Deserialization</a></h3>
+<h3 id="deserialization-1"><a class="header" href="#deserialization-1">Deserialization</a></h3>
 <p><code>twilight-gateway</code> supports <a href="https://crates.io/crates/serde_json"><code>serde_json</code></a> and <a href="https://crates.io/crates/simd-json"><code>simd-json</code></a> for deserializing
 and serializing events.</p>
-<h4><a class="header" href="#simd-1" id="simd-1">SIMD</a></h4>
+<h4 id="simd-1"><a class="header" href="#simd-1">SIMD</a></h4>
 <p>The <code>simd-json</code> feature enables usage of <a href="https://crates.io/crates/simd-json"><code>simd-json</code></a>, which uses modern CPU
 features to more efficiently deserialize JSON data. It is not enabled by
 default.</p>
@@ -443,34 +445,34 @@ default.</p>
 <pre><code class="language-toml">[build]
 rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
 </code></pre>
-<h3><a class="header" href="#metrics" id="metrics">Metrics</a></h3>
+<h3 id="metrics"><a class="header" href="#metrics">Metrics</a></h3>
 <p>The <code>metrics</code> feature provides metrics information via the <a href="https://crates.io/crates/metrics"><code>metrics</code></a> crate.
 Some of the metrics logged are counters about received event counts and their
 types and gauges about the capacity and efficiency of the inflater of each
 shard.</p>
 <p>This is disabled by default.</p>
-<h3><a class="header" href="#tls-1" id="tls-1">TLS</a></h3>
+<h3 id="tls-1"><a class="header" href="#tls-1">TLS</a></h3>
 <p><code>twilight-gateway</code> has features to enable <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a> and
 <a href="chapter_1_crates/./section_2_http.html"><code>twilight-http</code></a>'s TLS features. These features are mutually exclusive. <code>rustls</code>
 is enabled by default.</p>
-<h4><a class="header" href="#native-1" id="native-1">Native</a></h4>
+<h4 id="native-1"><a class="header" href="#native-1">Native</a></h4>
 <p>The <code>native</code> feature enables <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s <code>tokio-native-tls</code> feature
 as well as <a href="chapter_1_crates/./section_2_http.html"><code>twilight-http</code></a>'s <code>native</code> feature which uses <code>hyper-tls</code>.</p>
-<h4><a class="header" href="#rustls-1" id="rustls-1">RusTLS</a></h4>
+<h4 id="rustls-1"><a class="header" href="#rustls-1">RusTLS</a></h4>
 <p>The <code>rustls</code> feature enables <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s <code>tokio-rustls</code> feature and
 <a href="chapter_1_crates/./section_2_http.html"><code>twilight-http</code></a>'s <code>rustls</code> feature, which use <a href="https://crates.io/crates/rustls">RusTLS</a> as the TLS backend.</p>
 <p>This is enabled by default.</p>
-<h3><a class="header" href="#zlib" id="zlib">Zlib</a></h3>
-<h4><a class="header" href="#stock" id="stock">Stock</a></h4>
+<h3 id="zlib"><a class="header" href="#zlib">Zlib</a></h3>
+<h4 id="stock"><a class="header" href="#stock">Stock</a></h4>
 <p>The <code>stock-zlib</code> feature makes <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> use of the stock Zlib which is either
 upstream or the one included with the operating system.</p>
-<h4><a class="header" href="#simd-2" id="simd-2">SIMD</a></h4>
+<h4 id="simd-2"><a class="header" href="#simd-2">SIMD</a></h4>
 <p><code>simd-zlib</code> enables the use of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a> which is a modern fork of zlib that in
 most cases will be more effective. However, this will add an externel dependency
 on <a href="https://cmake.org/">cmake</a>.</p>
 <p>If both are enabled or if the <code>zlib</code> feature of <a href="https://github.com/alexcrichton/flate2-rs">flate2</a> is enabled anywhere in
 the dependency tree it will make use of that instead of <a href="https://github.com/zlib-ng/zlib-ng">zlib-ng</a>.</p>
-<h2><a class="header" href="#example-1" id="example-1">Example</a></h2>
+<h2 id="example-1"><a class="header" href="#example-1">Example</a></h2>
 <p>Starting a <code>Shard</code> and printing the contents of new messages as they come in:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::StreamExt;
 use std::{env, error::Error};
@@ -495,14 +497,14 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
     Ok(())
 }
 </code></pre></pre>
-<h2><a class="header" href="#links-3" id="links-3">Links</a></h2>
+<h2 id="links-3"><a class="header" href="#links-3">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/gateway">https://github.com/twilight-rs/twilight/tree/trunk/gateway</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-gateway">https://docs.rs/twilight-gateway</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-gateway">https://crates.io/crates/twilight-gateway</a></p>
-<h1><a class="header" href="#cache" id="cache">Cache</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="cache"><a class="header" href="#cache">Cache</a></h1>
 <p>Twilight includes an in-process-memory cache. It's responsible for processing
 events and caching things like guilds, channels, users, and voice states.</p>
-<h2><a class="header" href="#examples" id="examples">Examples</a></h2>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <p>Process new messages that come over a shard into the cache:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
@@ -526,11 +528,11 @@ while let Some(event) = events.next().await {
 <span class="boring">    Ok(())
 </span><span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links-4" id="links-4">Links</a></h2>
+<h2 id="links-4"><a class="header" href="#links-4">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory">https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-cache-inmemory">https://docs.rs/twilight-cache-inmemory</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-cache-inmemory">https://crates.io/crates/twilight-cache-inmemory</a></p>
-<h1><a class="header" href="#command-parser" id="command-parser">Command Parser</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="command-parser"><a class="header" href="#command-parser">Command Parser</a></h1>
 <p>The Command Parser is a basic parser for the Twilight ecosystem. We'll get this out
 of the way first: it's not a framework, and it doesn't try to be.</p>
 <p>The parser, for the most part, takes a configuration of prefixes and commands,
@@ -541,7 +543,7 @@ given to the command.</p>
 names, prefixes, and ignored guilds and users. The parser parses out commands
 matching an available command and prefix and provides the command arguments to
 you.</p>
-<h2><a class="header" href="#examples-1" id="examples-1">Examples</a></h2>
+<h2 id="examples-1"><a class="header" href="#examples-1">Examples</a></h2>
 <p>A simple parser for a bot with one prefix (<code>&quot;!&quot;</code>) and two commands, <code>&quot;echo&quot;</code>
 and <code>&quot;ping&quot;</code>:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">fn main() {
@@ -575,18 +577,18 @@ match parser.parse(&quot;!echo a message&quot;) {
 }
 <span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links-5" id="links-5">Links</a></h2>
+<h2 id="links-5"><a class="header" href="#links-5">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/command-parser">https://github.com/twilight-rs/twilight/tree/trunk/command-parser</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-command-parser">https://docs.rs/twilight-command-parser</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-command-parser">https://crates.io/crates/twilight-command-parser</a></p>
-<h1><a class="header" href="#standby" id="standby">Standby</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="standby"><a class="header" href="#standby">Standby</a></h1>
 <p>Standby is a utility to wait for an event to happen based on a predicate check.
 For example, you may have a command that makes a reaction menu of ✅ and ❌. If
 you want to handle a reaction to these, using something like an
 application-level state or event stream may not suit your use case. It may be
 cleaner to wait for a reaction inline to your function. This is where Standby
 comes in.</p>
-<h2><a class="header" href="#examples-2" id="examples-2">Examples</a></h2>
+<h2 id="examples-2"><a class="header" href="#examples-2">Examples</a></h2>
 <p>Wait for a message in channel 123 by user 456 with the content &quot;test&quot;:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[allow(unused_variables)]
 </span><span class="boring">#[tokio::main]
@@ -603,23 +605,23 @@ let message = standby.wait_for_message(ChannelId(123), |event: &amp;MessageCreat
 <span class="boring">    Ok(())
 </span><span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links-6" id="links-6">Links</a></h2>
+<h2 id="links-6"><a class="header" href="#links-6">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/standby">https://github.com/twilight-rs/twilight/tree/trunk/standby</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-standby">https://docs.rs/twilight-standby</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-standby">https://crates.io/crates/twilight-standby</a></p>
-<h1><a class="header" href="#first-party" id="first-party">First-party</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="first-party"><a class="header" href="#first-party">First-party</a></h1>
 <p>Twilight includes crates maintained by the organization, but not included as
 part of the core experience. Just like all of the core crates these are entirely
 opt-in, but are for more advanced or specific use cases, such as integration
 with other software.</p>
 <p>Although not a part of the core experience, these are given the same level of
 support as the core crates.</p>
-<h1><a class="header" href="#embed-builder" id="embed-builder">Embed Builder</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="embed-builder"><a class="header" href="#embed-builder">Embed Builder</a></h1>
 <p><code>twilight-embed-builder</code> is a utility crate to create validated embeds, useful
 when creating or updating messages.</p>
 <p>With this library, you can create mentions for various types, such as users,
 emojis, roles, members, or channels.</p>
-<h2><a class="header" href="#examples-3" id="examples-3">Examples</a></h2>
+<h2 id="examples-3"><a class="header" href="#examples-3">Examples</a></h2>
 <p>Build a simple embed:</p>
 <pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
 </span><span class="boring">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
@@ -645,15 +647,15 @@ let embed = EmbedBuilder::new()
 <span class="boring">    Ok(())
 </span><span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links-7" id="links-7">Links</a></h2>
+<h2 id="links-7"><a class="header" href="#links-7">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder">https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-embed-builder">https://docs.rs/twilight-embed-builder</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-embed-builder">https://crates.io/crates/twilight-embed-builder</a></p>
-<h1><a class="header" href="#mention" id="mention">Mention</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="mention"><a class="header" href="#mention">Mention</a></h1>
 <p><code>twilight-mention</code> is a utility crate to mention <a href="chapter_1_crates/section_7_first_party/../section_1_model.html">model</a> resources.</p>
 <p>With this library, you can create mentions for various resources, such as users,
 emojis, roles, members, or channels.</p>
-<h2><a class="header" href="#examples-4" id="examples-4">Examples</a></h2>
+<h2 id="examples-4"><a class="header" href="#examples-4">Examples</a></h2>
 <p>Create a mention formatter for a user ID, and then format it in a message:</p>
 <pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -664,34 +666,34 @@ let user_id = UserId(123);
 let message = format!(&quot;Hey there, {}!&quot;, user_id.mention());
 <span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links-8" id="links-8">Links</a></h2>
+<h2 id="links-8"><a class="header" href="#links-8">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/mention">https://github.com/twilight-rs/twilight/tree/trunk/utils/mention</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-mention">https://docs.rs/twilight-mention</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-mention">https://crates.io/crates/twilight-mention</a></p>
-<h1><a class="header" href="#lavalink" id="lavalink">Lavalink</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="lavalink"><a class="header" href="#lavalink">Lavalink</a></h1>
 <p><code>twilight-lavalink</code> is a client for <a href="https://github.com/Frederikam/Lavalink">Lavalink</a> for use with <a href="chapter_1_crates/section_7_first_party/../section_1_model.html">model</a> events from
 the <a href="chapter_1_crates/section_7_first_party/../section_3_gateway.html">gateway</a>.</p>
 <p>It includes support for managing multiple nodes, a player manager for
 conveniently using players to send events and retrieve information for each
 guild, and an HTTP module for creating requests using the http crate and
 providing models to deserialize their responses.</p>
-<h2><a class="header" href="#features-2" id="features-2">Features</a></h2>
-<h3><a class="header" href="#http-support" id="http-support">HTTP Support</a></h3>
+<h2 id="features-2"><a class="header" href="#features-2">Features</a></h2>
+<h3 id="http-support"><a class="header" href="#http-support">HTTP Support</a></h3>
 <p>The <code>http-support</code> feature adds types for creating requests and deserializing
 response bodies of Lavalink's HTTP routes via the <code>http</code> crate.</p>
 <p>This is enabled by default.</p>
-<h3><a class="header" href="#tls-2" id="tls-2">TLS</a></h3>
+<h3 id="tls-2"><a class="header" href="#tls-2">TLS</a></h3>
 <p><code>twilight-lavalink</code> has features to enable <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s TLS features.
 These features are mutually exclusive.</p>
 <p><code>rustls</code> is enabled by default.</p>
-<h4><a class="header" href="#native-2" id="native-2">Native</a></h4>
+<h4 id="native-2"><a class="header" href="#native-2">Native</a></h4>
 <p>The <code>native</code> feature enables <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s <code>tokio-native-tls</code> feature.
 This will use native TLS support, for example OpenSSL on Linux.</p>
-<h4><a class="header" href="#rustls-2" id="rustls-2">RusTLS</a></h4>
+<h4 id="rustls-2"><a class="header" href="#rustls-2">RusTLS</a></h4>
 <p>The <code>rustls</code> feature enables <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s <code>tokio-rustls</code> which uses
 the <a href="https://crates.io/crates/rustls">RusTLS</a> crate as the TLS backend.</p>
 <p>This is enabled by default.</p>
-<h2><a class="header" href="#examples-5" id="examples-5">Examples</a></h2>
+<h2 id="examples-5"><a class="header" href="#examples-5">Examples</a></h2>
 <p>Create a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html">client</a>, add a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/node/struct.Node.html">node</a>, and give events to the client to <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html#method.process">process</a>
 events:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::StreamExt;
@@ -731,21 +733,21 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync + 'static&gt;
     Ok(())
 }
 </code></pre></pre>
-<h2><a class="header" href="#links-9" id="links-9">Links</a></h2>
+<h2 id="links-9"><a class="header" href="#links-9">Links</a></h2>
 <p><strong>source</strong>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/lavalink">https://github.com/twilight-rs/twilight/tree/trunk/lavalink</a></p>
 <p><strong>docs</strong>: <a href="https://docs.rs/twilight-lavalink">https://docs.rs/twilight-lavalink</a></p>
 <p><strong>crates.io</strong>: <a href="https://crates.io/crates/twilight-lavalink">https://crates.io/crates/twilight-lavalink</a></p>
-<h1><a class="header" href="#util" id="util">Util</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="util"><a class="header" href="#util">Util</a></h1>
 <p><code>twilight-util</code> is a utility crate that adds utilities to the twilight
 ecosystem that do not fit in any other crate. One example feature of the crate
 is a trait to make extracting data from Discord identifiers (snowflakes) easier.</p>
-<h2><a class="header" href="#features-3" id="features-3">Features</a></h2>
+<h2 id="features-3"><a class="header" href="#features-3">Features</a></h2>
 <p><code>twilight-util</code> by default exports nothing. Features must be individually
 enabled via feature flags.</p>
-<h3><a class="header" href="#link" id="link">Link</a></h3>
+<h3 id="link"><a class="header" href="#link">Link</a></h3>
 <p>The <code>link</code> feature enables the parsing and formatting of URLs to resources, such
 as parsing and formatting webhook links or links to a user's avatar.</p>
-<h4><a class="header" href="#examples-6" id="examples-6">Examples</a></h4>
+<h4 id="examples-6"><a class="header" href="#examples-6">Examples</a></h4>
 <p>Parse a webhook URL with a token:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[allow(unused_variables)]
 </span><span class="boring">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
@@ -762,10 +764,10 @@ assert_eq!(
 );
 <span class="boring">Ok(()) }
 </span></code></pre></pre>
-<h3><a class="header" href="#snowflake" id="snowflake">Snowflake</a></h3>
+<h3 id="snowflake"><a class="header" href="#snowflake">Snowflake</a></h3>
 <p>The <code>snowflake</code> feature calculates information out of snowflakes, such as the
 timestamp or the ID of the worker that created it.</p>
-<h4><a class="header" href="#examples-7" id="examples-7">Examples</a></h4>
+<h4 id="examples-7"><a class="header" href="#examples-7">Examples</a></h4>
 <p>Retrieve the timestamp of a snowflake in milliseconds from the Unix epoch as a
 64-bit integer:</p>
 <pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
@@ -777,30 +779,30 @@ let user = UserId(123456);
 let timestamp = user.timestamp();
 <span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links-10" id="links-10">Links</a></h2>
+<h2 id="links-10"><a class="header" href="#links-10">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/util">https://github.com/twilight-rs/twilight/tree/trunk/util</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-util">https://docs.rs/twilight-util</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-util">https://crates.io/crates/twilight-util</a></p>
-<h1><a class="header" href="#gateway-queue" id="gateway-queue">Gateway queue</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="gateway-queue"><a class="header" href="#gateway-queue">Gateway queue</a></h1>
 <p><code>twilight-gateway-queue</code> is a trait and some implementations that are used by
 the <a href="chapter_1_crates/section_7_first_party/../section_3_gateway.html">gateway</a> to ratelimit <code>identify</code> calls. Developers should prefer to use the
 re-exports of these crates through the <a href="chapter_1_crates/section_7_first_party/../section_3_gateway.html">gateway</a>.</p>
-<h2><a class="header" href="#links-11" id="links-11">Links</a></h2>
+<h2 id="links-11"><a class="header" href="#links-11">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/gateway/queue">https://github.com/twilight-rs/twilight/tree/trunk/gateway/queue</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-gateway-queue">https://docs.rs/twilight-gateway-queue</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-gateway-queue">https://crates.io/crates/twilight-gateway-queue</a></p>
-<h1><a class="header" href="#third-party" id="third-party">Third-party</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="third-party"><a class="header" href="#third-party">Third-party</a></h1>
 <p>Third-party crates are crates that aren't supported by the Twilight organization
 but are recognised by it. Of course, use these at your own risk. :)</p>
 <p>Third-party crates may become first-party crates if they end up becoming useful
 enough for a large number of users.</p>
-<h2><a class="header" href="#list-of-crates" id="list-of-crates">List of Crates</a></h2>
+<h2 id="list-of-crates"><a class="header" href="#list-of-crates">List of Crates</a></h2>
 <p>Below is a list of crates. If you want yours added, feel free to ask!</p>
-<h3><a class="header" href="#rarity-rspermission-calculator" id="rarity-rspermission-calculator"><code>rarity-rs/permission-calculator</code></a></h3>
+<h3 id="rarity-rspermission-calculator"><a class="header" href="#rarity-rspermission-calculator"><code>rarity-rs/permission-calculator</code></a></h3>
 <p>The permission calculator is a crate for calculating the permissions of a
 member in a channel, taking into account its roles and permission overwrites.</p>
 <p>You can check it out <a href="https://github.com/rarity-rs/permission-calculator">here</a></p>
-<h1><a class="header" href="#services" id="services">Services</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="services"><a class="header" href="#services">Services</a></h1>
 <p>Twilight is built with a service-minded approach. This means that it caters to
 both monolithic and multi-serviced applications equally. If you have a very
 large bot and have a multi-serviced application and feel like Rust is a good
@@ -808,7 +810,7 @@ language to use for some of your services, then Twilight is a great choice. If
 you have a small bot and just want to get it going in a monolithic application,
 then it's also a good choice. It's easy to split off parts of your application
 into other services as your application grows.</p>
-<h2><a class="header" href="#gateway-clusters" id="gateway-clusters">Gateway clusters</a></h2>
+<h2 id="gateway-clusters"><a class="header" href="#gateway-clusters">Gateway clusters</a></h2>
 <p>One of the popular design choices when creating a multi-serviced application is
 to have a service that simply connects shards to the gateway and sends the
 events to a broker to be processed. As bots grow into hundreds or thousands of
@@ -817,41 +819,41 @@ groups of shards - can be managed by each. Twilight is a good choice for this
 use case: you can receive either events that come in in a loop and send the
 payloads to the appropriate broker stream, or you can loop over received
 payloads' bytes to send off.</p>
-<h2><a class="header" href="#gateway-session-ratelimiting" id="gateway-session-ratelimiting">Gateway session ratelimiting</a></h2>
+<h2 id="gateway-session-ratelimiting"><a class="header" href="#gateway-session-ratelimiting">Gateway session ratelimiting</a></h2>
 <p>If you have multiple clusters, then you need to queue and ratelimit your
 initialized sessions. The Gateway includes a Queue trait which you can
 implement, and the gateway will submit a request to the queue before starting a
 session. Twilight comes with a queue that supports sharding and Large Bot
 sharding, but when you start to have multiple clusters you'll want to implement
 your own. Our <a href="https://github.com/twilight-rs/gateway-queue">gateway-queue</a> is an example of this.</p>
-<h2><a class="header" href="#http-proxy-ratelimiting" id="http-proxy-ratelimiting">HTTP proxy ratelimiting</a></h2>
+<h2 id="http-proxy-ratelimiting"><a class="header" href="#http-proxy-ratelimiting">HTTP proxy ratelimiting</a></h2>
 <p>If you have multiple services or lambda functions that can make HTTP requests,
 then you'll run into ratelimiting issues. Twilight's HTTP client supports
 proxying, and can be combined with something like our very own <a href="https://github.com/twilight-rs/http-proxy">http-proxy</a>
 to proxy requests and ratelimit them.</p>
-<h2><a class="header" href="#the-sky-is-the-limit" id="the-sky-is-the-limit">The sky is the limit</a></h2>
+<h2 id="the-sky-is-the-limit"><a class="header" href="#the-sky-is-the-limit">The sky is the limit</a></h2>
 <p>You can do so much more than just this, and that's the beauty of the ecosystem:
 it's flexible enough to do anything you need, and if you find something it can't
 then we'll fix it. The goal is to remove all limitations on designs and allow
 you to do what you need.</p>
-<h1><a class="header" href="#bots-using-twilight" id="bots-using-twilight">Bots using Twilight</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="bots-using-twilight"><a class="header" href="#bots-using-twilight">Bots using Twilight</a></h1>
 <p>Below is a list of bots known to be using the Twilight ecosystem. The use could
 be as small as only <a href="./chapter_1_crates/section_3_gateway.html">the gateway</a> or <a href="./chapter_1_crates/section_2_http.html">HTTP client</a>, or as large as all of the
 <a href="./chapter_1_crates/summary.html">core crates</a>.</p>
 <p>Want your bot added? Feel free to send a PR to the <a href="https://github.com/twilight-rs/twilight-rs.github.io">repo</a>!</p>
-<h2><a class="header" href="#open-source" id="open-source">Open-Source</a></h2>
-<h3><a class="header" href="#gearbot" id="gearbot">Gearbot</a></h3>
+<h2 id="open-source"><a class="header" href="#open-source">Open-Source</a></h2>
+<h3 id="gearbot"><a class="header" href="#gearbot">Gearbot</a></h3>
 <p>The GearBot team are rewriting their bot to use Twilight, with a need for
 performance and scalability in mind.</p>
 <p><em>Source</em>: <a href="https://github.com/gearbot/GearBot-2">GitHub</a></p>
-<h3><a class="header" href="#lasagne-bot" id="lasagne-bot">Lasagne bot</a></h3>
+<h3 id="lasagne-bot"><a class="header" href="#lasagne-bot">Lasagne bot</a></h3>
 <p>Lasagne bot is a bot that posts garfield comics.</p>
 <p><em>Source</em>: <a href="https://git.sr.ht/%7Eerk/lasagna">Sr.ht</a></p>
-<h3><a class="header" href="#hartex" id="hartex">HarTex</a></h3>
+<h3 id="hartex"><a class="header" href="#hartex">HarTex</a></h3>
 <p>HarTex is a Discord bot built and optimized for server administration and moderation needs in mind.</p>
 <p><em>Source</em>: <a href="https://github.com/HT-Studios/HarTex-rust-discord-bot">GitHub</a></p>
-<h1><a class="header" href="#changelogs" id="changelogs">Changelogs</a></h1>
-<h2><a class="header" href="#a-hrefhttpsgithubcomrust-langrustreleasestag010010a---2020-09-13" id="a-hrefhttpsgithubcomrust-langrustreleasestag010010a---2020-09-13"><a href="https://github.com/rust-lang/rust/releases/tag/0.1.0">0.1.0</a> - 2020-09-13</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="changelogs"><a class="header" href="#changelogs">Changelogs</a></h1>
+<h2 id="a-hrefhttpsgithubcomrust-langrustreleasestag010010a---2020-09-13"><a class="header" href="#a-hrefhttpsgithubcomrust-langrustreleasestag010010a---2020-09-13"><a href="https://github.com/rust-lang/rust/releases/tag/0.1.0">0.1.0</a> - 2020-09-13</a></h2>
 <p>Initial release.</p>
 <p>Check out the crates on <a href="https://crates.io/teams/github:twilight-rs:core">crates.io</a>.</p>
 

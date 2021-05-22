@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,17 +165,17 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#http" id="http">HTTP</a></h1>
+                        <h1 id="http"><a class="header" href="#http">HTTP</a></h1>
 <p><code>twilight-http</code> is an HTTP client wrapping all of the documented Discord HTTP API.
 It is built on top of <a href="https://github.com/seanmonstar/reqwest">Reqwest</a>, and supports taking any generic Reqwest client,
 allowing you to pick your own TLS backend. By default, it uses <a href="https://github.com/ctz/rustls">RusTLS</a> a Rust TLS implementation,
 but it can be changed to use NativeTLS which uses the TLS native to the platform, and on Unix uses OpenSSL.</p>
 <p>Ratelimiting is included out-of-the-box, along with support for proxies.</p>
-<h2><a class="header" href="#features" id="features">Features</a></h2>
-<h3><a class="header" href="#deserialization" id="deserialization">Deserialization</a></h3>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<h3 id="deserialization"><a class="header" href="#deserialization">Deserialization</a></h3>
 <p><code>twilight-gateway</code> supports <a href="https://crates.io/crates/serde_json"><code>serde_json</code></a> and <a href="https://crates.io/crates/simd-json"><code>simd-json</code></a> for deserializing
 and serializing events.</p>
-<h4><a class="header" href="#simd" id="simd">SIMD</a></h4>
+<h4 id="simd"><a class="header" href="#simd">SIMD</a></h4>
 <p>The <code>simd-json</code> feature enables usage of <a href="https://crates.io/crates/simd-json"><code>simd-json</code></a>, which uses modern CPU
 features to more efficiently deserialize JSON data. It is not enabled by
 default.</p>
@@ -182,17 +184,17 @@ default.</p>
 <pre><code class="language-toml">[build]
 rustflags = [&quot;-C&quot;, &quot;target-cpu=native&quot;]
 </code></pre>
-<h3><a class="header" href="#tls" id="tls">TLS</a></h3>
+<h3 id="tls"><a class="header" href="#tls">TLS</a></h3>
 <p><code>twilight-http</code> has features to enable certain HTTPS TLS connectors.</p>
 <p>These features are mutually exclusive. <code>rustls</code> is enabled by default.</p>
-<h4><a class="header" href="#native" id="native">Native</a></h4>
+<h4 id="native"><a class="header" href="#native">Native</a></h4>
 <p>The <code>native</code> feature causes the client to use <a href="https://crates.io/crates/hyper-tls"><code>hyper-tls</code></a>. This will use the
 native TLS backend, such as OpenSSL on Linux.</p>
-<h4><a class="header" href="#rustls" id="rustls">RusTLS</a></h4>
+<h4 id="rustls"><a class="header" href="#rustls">RusTLS</a></h4>
 <p>The <code>rustls</code> feature causes the client to use <a href="https://crates.io/crates/hyper-rustls"><code>hyper-rustls</code></a>. This enables
 usage of the <a href="https://github.com/ctz/rustls">RusTLS</a> crate as the TLS backend.</p>
 <p>This is enabled by default.</p>
-<h2><a class="header" href="#example" id="example">Example</a></h2>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
 <p>A quick example showing how to get the current user's name:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::future;
 use std::{env, error::Error};
@@ -212,7 +214,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync&gt;&gt; {
     Ok(())
 }
 </code></pre></pre>
-<h2><a class="header" href="#links" id="links">Links</a></h2>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/http">https://github.com/twilight-rs/twilight/tree/trunk/http</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-http">https://docs.rs/twilight-http</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-http">https://crates.io/crates/twilight-http</a></p>

@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,30 +165,30 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#lavalink" id="lavalink">Lavalink</a></h1>
+                        <h1 id="lavalink"><a class="header" href="#lavalink">Lavalink</a></h1>
 <p><code>twilight-lavalink</code> is a client for <a href="https://github.com/Frederikam/Lavalink">Lavalink</a> for use with <a href="../section_1_model.html">model</a> events from
 the <a href="../section_3_gateway.html">gateway</a>.</p>
 <p>It includes support for managing multiple nodes, a player manager for
 conveniently using players to send events and retrieve information for each
 guild, and an HTTP module for creating requests using the http crate and
 providing models to deserialize their responses.</p>
-<h2><a class="header" href="#features" id="features">Features</a></h2>
-<h3><a class="header" href="#http-support" id="http-support">HTTP Support</a></h3>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<h3 id="http-support"><a class="header" href="#http-support">HTTP Support</a></h3>
 <p>The <code>http-support</code> feature adds types for creating requests and deserializing
 response bodies of Lavalink's HTTP routes via the <code>http</code> crate.</p>
 <p>This is enabled by default.</p>
-<h3><a class="header" href="#tls" id="tls">TLS</a></h3>
+<h3 id="tls"><a class="header" href="#tls">TLS</a></h3>
 <p><code>twilight-lavalink</code> has features to enable <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s TLS features.
 These features are mutually exclusive.</p>
 <p><code>rustls</code> is enabled by default.</p>
-<h4><a class="header" href="#native" id="native">Native</a></h4>
+<h4 id="native"><a class="header" href="#native">Native</a></h4>
 <p>The <code>native</code> feature enables <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s <code>tokio-native-tls</code> feature.
 This will use native TLS support, for example OpenSSL on Linux.</p>
-<h4><a class="header" href="#rustls" id="rustls">RusTLS</a></h4>
+<h4 id="rustls"><a class="header" href="#rustls">RusTLS</a></h4>
 <p>The <code>rustls</code> feature enables <a href="https://crates.io/crates/async-tungstenite"><code>async-tungstenite</code></a>'s <code>tokio-rustls</code> which uses
 the <a href="https://crates.io/crates/rustls">RusTLS</a> crate as the TLS backend.</p>
 <p>This is enabled by default.</p>
-<h2><a class="header" href="#examples" id="examples">Examples</a></h2>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <p>Create a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html">client</a>, add a <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/node/struct.Node.html">node</a>, and give events to the client to <a href="https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html#method.process">process</a>
 events:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::StreamExt;
@@ -226,7 +228,7 @@ async fn main() -&gt; Result&lt;(), Box&lt;dyn Error + Send + Sync + 'static&gt;
     Ok(())
 }
 </code></pre></pre>
-<h2><a class="header" href="#links" id="links">Links</a></h2>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p><strong>source</strong>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/lavalink">https://github.com/twilight-rs/twilight/tree/trunk/lavalink</a></p>
 <p><strong>docs</strong>: <a href="https://docs.rs/twilight-lavalink">https://docs.rs/twilight-lavalink</a></p>
 <p><strong>crates.io</strong>: <a href="https://crates.io/crates/twilight-lavalink">https://crates.io/crates/twilight-lavalink</a></p>

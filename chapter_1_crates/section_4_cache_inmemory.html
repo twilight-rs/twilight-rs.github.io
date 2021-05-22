@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,10 +165,10 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#cache" id="cache">Cache</a></h1>
+                        <h1 id="cache"><a class="header" href="#cache">Cache</a></h1>
 <p>Twilight includes an in-process-memory cache. It's responsible for processing
 events and caching things like guilds, channels, users, and voice states.</p>
-<h2><a class="header" href="#examples" id="examples">Examples</a></h2>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <p>Process new messages that come over a shard into the cache:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018"><span class="boring">#[tokio::main]
 </span><span class="boring">async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
@@ -190,7 +192,7 @@ while let Some(event) = events.next().await {
 <span class="boring">    Ok(())
 </span><span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links" id="links">Links</a></h2>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory">https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-cache-inmemory">https://docs.rs/twilight-cache-inmemory</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-cache-inmemory">https://crates.io/crates/twilight-cache-inmemory</a></p>

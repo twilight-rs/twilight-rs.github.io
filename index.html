@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,7 +165,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#overview" id="overview">Overview</a></h1>
+                        <h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
 <p><img
   src="https://raw.githubusercontent.com/twilight-rs/twilight/trunk/logo.png"
   alt="twilight logo"
@@ -172,7 +174,7 @@
 <p><strong>twilight</strong> is a powerful asynchronous, flexible, and scalable ecosystem of
 Rust libraries for the Discord API.</p>
 <p><a href="https://crates.io/teams/github:twilight-rs:core">Check out the crates on crates.io</a>.</p>
-<h2><a class="header" href="#who-twilight-is-for" id="who-twilight-is-for">Who Twilight is For</a></h2>
+<h2 id="who-twilight-is-for"><a class="header" href="#who-twilight-is-for">Who Twilight is For</a></h2>
 <p>Twilight is meant for people who are very familiar with Rust and at least
 somewhat familiar with Discord bots. It aims to be the library you use when you
 want - or, maybe for scaling reasons, need - the freedom to structure things
@@ -181,16 +183,16 @@ how you want and do things that other libraries may not strongly cater to.</p>
 <a href="https://crates.io/crates/serenity">serenity</a> is a great library for getting started and offers an opinionated,
 batteries-included approach to making bots. You'll probably have a better
 experience with it and we recommend you check it out.</p>
-<h2><a class="header" href="#the-guide" id="the-guide">The Guide</a></h2>
+<h2 id="the-guide"><a class="header" href="#the-guide">The Guide</a></h2>
 <p>In this guide you'll learn about the core crates in the twilight ecosystem,
 useful first-party crates for more advanced use cases, and third-party crates
 giving you a tailored experience.</p>
-<h2><a class="header" href="#links" id="links">Links</a></h2>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p>The organization for the project is <a href="https://github.com/twilight-rs">on GitHub</a>.</p>
 <p>The crates are available on <a href="https://crates.io/teams/github:twilight-rs:core">crates.io</a>.</p>
 <p>The API docs are also hosted for the <a href="https://api.twilight.rs">latest version</a>.</p>
 <p>There is a community and support server <a href="https://discord.gg/7jj8n7D">on Discord</a>.</p>
-<h2><a class="header" href="#a-quick-example" id="a-quick-example">A Quick Example</a></h2>
+<h2 id="a-quick-example"><a class="header" href="#a-quick-example">A Quick Example</a></h2>
 <p>Below is a quick example of a program printing &quot;Pong!&quot; when a ping command comes
 in from a channel:</p>
 <pre><pre class="playground"><code class="language-rust no_run edition2018">use futures::stream::StreamExt;

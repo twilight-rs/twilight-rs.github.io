@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,12 +165,12 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#embed-builder" id="embed-builder">Embed Builder</a></h1>
+                        <h1 id="embed-builder"><a class="header" href="#embed-builder">Embed Builder</a></h1>
 <p><code>twilight-embed-builder</code> is a utility crate to create validated embeds, useful
 when creating or updating messages.</p>
 <p>With this library, you can create mentions for various types, such as users,
 emojis, roles, members, or channels.</p>
-<h2><a class="header" href="#examples" id="examples">Examples</a></h2>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <p>Build a simple embed:</p>
 <pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
 </span><span class="boring">fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
@@ -194,7 +196,7 @@ let embed = EmbedBuilder::new()
 <span class="boring">    Ok(())
 </span><span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links" id="links">Links</a></h2>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder">https://github.com/twilight-rs/twilight/tree/trunk/utils/embed-builder</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-embed-builder">https://docs.rs/twilight-embed-builder</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-embed-builder">https://crates.io/crates/twilight-embed-builder</a></p>

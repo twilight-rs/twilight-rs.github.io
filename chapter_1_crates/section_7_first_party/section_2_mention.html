@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,11 +165,11 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#mention" id="mention">Mention</a></h1>
+                        <h1 id="mention"><a class="header" href="#mention">Mention</a></h1>
 <p><code>twilight-mention</code> is a utility crate to mention <a href="../section_1_model.html">model</a> resources.</p>
 <p>With this library, you can create mentions for various resources, such as users,
 emojis, roles, members, or channels.</p>
-<h2><a class="header" href="#examples" id="examples">Examples</a></h2>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <p>Create a mention formatter for a user ID, and then format it in a message:</p>
 <pre><pre class="playground"><code class="language-rust edition2018"><span class="boring">#[allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -178,7 +180,7 @@ let user_id = UserId(123);
 let message = format!(&quot;Hey there, {}!&quot;, user_id.mention());
 <span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#links" id="links">Links</a></h2>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p><em>source</em>: <a href="https://github.com/twilight-rs/twilight/tree/trunk/utils/mention">https://github.com/twilight-rs/twilight/tree/trunk/utils/mention</a></p>
 <p><em>docs</em>: <a href="https://docs.rs/twilight-mention">https://docs.rs/twilight-mention</a></p>
 <p><em>crates.io</em>: <a href="https://crates.io/crates/twilight-mention">https://crates.io/crates/twilight-mention</a></p>
