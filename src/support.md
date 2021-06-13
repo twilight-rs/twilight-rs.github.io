@@ -15,7 +15,7 @@ The API documentation is [also available][api docs].
 
 ### Supported Rust Versions
 
-Twilight currently supports an MSRV of Rust 1.48+.
+Twilight currently supports an MSRV of Rust 1.49+.
 
 ### Breaking Changes
 
@@ -27,7 +27,7 @@ fearless when it needs to do so: they won't be avoided for the sake of avoiding
 a change. Breaking changes won't be piled up over time to make a single big
 release: major versions will be often and painless.
 
-[Discord server]: https://discord.gg/7jj8n7D
+[Discord server]: https://discord.gg/twilight-rs
 [GitHub issues]: https://github.com/twilight-rs/twilight/issues
 [api docs]: https://api.twilight.rs
 [serenity]: https://crates.io/crates/serenity

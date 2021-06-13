@@ -58,7 +58,7 @@ let timestamp = user.timestamp();
 
 ## Links
 
-*source*: <https://github.com/twilight-rs/twilight/tree/trunk/util>
+*source*: <https://github.com/twilight-rs/twilight/tree/main/util>
 
 *docs*: <https://docs.rs/twilight-util>
 

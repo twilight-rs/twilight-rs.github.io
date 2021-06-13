@@ -53,7 +53,7 @@ match parser.parse("!echo a message") {
 
 ## Links
 
-*source*: <https://github.com/twilight-rs/twilight/tree/trunk/command-parser>
+*source*: <https://github.com/twilight-rs/twilight/tree/main/command-parser>
 
 *docs*: <https://docs.rs/twilight-command-parser>
 

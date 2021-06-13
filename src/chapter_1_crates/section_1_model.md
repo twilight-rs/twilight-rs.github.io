@@ -27,7 +27,7 @@ or extended by other Twilight crates.
 
 ## Links
 
-*source*: <https://github.com/twilight-rs/twilight/tree/master/model>
+*source*: <https://github.com/twilight-rs/twilight/tree/main/model>
 
 *docs*: <https://docs.rs/twilight-model>
 

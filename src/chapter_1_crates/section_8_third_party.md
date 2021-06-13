@@ -10,11 +10,11 @@ enough for a large number of users.
 
 Below is a list of crates. If you want yours added, feel free to ask!
 
-### `rarity-rs/permission-calculator`
+### `twilight-rs/permission-calculator`
 
 The permission calculator is a crate for calculating the permissions of a
 member in a channel, taking into account its roles and permission overwrites.
 
-You can check it out [here][`rarity-rs/permission-calculator`]
+You can check it out [here][`twilight-rs/permission-calculator`]
 
-[`rarity-rs/permission-calculator`]: https://github.com/rarity-rs/permission-calculator
+[`twilight-rs/permission-calculator`]: https://github.com/twilight-rs/permission-calculator

@@ -18,12 +18,10 @@ use twilight_gateway::{Intents, Shard};
 
 let token = env::var("DISCORD_TOKEN")?;
 
-let mut shard = Shard::new(token, Intents::GUILD_MESSAGES);
+let (mut shard, mut events) = Shard::new(token, Intents::GUILD_MESSAGES);
 shard.start().await?;
 
 let cache = InMemoryCache::new();
-
-let mut events = shard.events();
 
 while let Some(event) = events.next().await {
     cache.update(&event);
@@ -34,7 +32,7 @@ while let Some(event) = events.next().await {
 
 ## Links
 
-*source*: <https://github.com/twilight-rs/twilight/tree/trunk/cache/in-memory>
+*source*: <https://github.com/twilight-rs/twilight/tree/main/cache/in-memory>
 
 *docs*: <https://docs.rs/twilight-cache-inmemory>
 
