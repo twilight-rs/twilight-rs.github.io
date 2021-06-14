@@ -33,7 +33,7 @@ use twilight_embed_builder::{EmbedBuilder, ImageSource};
 
 let embed = EmbedBuilder::new()
     .description("Here's a cool image of Twilight Sparkle")
-    .image(ImageSource::attachment("bestpony.png"))
+    .image(ImageSource::attachment("bestpony.png")?)
     .build()?;
 #     Ok(())
 # }
