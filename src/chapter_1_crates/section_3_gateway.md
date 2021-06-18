@@ -21,9 +21,7 @@ tasks as soon as they arrive.
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 #    let token = "dummy";
 let intents = Intents::GUILD_MESSAGES | Intents::GUILDS;
-let cluster = Cluster::new(token, intents).await?;
-
-let mut events = cluster.events();
+let (cluster, mut events) = Cluster::new(token, intents).await?;
 
 let cluster_spawn = cluster.clone();
 
@@ -91,12 +89,12 @@ This is enabled by default.
 
 #### Stock
 
-The `stock-zlib` feature makes [flate2] use of the stock Zlib which is either
+The `zlib-stock` feature makes [flate2] use of the stock Zlib which is either
 upstream or the one included with the operating system.
 
 #### SIMD
 
-`simd-zlib` enables the use of [zlib-ng] which is a modern fork of zlib that in
+`zlib-simd` enables the use of [zlib-ng] which is a modern fork of zlib that in
 most cases will be more effective. However, this will add an externel dependency
 on [cmake].
 
@@ -118,8 +116,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     tracing_subscriber::fmt::init();
 
     let token = env::var("DISCORD_TOKEN")?;
-    let mut shard = Shard::new(token, Intents::GUILD_MESSAGES);
-    let mut events = shard.events();
+    let (mut shard, mut events) = Shard::new(token, Intents::GUILD_MESSAGES);
 
     shard.start().await?;
     println!("Created shard");
@@ -134,7 +131,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
 ## Links
 
-*source*: <https://github.com/twilight-rs/twilight/tree/trunk/gateway>
+*source*: <https://github.com/twilight-rs/twilight/tree/main/gateway>
 
 *docs*: <https://docs.rs/twilight-gateway>
 

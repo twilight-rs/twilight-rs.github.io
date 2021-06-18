@@ -67,8 +67,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     lavalink.add(lavalink_host, lavalink_auth).await?;
 
     let intents = Intents::GUILD_MESSAGES | Intents::GUILD_VOICE_STATES;
-    let mut shard = Shard::new(token, intents);
-    let mut events = shard.events();
+    let (mut shard, mut events) = Shard::new(token, intents);
 
     shard.start().await?;
 
@@ -82,7 +81,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 
 ## Links
 
-**source**: <https://github.com/twilight-rs/twilight/tree/trunk/lavalink>
+**source**: <https://github.com/twilight-rs/twilight/tree/main/lavalink>
 
 **docs**: <https://docs.rs/twilight-lavalink>
 

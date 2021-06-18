@@ -72,7 +72,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
 ## Links
 
-*source*: <https://github.com/twilight-rs/twilight/tree/trunk/http>
+*source*: <https://github.com/twilight-rs/twilight/tree/main/http>
 
 *docs*: <https://docs.rs/twilight-http>
 

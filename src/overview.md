@@ -1,7 +1,7 @@
 # Overview
 
 <img
-  src="https://raw.githubusercontent.com/twilight-rs/twilight/trunk/logo.png"
+  src="https://raw.githubusercontent.com/twilight-rs/twilight/main/logo.png"
   alt="twilight logo"
 />
 
@@ -63,7 +63,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     // messages in a guild and direct messages.
     let intents = Intents::GUILD_MESSAGES | Intents::DIRECT_MESSAGES;
 
-    let cluster = Cluster::builder(&token, intents)
+    let (cluster, mut events) = Cluster::builder(&token, intents)
         .shard_scheme(scheme)
         .build()
         .await?;
@@ -84,7 +84,6 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         .resource_types(ResourceType::MESSAGE)
         .build();
 
-    let mut events = cluster.events();
     // Startup an event loop to process each event in the event stream as they
     // come in.
     while let Some((shard_id, event)) = events.next().await {
@@ -121,4 +120,4 @@ async fn handle_event(
 [docs:latest]: https://api.twilight.rs
 [github]: https://github.com/twilight-rs
 [serenity]: https://crates.io/crates/serenity
-[server]: https://discord.gg/7jj8n7D
+[server]: https://discord.gg/twilight-rs

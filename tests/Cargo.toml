@@ -8,16 +8,16 @@ edition = "2018"
 futures = { version = "0.3", default-features = false }
 skeptic = "0.13.5"
 tokio = { version = "1.0", features = ["full"] }
-twilight-gateway = { version = "0.3" }
-twilight-http = { version = "0.3" }
-twilight-model = { version = "0.3" }
-twilight-lavalink = { version = "0.3" }
-twilight-cache-inmemory = { version = "0.3" }
-twilight-command-parser = { version = "0.3" }
-twilight-embed-builder = { version = "0.3" }
-twilight-mention = { version = "0.3" }
-twilight-standby = { version = "0.3" }
-twilight-util = { version = "0.3", features = ["full"] }
+twilight-gateway = { version = "0.5" }
+twilight-http = { version = "0.5" }
+twilight-model = { version = "0.5" }
+twilight-lavalink = { version = "0.5" }
+twilight-cache-inmemory = { version = "0.5" }
+twilight-command-parser = { version = "0.5" }
+twilight-embed-builder = { version = "0.5" }
+twilight-mention = { version = "0.5" }
+twilight-standby = { version = "0.5" }
+twilight-util = { version = "0.5", features = ["full"] }
 tracing-subscriber = "0.2"
 
 [build-dependencies]

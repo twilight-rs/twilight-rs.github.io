@@ -30,7 +30,7 @@ let message = standby.wait_for_message(ChannelId(123), |event: &MessageCreate| {
 
 ## Links
 
-*source*: <https://github.com/twilight-rs/twilight/tree/trunk/standby>
+*source*: <https://github.com/twilight-rs/twilight/tree/main/standby>
 
 *docs*: <https://docs.rs/twilight-standby>
 
