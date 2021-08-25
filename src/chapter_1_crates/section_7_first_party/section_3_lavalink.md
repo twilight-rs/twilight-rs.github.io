@@ -88,7 +88,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 **crates.io**: <https://crates.io/crates/twilight-lavalink>
 
 [RusTLS]: https://crates.io/crates/rustls
-[Lavalink]: https://github.com/Frederikam/Lavalink
+[Lavalink]: https://github.com/freyacodes/Lavalink
 [client]: https://twilight-rs.github.io/twilight/twilight_lavalink/client/struct.Lavalink.html
 [gateway]: ../section_3_gateway.html
 [model]: ../section_1_model.html
