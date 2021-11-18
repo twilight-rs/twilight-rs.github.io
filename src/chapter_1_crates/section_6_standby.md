@@ -15,15 +15,23 @@ Wait for a message in channel 123 by user 456 with the content "test":
 # #[allow(unused_variables)]
 # #[tokio::main]
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
-use twilight_model::{gateway::payload::MessageCreate, id::{ChannelId, UserId}};
+use twilight_model::{
+    gateway::payload::incoming::MessageCreate,
+    id::{ChannelId, UserId},
+};
 use twilight_standby::Standby;
 
 let standby = Standby::new();
 
 // Later on in the application...
-let message = standby.wait_for_message(ChannelId(123), |event: &MessageCreate| {
-    event.author.id == UserId(456) && event.content == "test"
-}).await?;
+let message = standby
+    .wait_for_message(
+        ChannelId::new(123).expect("zero id"),
+        |event: &MessageCreate| {
+            event.author.id == UserId::new(456).expect("zero id") && event.content == "test"
+        },
+    )
+    .await?;
 #     Ok(())
 # }
 ```

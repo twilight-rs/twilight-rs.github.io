@@ -27,7 +27,7 @@ use twilight_util::link::webhook;
 let url = "https://discord.com/api/webhooks/794590023369752587/tjxHaPHLKp9aEdSwJuLeHhHHGEqIxt1aay4I67FOP9uzsYEWmj0eJmDn-2ZvCYLyOb_K";
 
 let (id, token) = webhook::parse(url)?;
-assert_eq!(WebhookId(794590023369752587), id);
+assert_eq!(WebhookId::new(794590023369752587).expect("zero id"), id);
 assert_eq!(
     Some("tjxHaPHLKp9aEdSwJuLeHhHHGEqIxt1aay4I67FOP9uzsYEWmj0eJmDn-2ZvCYLyOb_K"),
     token,
@@ -51,10 +51,16 @@ Retrieve the timestamp of a snowflake in milliseconds from the Unix epoch as a
 use twilight_util::snowflake::Snowflake;
 use twilight_model::id::UserId;
 
-let user = UserId(123456);
+let user = UserId::new(123456).expect("zero id");
 let timestamp = user.timestamp();
 # }
 ```
+
+### Permission Calculator
+
+The `permission-calculator` feature is used for calculating the permissions
+of a member in a channel, taking into account its roles and permission
+overwrites.
 
 ## Links
 

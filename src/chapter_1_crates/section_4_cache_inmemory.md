@@ -18,7 +18,7 @@ use twilight_gateway::{Intents, Shard};
 
 let token = env::var("DISCORD_TOKEN")?;
 
-let (mut shard, mut events) = Shard::new(token, Intents::GUILD_MESSAGES);
+let (shard, mut events) = Shard::new(token, Intents::GUILD_MESSAGES);
 shard.start().await?;
 
 let cache = InMemoryCache::new();

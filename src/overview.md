@@ -47,7 +47,7 @@ in from a channel:
 
 ```rust,no_run
 use futures::stream::StreamExt;
-use std::{env, error::Error};
+use std::{env, error::Error, sync::Arc};
 use twilight_cache_inmemory::{InMemoryCache, ResourceType};
 use twilight_gateway::{cluster::{Cluster, ShardScheme}, Event, Intents};
 use twilight_http::Client as HttpClient;
@@ -68,6 +68,8 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         .build()
         .await?;
 
+    let cluster = Arc::new(cluster);
+
     // Start up the cluster
     let cluster_spawn = cluster.clone();
 
@@ -75,9 +77,9 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         cluster_spawn.up().await;
     });
 
-    // The http client is seperate from the gateway,
-    // so startup a new one
-    let http = HttpClient::new(&token);
+    // The http client is seperate from the gateway, so startup a new
+    // one, also use Arc such that it can be cloned to other threads.
+    let http = Arc::new(HttpClient::new(token));
 
     // Since we only care about messages, make the cache only process messages.
     let cache = InMemoryCache::builder()
@@ -91,7 +93,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         cache.update(&event);
 
         // Spawn a new task to handle the event
-        tokio::spawn(handle_event(shard_id, event, http.clone()));
+        tokio::spawn(handle_event(shard_id, event, Arc::clone(&http)));
     }
 
     Ok(())
@@ -100,11 +102,11 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 async fn handle_event(
     shard_id: u64,
     event: Event,
-    http: HttpClient,
+    http: Arc<HttpClient>,
 ) -> Result<(), Box<dyn Error + Send + Sync>> {
     match event {
         Event::MessageCreate(msg) if msg.content == "!ping" => {
-            http.create_message(msg.channel_id).content("Pong!")?.await?;
+            http.create_message(msg.channel_id).content("Pong!")?.exec().await?;
         }
         Event::ShardConnected(_) => {
             println!("Connected on shard {}", shard_id);
