@@ -60,14 +60,14 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     let lavalink_auth = env::var("LAVALINK_AUTHORIZATION")?;
     let shard_count = 1_u64;
 
-    let http = HttpClient::new(&token);
-    let user_id = http.current_user().await?.id;
+    let http = HttpClient::new(token.clone());
+    let user_id = http.current_user().exec().await?.model().await?.id;
 
     let lavalink = Lavalink::new(user_id, shard_count);
     lavalink.add(lavalink_host, lavalink_auth).await?;
 
     let intents = Intents::GUILD_MESSAGES | Intents::GUILD_VOICE_STATES;
-    let (mut shard, mut events) = Shard::new(token, intents);
+    let (shard, mut events) = Shard::new(token, intents);
 
     shard.start().await?;
 

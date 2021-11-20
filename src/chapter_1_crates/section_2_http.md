@@ -51,10 +51,8 @@ This is enabled by default.
 A quick example showing how to get the current user's name:
 
 ```rust,no_run
-use futures::future;
 use std::{env, error::Error};
 use twilight_http::Client;
-use twilight_model::id::ChannelId;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
@@ -63,7 +61,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
     let client = Client::new(env::var("DISCORD_TOKEN")?);
 
-    let me = client.current_user().await?;
+    let me = client.current_user().exec().await?.model().await?;
     println!("Current user: {}#{}", me.name, me.discriminator);
 
     Ok(())

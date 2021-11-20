@@ -14,6 +14,7 @@ usually want to spawn a task to bring it up such that you can begin to receive
 tasks as soon as they arrive.
 
 ```rust,no_run
+# use std::sync::Arc;
 # use futures::StreamExt;
 # use twilight_gateway::{Cluster, Intents};
 #
@@ -22,6 +23,7 @@ tasks as soon as they arrive.
 #    let token = "dummy";
 let intents = Intents::GUILD_MESSAGES | Intents::GUILDS;
 let (cluster, mut events) = Cluster::new(token, intents).await?;
+let cluster = Arc::new(cluster);     
 
 let cluster_spawn = cluster.clone();
 
@@ -116,7 +118,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     tracing_subscriber::fmt::init();
 
     let token = env::var("DISCORD_TOKEN")?;
-    let (mut shard, mut events) = Shard::new(token, Intents::GUILD_MESSAGES);
+    let (shard, mut events) = Shard::new(token, Intents::GUILD_MESSAGES);
 
     shard.start().await?;
     println!("Created shard");
