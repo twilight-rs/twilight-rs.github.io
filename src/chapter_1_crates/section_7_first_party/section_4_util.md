@@ -9,6 +9,42 @@ is a trait to make extracting data from Discord identifiers (snowflakes) easier.
 `twilight-util` by default exports nothing. Features must be individually
 enabled via feature flags.
 
+### Builder
+
+The `builder` feature enables builders for large structs, at the
+moment only a builder for commands is availible.
+
+#### Examples
+
+Create a command that can be used to send a animal picture in a
+certain category:
+
+```rust
+# fn main() {
+use twilight_model::application::command::CommandType;
+use twilight_util::builder::command::{BooleanBuilder, CommandBuilder, StringBuilder};
+
+CommandBuilder::new(
+    "blep".into(),
+    "Send a random adorable animal photo".into(),
+    CommandType::ChatInput,
+)
+.option(
+    StringBuilder::new("animal".into(), "The type of animal".into())
+        .required(true)
+        .choices([
+            ("Dog".into(), "animal_dog".into()),
+            ("Cat".into(), "animal_cat".into()),
+            ("Penguin".into(), "animal_penguin".into()),
+        ]),
+)
+.option(BooleanBuilder::new(
+    "only_smol".into(),
+    "Whether to show only baby animals".into(),
+));
+# }
+```
+
 ### Link
 
 The `link` feature enables the parsing and formatting of URLs to resources, such
@@ -35,6 +71,12 @@ assert_eq!(
 # Ok(()) }
 ```
 
+### Permission Calculator
+
+The `permission-calculator` feature is used for calculating the permissions
+of a member in a channel, taking into account its roles and permission
+overwrites.
+
 ### Snowflake
 
 The `snowflake` feature calculates information out of snowflakes, such as the
@@ -56,11 +98,6 @@ let timestamp = user.timestamp();
 # }
 ```
 
-### Permission Calculator
-
-The `permission-calculator` feature is used for calculating the permissions
-of a member in a channel, taking into account its roles and permission
-overwrites.
 
 ## Links
 

@@ -17,7 +17,7 @@ tasks as soon as they arrive.
 # use std::sync::Arc;
 # use futures::StreamExt;
 # use twilight_gateway::{Cluster, Intents};
-
+#
 # #[tokio::main]
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
 #    let token = "dummy";
