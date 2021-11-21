@@ -10,3 +10,9 @@ enough for a large number of users.
 
 Below is a list of crates. If you want yours added, feel free to ask!
 
+### `baptiste0928/twilight-interactions`
+
+`twilight-interactions` provides macros and utilities to make interactions easier to use.
+Its features include slash command parsing and creation from structs with derive macros.
+
+[GitHub repository](https://github.com/baptiste0928/twilight-interactions) - [Documentation](https://docs.rs/twilight-interactions/0.7.1/twilight_interactions/)
