@@ -27,6 +27,12 @@ HarTex is a Discord bot built and optimized for server administration and modera
 
 *Source*: [GitHub][bot:hartex:source]
 
+### interchannel message mover
+
+a discord bot to move messages between channels easily
+
+*Source*: [GitHub][bot:mover:source]
+
 [HTTP client]: ./chapter_1_crates/section_2_http.html
 [core crates]: ./chapter_1_crates/summary.html
 [repo]: https://github.com/twilight-rs/twilight-rs.github.io
@@ -35,3 +41,4 @@ HarTex is a Discord bot built and optimized for server administration and modera
 [bot:gearbot:source]: https://github.com/gearbot/GearBot-2
 [bot:lasagna:source]: https://git.sr.ht/~erk/lasagna
 [bot:hartex:source]: https://github.com/HT-Studios/HarTex-rust-discord-bot
+[bot:mover:source]: https://github.com/laralove143/discord-interchannel-message-mover
