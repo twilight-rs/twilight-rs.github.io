@@ -27,6 +27,12 @@ HarTex is a Discord bot built and optimized for server administration and modera
 
 *Source*: [GitHub][bot:hartex:source]
 
+### Timezoner
+
+Timezoner is a bot that lets people send a date/time that appears in everyone's own timezone.
+
+*Source*: [GitHub][bot:timezoner:source]
+
 [HTTP client]: ./chapter_1_crates/section_2_http.html
 [core crates]: ./chapter_1_crates/summary.html
 [repo]: https://github.com/twilight-rs/twilight-rs.github.io
@@ -35,3 +41,4 @@ HarTex is a Discord bot built and optimized for server administration and modera
 [bot:gearbot:source]: https://github.com/gearbot/GearBot-2
 [bot:lasagna:source]: https://git.sr.ht/~erk/lasagna
 [bot:hartex:source]: https://github.com/HT-Studios/HarTex-rust-discord-bot
+[bot:timezoner:source]: https://github.com/laralove143/timezoner-discord-bot
