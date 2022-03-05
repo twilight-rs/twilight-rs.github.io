@@ -33,6 +33,12 @@ a discord bot to move messages between channels easily
 
 *Source*: [GitHub][bot:mover:source]
 
+### Timezoner
+
+Timezoner is a bot that lets people send a date/time that appears in everyone's own timezone.
+
+*Source*: [GitHub][bot:timezoner:source]
+
 [HTTP client]: ./chapter_1_crates/section_2_http.html
 [core crates]: ./chapter_1_crates/summary.html
 [repo]: https://github.com/twilight-rs/twilight-rs.github.io
@@ -42,3 +48,4 @@ a discord bot to move messages between channels easily
 [bot:lasagna:source]: https://git.sr.ht/~erk/lasagna
 [bot:hartex:source]: https://github.com/HT-Studios/HarTex-rust-discord-bot
 [bot:mover:source]: https://github.com/laralove143/discord-interchannel-message-mover
+[bot:timezoner:source]: https://github.com/laralove143/timezoner-discord-bot
