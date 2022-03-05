@@ -27,6 +27,12 @@ HarTex is a Discord bot built and optimized for server administration and modera
 
 *Source*: [GitHub][bot:hartex:source]
 
+### interchannel message mover
+
+a discord bot to move messages between channels easily
+
+*Source*: [GitHub][bot:mover:source]
+
 ### Timezoner
 
 Timezoner is a bot that lets people send a date/time that appears in everyone's own timezone.
@@ -41,4 +47,5 @@ Timezoner is a bot that lets people send a date/time that appears in everyone's 
 [bot:gearbot:source]: https://github.com/gearbot/GearBot-2
 [bot:lasagna:source]: https://git.sr.ht/~erk/lasagna
 [bot:hartex:source]: https://github.com/HT-Studios/HarTex-rust-discord-bot
+[bot:mover:source]: https://github.com/laralove143/discord-interchannel-message-mover
 [bot:timezoner:source]: https://github.com/laralove143/timezoner-discord-bot
