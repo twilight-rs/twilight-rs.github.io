@@ -57,13 +57,13 @@ Parse a webhook URL with a token:
 ```rust,no_run
 # #[allow(unused_variables)]
 # fn main() -> Result<(), Box<dyn std::error::Error>> {
-use twilight_model::id::WebhookId;
+use twilight_model::id::Id;
 use twilight_util::link::webhook;
 
 let url = "https://discord.com/api/webhooks/794590023369752587/tjxHaPHLKp9aEdSwJuLeHhHHGEqIxt1aay4I67FOP9uzsYEWmj0eJmDn-2ZvCYLyOb_K";
 
 let (id, token) = webhook::parse(url)?;
-assert_eq!(WebhookId::new(794590023369752587).expect("zero id"), id);
+assert_eq!(Id::new(794590023369752587), id);
 assert_eq!(
     Some("tjxHaPHLKp9aEdSwJuLeHhHHGEqIxt1aay4I67FOP9uzsYEWmj0eJmDn-2ZvCYLyOb_K"),
     token,
@@ -91,9 +91,9 @@ Retrieve the timestamp of a snowflake in milliseconds from the Unix epoch as a
 # #[allow(unused_variables)]
 # fn main() {
 use twilight_util::snowflake::Snowflake;
-use twilight_model::id::UserId;
+use twilight_model::id::{Id, marker::UserMarker};
 
-let user = UserId::new(123456).expect("zero id");
+let user: Id<UserMarker> = Id::new(123456);
 let timestamp = user.timestamp();
 # }
 ```
