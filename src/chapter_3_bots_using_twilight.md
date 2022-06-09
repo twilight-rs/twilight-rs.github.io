@@ -39,6 +39,12 @@ Timezoner is a bot that lets people send a date/time that appears in everyone's 
 
 *Source*: [GitHub][bot:timezoner:source]
 
+### Tricked-Bot
+
+A invite tracker and autoresponder bot.
+
+*Source*: [Github][bot:trickedbot:source]
+
 [HTTP client]: ./chapter_1_crates/section_2_http.html
 [core crates]: ./chapter_1_crates/summary.html
 [repo]: https://github.com/twilight-rs/twilight-rs.github.io
@@ -49,3 +55,4 @@ Timezoner is a bot that lets people send a date/time that appears in everyone's 
 [bot:hartex:source]: https://github.com/HT-Studios/HarTex-rust-discord-bot
 [bot:mover:source]: https://github.com/laralove143/discord-interchannel-message-mover
 [bot:timezoner:source]: https://github.com/laralove143/timezoner-discord-bot
+[bot:trickedbot:source]: https://github.com/Tricked-dev/tricked-bot
