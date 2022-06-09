@@ -17,6 +17,6 @@ Its features include slash command parsing and creation from structs with derive
 
 [GitHub repository][github/twilight-interactions] - [Documentation][docs-rs/twilight-interactions]
 
-[docs-rs/twilight-interactions]: https://docs.rs/twilight-interactions/0.7.1/twilight_interactions/
+[docs-rs/twilight-interactions]: https://docs.rs/twilight-interactions/*/twilight_interactions/
 [github/twilight-interactions]: https://github.com/baptiste0928/twilight-interactions
 

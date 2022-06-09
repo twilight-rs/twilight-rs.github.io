@@ -32,7 +32,21 @@ cases it will be possible for the compiler to infer the marker that it needs to
 have. This helps ensuring that IDs are not used in the wrong context. If you
 need to use the id in a different context you can use the `cast` method which
 allow changing the marker type. This is for example helpful to turn a guild ID
-into a role ID to get the `@everyone` role.
+into a role ID to get the `@everyone` role. It comes with no additional run-time
+cost.
+
+### Example
+
+```rust
+use twilight_model::id::{Id, marker::{GuildMarker, RoleMarker}};
+# fn main() {
+
+let guild_id: Id<GuildMarker> = Id::new(123);
+
+// To get the everyone role we have to convert the guild id to a role id.
+let everyone_role_id: Id<RoleMarker> = guild_id.cast();
+# }
+```
 
 ## Links
 

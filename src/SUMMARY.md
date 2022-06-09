@@ -8,7 +8,6 @@
     - [HTTP](./chapter_1_crates/section_2_http.md)
     - [Gateway](./chapter_1_crates/section_3_gateway.md)
     - [Cache](./chapter_1_crates/section_4_cache_inmemory.md)
-    - [Command Parser](./chapter_1_crates/section_5_command_parser.md)
     - [Standby](./chapter_1_crates/section_6_standby.md)
     - [First-party](./chapter_1_crates/section_7_first_party/summary.md)
         - [Embed Builder](./chapter_1_crates/section_7_first_party/section_1_embed_builder.md)

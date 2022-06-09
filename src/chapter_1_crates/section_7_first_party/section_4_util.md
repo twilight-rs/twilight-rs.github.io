@@ -11,10 +11,12 @@ enabled via feature flags.
 
 ### Builder
 
-The `builder` feature enables builders for large structs, at the
-moment only a builder for commands is availible.
+The `builder` feature enables builders for large structs. There are as
+of writing builders for [`Command`], [`Embed`] and
+[`InteractionResponseData`].
 
-#### Examples
+
+#### Command example
 
 Create a command that can be used to send a animal picture in a
 certain category:
@@ -42,6 +44,39 @@ CommandBuilder::new(
     "only_smol".into(),
     "Whether to show only baby animals".into(),
 ));
+# }
+```
+
+#### Embed examples
+
+Build a simple embed:
+
+```rust
+# #[allow(unused_variables)]
+# fn main() -> Result<(), Box<dyn std::error::Error>> {
+use twilight_util::builder::embed::{EmbedBuilder, EmbedFieldBuilder};
+
+let embed = EmbedBuilder::new()
+    .description("Here's a list of reasons why Twilight is the best pony:")
+    .field(EmbedFieldBuilder::new("Wings", "She has wings.").inline())
+    .field(EmbedFieldBuilder::new("Horn", "She can do magic, and she's really good at it.").inline())
+    .build();
+#     Ok(())
+# }
+```
+
+Build an embed with an image:
+
+```rust
+# #[allow(unused_variables)]
+# fn main() -> Result<(), Box<dyn std::error::Error>> {
+use twilight_util::builder::embed::{EmbedBuilder, ImageSource};
+
+let embed = EmbedBuilder::new()
+    .description("Here's a cool image of Twilight Sparkle")
+    .image(ImageSource::attachment("bestpony.png")?)
+    .build();
+#     Ok(())
 # }
 ```
 
@@ -106,3 +141,8 @@ let timestamp = user.timestamp();
 *docs*: <https://docs.rs/twilight-util>
 
 *crates.io*: <https://crates.io/crates/twilight-util>
+
+
+[`Command`]: https://api.twilight.rs/twilight_model/application/command/struct.Command.html
+[`Embed`]: https://api.twilight.rs/twilight_model/channel/embed/struct.Embed.html
+[`InteractionResponseData`]: https://api.twilight.rs/twilight_model/http/interaction/struct.InteractionResponseData.html
