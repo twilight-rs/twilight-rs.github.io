@@ -56,14 +56,18 @@ use twilight_http::Client as HttpClient;
 async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let token = env::var("DISCORD_TOKEN")?;
 
-    // This is also the default.
-    let scheme = ShardScheme::Auto;
+    // Start a single shard.
+    let scheme = ShardScheme::Range {
+        from: 0,
+        to: 0,
+        total: 1,
+    };
 
     // Specify intents requesting events about things like new and updated
     // messages in a guild and direct messages.
     let intents = Intents::GUILD_MESSAGES | Intents::DIRECT_MESSAGES;
 
-    let (cluster, mut events) = Cluster::builder(&token, intents)
+    let (cluster, mut events) = Cluster::builder(token.clone(), intents)
         .shard_scheme(scheme)
         .build()
         .await?;

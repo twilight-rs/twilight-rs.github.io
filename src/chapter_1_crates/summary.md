@@ -3,8 +3,8 @@
 Twilight is, at heart, an ecosystem. These components of the ecosystem don't
 depend on each other in unnecessary ways, allowing you to pick and choose and
 combine the crates that you need for your use case. The crates for Twilight are
-categorised into three groups: the *core crates*, *first-party crates*, and *third-party
-crates*.
+categorised into three groups: the *core crates*, *first-party crates*, and
+*third-party crates*.
 
 ## Core Crates
 
@@ -18,10 +18,11 @@ of them. Most of them wrap Discord's various APIs.
 - [gateway]: Clients supporting Discord's gateway API.
 - [cache]: Definitions for implementating a cache. An in-process memory
   implementation is included.
-- [command-parser]: Basic command parser for parsing commands and arguments
-  out of messages.
 - [standby]: Utility for asynchronously waiting for certain events, like a new
   message in a channel or a new reaction to a message.
+- [util]: Provides various utilities for use with twilight such as: builders for
+  larger structs, permissing calculator to calculate permission of members and
+  various extension traits for snowflakes.
 
 ## First-Party Crates
 
@@ -34,14 +35,11 @@ first-party crate is [`twilight-lavalink`], a Client for interacting with
 ## Third-Party Crates
 
 Third-party crates are crates that aren't officially supported by the
-Twilight organization, but are recognised by it. An example is
-[`rarity-rs/permission-calculator`], which has interfaces for things like
-calculating the permissions for a member in a channel.
+Twilight organization, but are recognised by it.
 
-[`rarity-rs/permission-calculator`]: https://github.com/rarity-rs/permission-calculator
 [`twilight-lavalink`]: ./section_7_first_party/section_3_lavalink.md
 [cache]: ./section_4_cache_inmemory.md
-[command-parser]: ./section_5_command_parser.md
+[util]: ./section_7_first_party/section_4_util.md
 [gateway]: ./section_3_gateway.md
 [http]: ./section_2_http.md
 [model]: ./section_1_model.md

@@ -20,7 +20,7 @@ tasks as soon as they arrive.
 #
 # #[tokio::main]
 # async fn main() -> Result<(), Box<dyn std::error::Error>> {
-#    let token = "dummy";
+#    let token = String::from("dummy");
 let intents = Intents::GUILD_MESSAGES | Intents::GUILDS;
 let (cluster, mut events) = Cluster::new(token, intents).await?;
 let cluster = Arc::new(cluster);     
@@ -118,7 +118,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     tracing_subscriber::fmt::init();
 
     let token = env::var("DISCORD_TOKEN")?;
-    let (shard, mut events) = Shard::new(token, Intents::GUILD_MESSAGES);
+    let (shard, mut events) = Shard::new(token, Intents::GUILD_MESSAGES).await?;
 
     shard.start().await?;
     println!("Created shard");

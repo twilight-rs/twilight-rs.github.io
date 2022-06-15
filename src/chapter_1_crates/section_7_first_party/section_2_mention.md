@@ -13,9 +13,9 @@ Create a mention formatter for a user ID, and then format it in a message:
 # #[allow(unused_variables)]
 # fn main() {
 use twilight_mention::Mention;
-use twilight_model::id::UserId;
+use twilight_model::id::{Id, marker::UserMarker};
 
-let user_id = UserId::new(123).expect("zero id");
+let user_id: Id<UserMarker> = Id::new(123);
 let message = format!("Hey there, {}!", user_id.mention());
 # }
 ```
