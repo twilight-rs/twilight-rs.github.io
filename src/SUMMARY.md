@@ -10,7 +10,6 @@
     - [Cache](./chapter_1_crates/section_4_cache_inmemory.md)
     - [Standby](./chapter_1_crates/section_6_standby.md)
     - [First-party](./chapter_1_crates/section_7_first_party/summary.md)
-        - [Embed Builder](./chapter_1_crates/section_7_first_party/section_1_embed_builder.md)
         - [Mention](./chapter_1_crates/section_7_first_party/section_2_mention.md)
         - [Lavalink](./chapter_1_crates/section_7_first_party/section_3_lavalink.md)
         - [Util](./chapter_1_crates/section_7_first_party/section_4_util.md)
