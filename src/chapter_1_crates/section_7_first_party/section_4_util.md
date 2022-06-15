@@ -11,9 +11,11 @@ enabled via feature flags.
 
 ### Builder
 
-The `builder` feature enables builders for large structs. There are as
-of writing builders for [`Command`], [`Embed`] and
-[`InteractionResponseData`].
+The `builder` feature enables builders for large structs. At the time of
+writing, it contains the following builders:
+- [`CommandBuilder`]
+- [`EmbedBuilder`]
+- [`InteractionResponseData`]
 
 
 #### Command example
@@ -142,7 +144,6 @@ let timestamp = user.timestamp();
 
 *crates.io*: <https://crates.io/crates/twilight-util>
 
-
-[`Command`]: https://api.twilight.rs/twilight_model/application/command/struct.Command.html
-[`Embed`]: https://api.twilight.rs/twilight_model/channel/embed/struct.Embed.html
-[`InteractionResponseData`]: https://api.twilight.rs/twilight_model/http/interaction/struct.InteractionResponseData.html
+[`CommandBuilder`]: https://api.twilight.rs/twilight_util/builder/command/struct.CommandBuilder.html
+[`EmbedBuilder`]: https://api.twilight.rs/twilight_util/builder/embed/struct.EmbedBuilder.html
+[`InteractionResponseDataBuilder`]: https://api.twilight.rs/twilight_util/builder/struct.InteractionResponseDataBuilder.html
