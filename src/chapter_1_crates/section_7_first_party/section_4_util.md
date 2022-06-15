@@ -17,7 +17,6 @@ writing, it contains the following builders:
 - [`EmbedBuilder`]
 - [`InteractionResponseData`]
 
-
 #### Command example
 
 Create a command that can be used to send a animal picture in a
